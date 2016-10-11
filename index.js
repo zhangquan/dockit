@@ -19,6 +19,7 @@ var headingStyle = fs.readFileSync('./heading.css').toString();
 var codeStyle = fs.readFileSync('./code.css').toString();
 var paragraphStyle = fs.readFileSync('./paragraph.css').toString();
 var commonStyle = fs.readFileSync('./code.css').toString();
+var codeSpanStyle = fs.readFileSync('./codespan.css').toString();
 
 /**
  * 针对不同的组件，重写动态化效果
@@ -64,7 +65,14 @@ var wrapScript = function(content){
   return '<script type="text/javascript">' + content + '</script>';
 };
 
-//如果escapedText长度超过30个字符，则取30个
+/**
+ * heading组件，针对#语法转义
+ * 如果转义的段落文本字数超过30个字，即escapedText长度超过30个字符，则取30个，
+ * 因为这样可以控制锚点的url串的长度
+ * 功能点：
+ * 1. 标题可含链接，图片
+ * 2. 可以使用［友好］锚点
+ */
 renderer.heading = function (text, level) {
   var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
   var anchor = escapedText;
@@ -85,6 +93,12 @@ renderer.heading = function (text, level) {
   return tpl;
 };
 
+/**
+ * code 组件，针对代码块语法
+ * 功能：
+ * 1. 语法高亮
+ * 2. 背景修饰
+ */
 renderer.code = function(code, language){
   var tpl = wrapCSS(codeStyle);
   tpl += '<pre class="vczero_code_pre" id="__aa"><code>';
@@ -96,6 +110,26 @@ renderer.code = function(code, language){
   return tpl;
 }
 
+/**
+ * codespan 组件，内联代码
+ * 功能：字体 & 背景颜色
+ * 
+ */
+renderer.codespan = function(code){
+  var tpl = wrapCSS(codeSpanStyle);
+  tpl += '<span class="vczero_code_span">';
+  tpl += code;
+  tpl += '</span>';
+  return tpl;
+}
+
+
+/**
+ * paragraph 组件，文字段落
+ * 功能：
+ * 1. 字体大小增强
+ * 2. 段落相关增强
+ */
 renderer.paragraph = function(text){
   var str = '';
   str +='<div style="font-size:14px;">';
