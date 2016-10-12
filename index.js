@@ -15,19 +15,14 @@ var renderer = new marked.Renderer();
  * 针对不同的组件，重写View，包括样式和布局
  * 命名格式：组件名.css
  */
-var headingStyle = fs.readFileSync('./heading.css').toString();
-var codeStyle = fs.readFileSync('./code.css').toString();
-var paragraphStyle = fs.readFileSync('./paragraph.css').toString();
-var commonStyle = fs.readFileSync('./code.css').toString();
-var codeSpanStyle = fs.readFileSync('./codespan.css').toString();
+var commonStyle = fs.readFileSync('./common.css').toString();
 
 /**
  * 针对不同的组件，重写动态化效果
  * 命名格式：组件名.js
  */
-var headingJS = fs.readFileSync('./heading.js').toString();
-var codeJS = fs.readFileSync('./code.js').toString();
-var paragraphJS = fs.readFileSync('./paragraph.js').toString();
+var commonJS = fs.readFileSync('./common.js').toString();
+
 
 /**
  * 第三库链接，最终该链接的文件会部署到github page 上
@@ -41,13 +36,6 @@ var script = '<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.
 var mdPageHTML = '';
 // markdown转换后的html片段
 var mdTransformHTML = '';
-
-/**
- * TODO: 读取某个文件夹所有的.md文件进行编译
- * 1. 最终编译的效果是.html文件，能够独立运行
- * 2. 非公共组件，都是直出html页面，不做Ajax异步读取
- */
-var content = fs.readFileSync('./test.md').toString();
 
 /**
  * 包装读取的.css文件的内容，以便浏览器解析
@@ -66,6 +54,13 @@ var wrapScript = function(content){
 };
 
 /**
+ * TODO: 读取某个文件夹所有的.md文件进行编译
+ * 1. 最终编译的效果是.html文件，能够独立运行
+ * 2. 非公共组件，都是直出html页面，不做Ajax异步读取
+ */
+var content = fs.readFileSync('./test.cn.md').toString();
+
+/**
  * heading组件，针对#语法转义
  * 如果转义的段落文本字数超过30个字，即escapedText长度超过30个字符，则取30个，
  * 因为这样可以控制锚点的url串的长度
@@ -79,9 +74,13 @@ renderer.heading = function (text, level) {
   if(anchor.length > 30){
     anchor = anchor.substr(0, 30);
   }
-  var tpl = '<h';
+  var tpl = '';
+  tpl += '<h';
   tpl += level;
-  tpl += '><a name="';
+  if(level === 1){
+    tpl += ' class="_mx__heading _mx__heading_border"><a name="';
+  }
+  tpl += ' class="_mx__heading"><a name="';
   tpl += anchor;
   tpl += '" class="anchor" href="#';
   tpl += anchor;
@@ -100,13 +99,13 @@ renderer.heading = function (text, level) {
  * 2. 背景修饰
  */
 renderer.code = function(code, language){
-  var tpl = wrapCSS(codeStyle);
-  tpl += '<pre class="vczero_code_pre" id="__aa"><code>';
+  var tpl ='';
+  tpl += '<pre class="_mx__code_pre" id="__aa"><code>';
   tpl += '<a>'; 
   tpl += hljs.highlightAuto(code).value;
   tpl += '</a>';
   tpl += '</code></pre>';
-  tpl += wrapScript(codeJS);
+  tpl += '';
   return tpl;
 }
 
@@ -116,8 +115,8 @@ renderer.code = function(code, language){
  * 
  */
 renderer.codespan = function(code){
-  var tpl = wrapCSS(codeSpanStyle);
-  tpl += '<span class="vczero_code_span">';
+  var tpl = '';
+  tpl += '<span class="_mx__code_span">';
   tpl += code;
   tpl += '</span>';
   return tpl;
@@ -132,11 +131,22 @@ renderer.codespan = function(code){
  */
 renderer.paragraph = function(text){
   var str = '';
-  str +='<div style="font-size:14px;">';
+  str +='<div class="_mx__paragraph">';
   str += text;
   str += '</div>';
   return str;
 }
+
+renderer.link = function(href, title, text){
+  var str = '';
+  str += '<a class="_mx__link" ';
+  str += 'title="' + title + '" ';
+  str += 'href="' + href + '" >';
+  str += text;
+  str += '</a>';
+  return str;
+}
+
 
 
 marked.setOptions({
@@ -152,9 +162,9 @@ marked.setOptions({
 
 
 mdTransformHTML = marked(content);
-mdPageHTML = '<div class="vczero_md_container">' + wrapCSS(commonStyle) + script + mdTransformHTML + '</div>';
+mdPageHTML = '<meta charset="utf-8"><div class="_mx__md_container">' + wrapCSS(commonStyle) + script + mdTransformHTML + '</div>';
 
-fs.writeFileSync('./index.html', mdPageHTML);
+fs.writeFileSync('./index.cn.html', mdPageHTML);
 
 
 
