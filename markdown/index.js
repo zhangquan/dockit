@@ -35,3 +35,5 @@
 // var html_content = markdown.toHTML(md_content);
 // fs.writeFileSync('./index.html', html_content.join('\n'));
 //console.log(html_content);
+
+module.exports = require('./marked');

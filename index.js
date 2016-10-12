@@ -7,8 +7,8 @@
  * 4. 制作各种语法Demo
  */
 var fs = require('fs');
-var marked = require('marked');
-var hljs = require('highlight.js');
+var marked = require('./markdown');
+var hljs = require('./highlightjs');
 var renderer = new marked.Renderer();
 
 /**
