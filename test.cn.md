@@ -1,8 +1,8 @@
-# 第3篇 初始化工程     
+# 第3篇 初始化工程      
     
-mx_author 
+mx_time    
   update time: 2016/10/12
-mx_author
+mx_time    
 
 
 初始化工程是一个项目开发的第一步。迈出了这一步，你就成功了一半。我相信大部分同学构建了一个项目，是会拼着老命写完的（逃...）。      
@@ -26,6 +26,7 @@ weex-toolkit是一个很好的工具供我们工程构建。首先，第一步�
 如果显示版本号即为成功。         
 
 ## 创建项目     
+
 这里，我们不再使用`weex` 跑一个文件的形式。我们需要一个较为完整的方案，因此，这里采用weex init命令创建项目。         
 
 首先，我们创建一个目录存放我们的项目，启动命令行：     
@@ -57,7 +58,7 @@ weex-toolkit是一个很好的工具供我们工程构建。首先，第一步�
  	
  这时，打开浏览器，输入http://127.0.0.1:8080, 就会看到如下界面效果:       
  
- ![](http://alinode-assets.oss-cn-hangzhou.aliyuncs.com/6a95c4dc-b01d-4585-b574-7e706e2cc03e.png)      	
+ ![阿里云@600*320](http://alinode-assets.oss-cn-hangzhou.aliyuncs.com/6a95c4dc-b01d-4585-b574-7e706e2cc03e.png)      	
           
 ## npm run dev干了什么事儿      
 当然这一些都是node/npm的常识了。首先，我们打开package.json文件。可以看到如下代码：     

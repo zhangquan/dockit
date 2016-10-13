@@ -81,9 +81,9 @@ renderer.heading = function (text, level) {
     tpl += ' class="_mx__heading _mx__heading_border"><a name="';
   }
   tpl += ' class="_mx__heading"><a name="';
-  tpl += anchor;
+  tpl += text;
   tpl += '" class="anchor" href="#';
-  tpl += anchor;
+  tpl += text;
   tpl += '"><span class="header-link"></span></a>';
   tpl += text;
   tpl += '</h';

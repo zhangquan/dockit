@@ -26,9 +26,7 @@ var block = {
   paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def))+)\n*/,
   text: /^[^\n]+/,
   //作者
-  mx_author: /^mx_author\s*([\s\S]*)mx_author\s*/,
-  //api稳定 /^a.*e$/
-  mx_api_stable: '[mx_api_stable\]'
+  mx_time: /^mx_time\s*([\s\S]*)mx_time\s*/
 };
 
 block.bullet = /(?:[*+-]|\d+\.)/;
@@ -187,21 +185,11 @@ Lexer.prototype.token = function(src, top, bq) {
       continue;
     }
 
-    // mx_author 定制
-    if (cap = this.rules.mx_author.exec(src)) {
+    // mx_time 定制
+    if (cap = this.rules.mx_time.exec(src)) {
       src = src.substring(cap[0].length);
       this.tokens.push({
-        type: 'mx_author',
-        data: cap[1]
-      });
-      continue;
-    }
-
-    // mx_api_stable 定制
-    if (cap = this.rules.mx_api_stable.exec(src)) {
-      src = src.substring(cap[0].length);
-      this.tokens.push({
-        type: 'mx_api_stable',
+        type: 'mx_time',
         data: cap[1]
       });
       continue;
@@ -912,8 +900,16 @@ Renderer.prototype.link = function(href, title, text) {
 };
 
 Renderer.prototype.image = function(href, title, text) {
+  //获取图片的高度
+  var style = '';
+  var alt = '';
+  if(text.indexOf('@') > -1) {
+    var size = text.split('@')[1].split('*');
+    alt = text.split('@')[0];
+    style = 'style="width:' + size[0] + 'px;height:' + size[1] +'px;"';
+  }
   var out = '<div class="_mx__image_container">'
-  out += '<img src="' + href + '" alt="' + text + '" class="_mx__image"';
+  out += '<img src="' + href + '" alt="' + alt + '" class="_mx__image" ' + style;
   if (title) {
     out += ' title="' + title + '" ';
   }
@@ -927,17 +923,10 @@ Renderer.prototype.text = function(text) {
 };
 
 //作者
-Renderer.prototype.mx_author = function(data) {
-  return '<div class="_mx__author">' 
+Renderer.prototype.mx_time = function(data) {
+  return '<div class="_mx__time">' 
     + data
     + '</div>';
-};
-
- //稳定版API
-Renderer.prototype.mx_api_stable = function(data) {
-  return '<span class="_mx__api_stable">' 
-    + data
-    + '</span>';
 };
 
 
@@ -1029,12 +1018,8 @@ Parser.prototype.tok = function() {
     case 'code': {
       return this.renderer.code(this.token.text, this.token.lang, this.token.escaped);
     }
-    case 'mx_author': {
-      return this.renderer.mx_author(this.token.data);
-    }
-
-    case 'mx_api_stable': {
-      return this.renderer.mx_api_stable(this.token.data);
+    case 'mx_time': {
+      return this.renderer.mx_time(this.token.data);
     }
     case 'table': {
       var header = ''
