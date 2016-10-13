@@ -162,7 +162,7 @@ marked.setOptions({
 
 
 mdTransformHTML = marked(content);
-mdPageHTML = '<meta charset="utf-8"><div class="_mx__md_container">' + wrapCSS(commonStyle) + script + mdTransformHTML + '</div>';
+mdPageHTML = '<meta charset="utf-8"><div id="_mx__md_container"> <div id="_mx__gotop">Top</div>' + wrapCSS(commonStyle) + script + mdTransformHTML + '</div>' + wrapScript(commonJS);
 
 fs.writeFileSync('./index.cn.html', mdPageHTML);
 

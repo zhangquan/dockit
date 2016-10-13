@@ -1,4 +1,4 @@
-._mx__md_container{
+#_mx__md_container{
   font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
   font-size:14px;
   max-width:900px;
@@ -130,4 +130,18 @@
 
 ._mx_toc_level_6{
 	margin-left:40px;
+}
+
+#_mx__gotop{
+	position: fixed;
+	width:40px;
+	height:40px;
+	border:1px solid #ddd;
+	border-radius:20px;
+	bottom:100px;
+	right: 10px;
+	text-align: center;
+	line-height:40px;
+	cursor:pointer;
+	display: none;
 }
