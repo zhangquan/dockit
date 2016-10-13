@@ -80,7 +80,7 @@ renderer.heading = function (text, level) {
   if(level === 1){
     tpl += ' class="_mx__heading _mx__heading_border"><a name="';
   }
-  tpl += ' class="_mx__heading"><a name="';
+  tpl += ' class="_mx__heading" onclick="addAnchor(\''+ text +'\')"><a name="';
   tpl += text;
   tpl += '" class="anchor" href="#';
   tpl += text;

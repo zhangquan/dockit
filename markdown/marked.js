@@ -25,7 +25,7 @@ var block = {
   table: noop,
   paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def))+)\n*/,
   text: /^[^\n]+/,
-  //作者
+  //更新时间
   mx_time: /^mx_time\s*([\s\S]*)mx_time\s*/
 };
 
@@ -922,7 +922,7 @@ Renderer.prototype.text = function(text) {
   return text;
 };
 
-//作者
+//更新时间
 Renderer.prototype.mx_time = function(data) {
   return '<div class="_mx__time">' 
     + data

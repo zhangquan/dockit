@@ -1,4 +1,4 @@
-(function(){
+(function(win, undefined){
   var md_container = document.getElementById('_mx__md_container');
   var goTop = document.getElementById('_mx__gotop');
 
@@ -41,6 +41,14 @@
     }, 1);
   };
 
-})();
+  win.addAnchor = function(a){
+    var url = window.location.href;
+    if(window.location.href.indexOf('#') > -1){
+      url = window.location.href.split('#')[0];
+    }
+    window.location.href = url + '#' + a;
+  }
+
+})(window);
 
 
