@@ -1,4 +1,3 @@
-
 /**
  * markdown文档增强工具
  * 1. 独立css文件，默认／更新css样式
@@ -6,59 +5,9 @@
  * 3. 增加新语法
  * 4. 制作各种语法Demo
  */
-var fs = require('fs');
-var marked = require('./markdown');
-var hljs = require('./highlightjs');
-var renderer = new marked.Renderer();
-
-/**
- * 针对不同的组件，重写View，包括样式和布局
- * 命名格式：组件名.css
- */
-var commonStyle = fs.readFileSync('./common.css').toString();
-
-/**
- * 针对不同的组件，重写动态化效果
- * 命名格式：组件名.js
- */
-var commonJS = fs.readFileSync('./common.js').toString();
-
-
-/**
- * 第三库链接，最终该链接的文件会部署到github page 上
- * 1. jquery / zepto
- * 2. highlight
- * 3. 以及一些其它的效果库 或者 公共基础库
- */
-var script = '<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>\n';
-
-// 整个markdown文章的容器
-var mdPageHTML = '';
-// markdown转换后的html片段
-var mdTransformHTML = '';
-
-/**
- * 包装读取的.css文件的内容，以便浏览器解析
- * content：css内容纯文本
- */
-var wrapCSS = function(content){
-  return '<style type="text/css">' + content + '</style>\n';
-};
-
-/**
- * 包装读取的.js文件的内容，以便浏览器解析
- * content：js内容纯文本
- */
-var wrapScript = function(content){
-  return '<script type="text/javascript">' + content + '</script>';
-};
-
-/**
- * TODO: 读取某个文件夹所有的.md文件进行编译
- * 1. 最终编译的效果是.html文件，能够独立运行
- * 2. 非公共组件，都是直出html页面，不做Ajax异步读取
- */
-var content = fs.readFileSync('./test.cn.md').toString();
+let marked = require('./markdown');
+let hljs = require('./highlightjs');
+let renderer = new marked.Renderer();
 
 /**
  * heading组件，针对#语法转义
@@ -69,12 +18,12 @@ var content = fs.readFileSync('./test.cn.md').toString();
  * 2. 可以使用［友好］锚点
  */
 renderer.heading = function (text, level) {
-  var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-  var anchor = escapedText;
+  let escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+  let anchor = escapedText;
   if(anchor.length > 30){
     anchor = anchor.substr(0, 30);
   }
-  var tpl = '';
+  let tpl = '';
   tpl += '<h';
   tpl += level;
   if(level === 1){
@@ -99,7 +48,7 @@ renderer.heading = function (text, level) {
  * 2. 背景修饰
  */
 renderer.code = function(code, language){
-  var tpl ='';
+  let tpl ='';
   tpl += '<pre class="_mx__code_pre" id="__aa"><code>';
   tpl += '<a>'; 
   tpl += hljs.highlightAuto(code).value;
@@ -115,7 +64,7 @@ renderer.code = function(code, language){
  * 
  */
 renderer.codespan = function(code){
-  var tpl = '';
+  let tpl = '';
   tpl += '<span class="_mx__code_span">';
   tpl += code;
   tpl += '</span>';
@@ -130,7 +79,7 @@ renderer.codespan = function(code){
  * 2. 段落相关增强
  */
 renderer.paragraph = function(text){
-  var str = '';
+  let str = '';
   str +='<div class="_mx__paragraph">';
   str += text;
   str += '</div>';
@@ -138,7 +87,7 @@ renderer.paragraph = function(text){
 }
 
 renderer.link = function(href, title, text){
-  var str = '';
+  let str = '';
   str += '<a class="_mx__link" ';
   str += 'title="' + title + '" ';
   str += 'href="' + href + '" >';
@@ -146,7 +95,6 @@ renderer.link = function(href, title, text){
   str += '</a>';
   return str;
 }
-
 
 
 marked.setOptions({
@@ -160,11 +108,4 @@ marked.setOptions({
   smartypants: false
 });
 
-
-mdTransformHTML = marked(content);
-mdPageHTML = '<meta charset="utf-8"><div id="_mx__md_container"> <div id="_mx__gotop">Top</div>' + wrapCSS(commonStyle) + script + mdTransformHTML + '</div>' + wrapScript(commonJS);
-
-fs.writeFileSync('./index.cn.html', mdPageHTML);
-
-
-
+module.exports = marked;

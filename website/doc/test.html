@@ -1,0 +1,240 @@
+<meta charset="utf-8"><div id="_mx__md_container"> <div id="_mx__gotop">Top</div><style type="text/css">#_mx__md_container{
+  font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+  font-size:14px;
+  max-width:900px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.hljs-keyword{
+  color: #F92672;
+}
+.hljs-built_in{
+  color: #0071A6;
+}
+
+/*code*/
+._mx__code_pre{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #F2F2F2 !important;
+  overflow-x: auto;
+  /*border:1px solid #1D1E19;*/
+  padding:15px;
+  /*border-radius:3px;*/
+}
+._mx__code_pre code{
+  /*color: #F6F7EE;*/
+}
+/*code span*/
+._mx__code_span{
+  display: inline-block;
+  padding:3px;
+  color: #5151BE;
+	background-color: #F5F6FA;
+	border:1px solid #CBD2E0;
+	border-radius:2px;
+	margin-left: 3px;
+	margin-right:3px;
+}
+/*heading*/
+._mx__heading{
+  color: #434343;
+}
+
+._mx__heading_border{
+	border-bottom: 1px solid #D5D5D5;
+	color: #262626;
+	display: block;
+	height:92px;
+	line-height:92px;
+}
+/*._mx__heading:hover{
+  color:#3498db;
+}*/
+/*paragraph*/
+._mx__paragraph{
+  color: #4e5665;
+  font-size: 14px;
+	line-height:22px;
+}
+
+/*link*/
+._mx__link{
+  color: #317FBD;
+}
+
+/*image*/
+._mx__image{
+  max-width:800px;
+	max-height: 600px;
+	display: inline-block;
+}
+._mx__image_container{
+	max-width:900px;
+	text-align: center;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+/*作者信息*/
+._mx__time{
+	position: relative;
+	top: -45px;
+	width: 165px;
+	float: right;
+	color: #A9A9A9;
+	font-size:13px;
+}
+
+/*api*/
+._mx__api_stable{
+	height: 40px;
+	background-color:red;
+	line-height:40px;
+	color: #fff;
+	padding-left:10px;
+}
+
+/*toc*/
+._mx__toc{
+	position: relative;
+	right:30px;
+	width:200px;
+	border:1px solid #D5D5D5;
+	background-color: #fff;
+	float: right;
+	margin-right: -200px;
+}
+
+._mx__toc_ul{
+	list-style: none;
+	margin-left: -30px;
+}
+._mx__toc_ul a{
+	text-decoration:none;
+	color: #2468B2;
+}
+
+._mx_toc_level_3{
+	margin-left:10px;
+}
+
+._mx_toc_level_4{
+	margin-left:20px;
+}
+
+._mx_toc_level_5{
+	margin-left:30px;
+}
+
+._mx_toc_level_6{
+	margin-left:40px;
+}
+
+#_mx__gotop{
+	position: fixed;
+	width:40px;
+	height:40px;
+	border:1px solid #ddd;
+	border-radius:20px;
+	bottom:100px;
+	right: 10px;
+	text-align: center;
+	line-height:40px;
+	cursor:pointer;
+	display: none;
+}</style>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+<h1 class="_mx__heading _mx__heading_border"><a name=" class="_mx__heading" onclick="addAnchor('How to customize native APIs ? <a class="_mx__link" title="null" href="https://github.com/weexteam/article/wiki/%E6%AC%A2%E8%BF%8E%E5%8F%82%E4%B8%8EWeex%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91" >cn</a>')"><a name="How to customize native APIs ? <a class="_mx__link" title="null" href="https://github.com/weexteam/article/wiki/%E6%AC%A2%E8%BF%8E%E5%8F%82%E4%B8%8EWeex%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91" >cn</a>" class="anchor" href="#How to customize native APIs ? <a class="_mx__link" title="null" href="https://github.com/weexteam/article/wiki/%E6%AC%A2%E8%BF%8E%E5%8F%82%E4%B8%8EWeex%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91" >cn</a>"><span class="header-link"></span></a>How to customize native APIs ? <a class="_mx__link" title="null" href="https://github.com/weexteam/article/wiki/%E6%AC%A2%E8%BF%8E%E5%8F%82%E4%B8%8EWeex%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91" >cn</a></h1><div class="_mx__paragraph">Weex SDK <span class="_mx__code_span">provides</span> only rendering capability, rather than having other capabilities, such as network, picture, and URL redirection. If you want the these features, you need to implement them yourselves.<br>The example below will describe how to extend weex with native logic or &#39;bridge&#39; your existed native code.</div><h2 class="_mx__heading" onclick="addAnchor('A URLHelper Example')"><a name="A URLHelper Example" class="anchor" href="#A URLHelper Example"><span class="header-link"></span></a>A URLHelper Example</h2><h3 class="_mx__heading" onclick="addAnchor('Create your own <span class="_mx__code_span">WXModule</span> in native:')"><a name="Create your own <span class="_mx__code_span">WXModule</span> in native:" class="anchor" href="#Create your own <span class="_mx__code_span">WXModule</span> in native:"><span class="header-link"></span></a>Create your own <span class="_mx__code_span">WXModule</span> in native:</h3><pre class="_mx__code_pre" id="__aa"><code><a>public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">URLHelperModule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WXModule</span></span>{
+    <span class="hljs-keyword">private</span> static <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-type">WEEX_CATEGORY</span>=<span class="hljs-string">"com.taobao.android.intent.category.WEEX"</span>;
+    <span class="hljs-meta">@WXModuleAnno</span>
+    public void openURL(<span class="hljs-type">String</span> url){
+        <span class="hljs-keyword">if</span> (<span class="hljs-type">TextUtils</span>.isEmpty(url)) {
+            <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-type">StringBuilder</span> builder=<span class="hljs-keyword">new</span> <span class="hljs-type">StringBuilder</span>(<span class="hljs-string">"http:"</span>);
+        builder.append(url);
+        <span class="hljs-type">Uri</span> uri = <span class="hljs-type">Uri</span>.parse(builder.toString());
+        <span class="hljs-type">Intent</span> intent = <span class="hljs-keyword">new</span> <span class="hljs-type">Intent</span>(<span class="hljs-type">Intent</span>.<span class="hljs-type">ACTION_VIEW</span>, uri);
+        intent.addCategory(<span class="hljs-type">WEEX_CATEGORY</span>);
+        mWXSDKInstance.getContext().startActivity(intent);
+    }
+}</a></code></pre><div class="_mx__paragraph">Notice the <span class="_mx__code_span">@WXModuleAnno</span>, use this annotation to mark the methods you wanna expose to javascript.<br>If your also want to callback to javascript, you should define a <span class="_mx__code_span">callbackId</span> parameter to received &#39;JS callback function id&#39;:</div><pre class="_mx__code_pre" id="__aa"><code><a>public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">URLHelperModule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WXModule</span></span>{
+
+    <span class="hljs-meta">@WXModuleAnno</span>
+    public void openURL(<span class="hljs-type">String</span> url,<span class="hljs-type">String</span> callbackId){
+        <span class="hljs-comment">//...</span>
+        <span class="hljs-comment">//callback to javascript </span>
+        <span class="hljs-type">Map</span>&lt;<span class="hljs-type">String</span>, <span class="hljs-type">Object</span>&gt; result = <span class="hljs-keyword">new</span> <span class="hljs-type">HashMap</span>&lt;<span class="hljs-type">String</span>, <span class="hljs-type">Object</span>&gt;();
+        result.put(<span class="hljs-string">"ts"</span>, <span class="hljs-type">System</span>.currentTimeMillis());
+        <span class="hljs-type">WXBridgeManager</span>.getInstance().callback(mWXSDKInstance.getInstanceId(), callbackId, result);
+    }
+}</a></code></pre><h3 class="_mx__heading" onclick="addAnchor('Register your module to engine:')"><a name="Register your module to engine:" class="anchor" href="#Register your module to engine:"><span class="header-link"></span></a>Register your module to engine:</h3><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">try</span> {
+     WXSDKEngine.registerModule(<span class="hljs-string">"myURL"</span>, URLHelperModule.<span class="hljs-keyword">class</span>);<span class="hljs-comment">//'myURL' is the name you'll use in javascript</span>
+    } <span class="hljs-keyword">catch</span> (WXException e) {
+       WXLogUtils.e(e.getMessage());
+    }</a></code></pre><h3 class="_mx__heading" onclick="addAnchor('Now, you can use eventModule in javascript like this:')"><a name="Now, you can use eventModule in javascript like this:" class="anchor" href="#Now, you can use eventModule in javascript like this:"><span class="header-link"></span></a>Now, you can use eventModule in javascript like this:</h3><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">let</span> URLHelper = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/myURL'</span>);<span class="hljs-comment">//same as you registered</span>
+URLHelper.openURL(<span class="hljs-string">"http://www.taobao.com"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ts</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"url is open at "</span>+ts);
+});</a></code></pre><h2 class="_mx__heading" onclick="addAnchor('Things you need to note:')"><a name="Things you need to note:" class="anchor" href="#Things you need to note:"><span class="header-link"></span></a>Things you need to note:</h2><ol>
+<li>Customized components must inherit from <span class="_mx__code_span">WXModule</span>;</li>
+<li>@WXModuleAnno annotation must be added, as it is the only way to be recognized by Weex;</li>
+<li>The access levels of method must be <strong>public</strong>;</li>
+<li>The module class also can not be an inner class;</li>
+<li>Customized components should not be obfuscated by tools like ProGuard;</li>
+<li>Module methods will be invoked on the UI thread, so do not put time-consuming operations there;</li>
+<li>Weex parameter&#39;s type can be int, double, float, String, Map, List, self-defined class that implements WXObject interface;</li>
+</ol>
+</div><script type="text/javascript">(function(win, undefined){
+  var md_container = document.getElementById('_mx__md_container');
+  var goTop = document.getElementById('_mx__gotop');
+
+  function getPagePosition() { 
+    var x = 0, y = 0;
+    if(window.pageYOffset){   
+      y = window.pageYOffset;    
+      x = window.pageXOffset; 
+    } else if(document.documentElement && document.documentElement.scrollTop){
+      y = document.documentElement.scrollTop;    
+      x = document.documentElement.scrollLeft; 
+    } else if(document.body) {
+      y = document.body.scrollTop;    
+      x = document.body.scrollLeft;   
+    } 
+    return {x:x, y:y};
+  }
+  
+  window.onscroll = function(){
+    var pos = getPagePosition();
+    if(pos.y > document.body.clientHeight){
+      goTop.style.display = 'block';
+    }else{
+      goTop.style.display = 'none';
+    }
+  };
+
+  //滚动到顶部
+  goTop.onclick = function(){
+    var pos = getPagePosition();
+    var y = pos.y;
+    var handle = setInterval(function(){
+      y = y - 50;
+      if(y <= 0){
+        window.scrollTo(0, 0);
+        clearInterval(handle);
+      }else{
+        window.scrollTo(0, y);
+      }
+    }, 1);
+  };
+
+  win.addAnchor = function(a){
+    var url = window.location.href;
+    if(window.location.href.indexOf('#') > -1){
+      url = window.location.href.split('#')[0];
+    }
+    window.location.href = url + '#' + a;
+  }
+
+})(window);
+
+
+</script>
