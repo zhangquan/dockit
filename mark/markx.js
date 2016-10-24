@@ -20,6 +20,12 @@ let renderer = new marked.Renderer();
 renderer.heading = function (text, level) {
   let escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
   let anchor = escapedText;
+  let img = '';
+  if(text.indexOf('<a class=') > 0){
+    let titles = text.split('<a class=');
+    text = titles[0];
+    img = titles[1];
+  }
   if(anchor.length > 30){
     anchor = anchor.substr(0, 30);
   }
@@ -35,6 +41,9 @@ renderer.heading = function (text, level) {
   tpl += text;
   tpl += '"><span class="header-link"></span></a>';
   tpl += text;
+  if(img){
+    tpl += '<a class=' + img;
+  }
   tpl += '</h';
   tpl += level;
   tpl += '>';

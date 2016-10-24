@@ -1,10 +1,235 @@
-<meta charset="utf-8"><div id="_mx__md_container"> <div id="_mx__gotop">Top</div><style type="text/css">#_mx__md_container{
-  font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
-  font-size:14px;
-  max-width:900px;
-	margin-left:auto;
-	margin-right:auto;
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+  <meta charset="UTF-8">
+  <title>weex document</title>
+  <!--这里处理css-->
+  <!--<link rel="stylesheet" href="doc.css"/>-->
+  <style type="text/css">
+    html,body{
+    background-color:#F4F4F4;
+    margin:0;
+    padding:0;
+    font-size:14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+.header{
+    background:#ffffff;
+    border-bottom:1px solid #dddddd;
+    width:100%;
+    height:100px;
+}
+
+.header .logo{
+    margin-left: 41px;
+}
+
+.header .logo img{
+    max-height:59px;
+    margin-top:20px;
+}
+
+.header .menu>div{
+    display: inline-block;
+    line-height:30px;
+    margin-right:52px;
+    color: #2792F4;
+    margin-top:35px;
+    cursor: pointer;
+}
+.header .menu>div img{
+    width:23px;
+    height:23px;
+}
+
+.header_menu_active{
+    font-weight: bold;
+    border-bottom:3px solid #2792F4;
+}
+
+/*tree_menu*/
+.tree_menu{
+    background:#F2F2F2;
+    border-right:1px solid #dddddd;
+    width:238px;
+    position: absolute;
+    top:101px;
+    left:0;
+    bottom:0;
+}
+
+.tree_menu_view{
+    width:100%;
+    margin-top:31px;
+    color:#333333;
+    line-height:30px;
+}
+
+.tree_menu_view>div{
+    padding-left:30px;
+    cursor: pointer;
+    /*font-weight: bold;*/
+}
+
+.tree_menu_active{
+    background-color:#DCDCDC;
+    border-left:3px solid #1b90f7;
+}
+.tree_menu_level2{
+    padding-left:48px !important;
+    /*font-weight: normal !important;*/
+}
+.tree_menu_level3{
+    padding-left:66px !important;
+    /*font-weight: normal !important;*/
+}
+
+/*doc_container*/
+.doc_container{
+    background:#fafafa;
+    position: absolute;
+    left: 239px;
+    top:101px;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+}
+
+/*doc_footer*/
+.doc_footer{
+    background:#fafafa;
+    border-top:1px solid #dddddd;
+    width:100%;
+    height:120px;
+}
+
+
+#_mx__gotop{
+    position: fixed;
+    width:40px;
+    height:40px;
+    border:1px solid #ddd;
+    border-radius:20px;
+    bottom:120px;
+    left: 1176px;
+    text-align: center;
+    line-height:40px;
+    cursor:pointer;
+    /*display: none;*/
+}
+
+.playground{
+    position: absolute;
+    left:1000px;
+    top:81px;
+    width:198px;
+    height:394px;
+    border:2px solid #2792F4;
+    border-radius:15px;
+}
+.playground_header{
+    width:100%;
+    height:40px;
+}
+.playground_header_circle{
+    width:8px;
+    height:8px;
+    border:1px solid #2792F4;
+    border-radius:8px;
+    background-color:#B8DEFD;
+    margin-left:72px;
+    margin-top: 15px;
+}
+.playground_header_rect{
+    width:35px;
+    height:4px;
+    border:1px solid #2792F4;
+    border-radius:4px;
+    background-color:#B8DEFD;
+    margin-top: 16px;
+    margin-right:72px;
+}
+.playground_main{
+    width:178px;
+    height:304px;
+    border:1px solid #2792F4;
+    margin-left:10px;
+    border-radius:2px;
+    text-align: center;
+    line-height:304px;
+    color: #2792F4;
+}
+.playground_footer{
+    width:100%;
+    height:40px;
+}
+
+.playground_footer>div{
+    width:32px;
+    height:32px;
+    border:1px solid #2792F4;
+    background-color:#B8DEFD;
+    border-radius:32px;
+    margin-top:7px;
+    margin-left:85px;
+}
+.playground_go{
+    background:#1b90f7;
+    border-radius:2px;
+    width:160px;
+    height:42px;
+    color: #fff;
+    text-align: center;
+    line-height:42px;
+    margin-top:35px;
+    margin-left:24px;
+}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="fl logo">
+      <img src="./../source/imgs/logo.png"/>
+    </div>
+    <div class="fr menu">
+      <div>
+        <img src="./../source/imgs/search.png"/>
+      </div>
+      <div>Docs</div>
+      <div class="header_menu_active">Download</div>
+      <div>Community</div>
+      <div>
+        <img src="./../source/imgs/baichuan.png"/>
+      </div>
+      <div>
+        <img src="./../source/imgs/github.png"/>
+      </div>
+    </div>
+  </div>
+  <div class="tree_menu">
+    <div class="tree_menu_view">
+      <div>Components</div>
+      <div class="tree_menu_active tree_menu_level2">div</div>
+      <div class="tree_menu_level2">list</div>
+      <div>API</div>
+      <div class="tree_menu_level2">modal</div>
+      <div class="tree_menu_level2">webview</div>
+    </div>
+  </div>
+  <div class="doc_container">
+    <div id="_mx__gotop">Top</div>
+    
+<div id="_mx__md_container">
+
+<style type="text/css">
 .hljs-keyword{
   color: #F92672;
 }
@@ -129,21 +354,21 @@
 	margin-left:40px;
 }
 
-#_mx__gotop{
-	position: fixed;
-	width:40px;
-	height:40px;
-	border:1px solid #ddd;
-	border-radius:20px;
-	bottom:100px;
-	right: 10px;
-	text-align: center;
-	line-height:40px;
-	cursor:pointer;
-	display: none;
-}</style>
+#_mx__md_container{
+	font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+	font-size:14px;
+	width:900px;
+	border-right:1px solid #DDDDDD;
+	padding-left:40px;
+	padding-right:40px;
+	padding-bottom:30px;
+	margin-top:-19px;
+}
+
+</style>
+
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
-<h1 class="_mx__heading _mx__heading_border"><a name=" class="_mx__heading" onclick="addAnchor('How to customize native APIs ? <a class="_mx__link" title="null" href="https://github.com/weexteam/article/wiki/%E6%AC%A2%E8%BF%8E%E5%8F%82%E4%B8%8EWeex%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91" >cn</a>')"><a name="How to customize native APIs ? <a class="_mx__link" title="null" href="https://github.com/weexteam/article/wiki/%E6%AC%A2%E8%BF%8E%E5%8F%82%E4%B8%8EWeex%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91" >cn</a>" class="anchor" href="#How to customize native APIs ? <a class="_mx__link" title="null" href="https://github.com/weexteam/article/wiki/%E6%AC%A2%E8%BF%8E%E5%8F%82%E4%B8%8EWeex%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91" >cn</a>"><span class="header-link"></span></a>How to customize native APIs ? <a class="_mx__link" title="null" href="https://github.com/weexteam/article/wiki/%E6%AC%A2%E8%BF%8E%E5%8F%82%E4%B8%8EWeex%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91" >cn</a></h1><div class="_mx__paragraph">Weex SDK <span class="_mx__code_span">provides</span> only rendering capability, rather than having other capabilities, such as network, picture, and URL redirection. If you want the these features, you need to implement them yourselves.<br>The example below will describe how to extend weex with native logic or &#39;bridge&#39; your existed native code.</div><h2 class="_mx__heading" onclick="addAnchor('A URLHelper Example')"><a name="A URLHelper Example" class="anchor" href="#A URLHelper Example"><span class="header-link"></span></a>A URLHelper Example</h2><h3 class="_mx__heading" onclick="addAnchor('Create your own <span class="_mx__code_span">WXModule</span> in native:')"><a name="Create your own <span class="_mx__code_span">WXModule</span> in native:" class="anchor" href="#Create your own <span class="_mx__code_span">WXModule</span> in native:"><span class="header-link"></span></a>Create your own <span class="_mx__code_span">WXModule</span> in native:</h3><pre class="_mx__code_pre" id="__aa"><code><a>public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">URLHelperModule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WXModule</span></span>{
+<h1 class="_mx__heading _mx__heading_border"><a name=" class="_mx__heading" onclick="addAnchor('How to customize native APIs ?')"><a name="How to customize native APIs ?" class="anchor" href="#How to customize native APIs ?"><span class="header-link"></span></a>How to customize native APIs ?<a class="_mx__link" title="null" href="https://github.com/weexteam/article/wiki/%E6%AC%A2%E8%BF%8E%E5%8F%82%E4%B8%8EWeex%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91" >cn</a></h1><div class="_mx__paragraph">Weex SDK <span class="_mx__code_span">provides</span> only rendering capability, rather than having other capabilities, such as network, picture, and URL redirection. If you want the these features, you need to implement them yourselves.<br>The example below will describe how to extend weex with native logic or &#39;bridge&#39; your existed native code.</div><h2 class="_mx__heading" onclick="addAnchor('A URLHelper Example')"><a name="A URLHelper Example" class="anchor" href="#A URLHelper Example"><span class="header-link"></span></a>A URLHelper Example</h2><h3 class="_mx__heading" onclick="addAnchor('Create your own <span class="_mx__code_span">WXModule</span> in native:')"><a name="Create your own <span class="_mx__code_span">WXModule</span> in native:" class="anchor" href="#Create your own <span class="_mx__code_span">WXModule</span> in native:"><span class="header-link"></span></a>Create your own <span class="_mx__code_span">WXModule</span> in native:</h3><pre class="_mx__code_pre" id="__aa"><code><a>public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">URLHelperModule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WXModule</span></span>{
     <span class="hljs-keyword">private</span> static <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-type">WEEX_CATEGORY</span>=<span class="hljs-string">"com.taobao.android.intent.category.WEEX"</span>;
     <span class="hljs-meta">@WXModuleAnno</span>
     public void openURL(<span class="hljs-type">String</span> url){
@@ -183,10 +408,10 @@ URLHelper.openURL(<span class="hljs-string">"http://www.taobao.com"</span>,<span
 <li>Module methods will be invoked on the UI thread, so do not put time-consuming operations there;</li>
 <li>Weex parameter&#39;s type can be int, double, float, String, Map, List, self-defined class that implements WXObject interface;</li>
 </ol>
-</div><script type="text/javascript">(function(win, undefined){
-  var md_container = document.getElementById('_mx__md_container');
+</div>
+<script type="text/javascript">
+(function(win, undefined){
   var goTop = document.getElementById('_mx__gotop');
-
   function getPagePosition() { 
     var x = 0, y = 0;
     if(window.pageYOffset){   
@@ -215,6 +440,7 @@ URLHelper.openURL(<span class="hljs-string">"http://www.taobao.com"</span>,<span
   goTop.onclick = function(){
     var pos = getPagePosition();
     var y = pos.y;
+    console.log(y);
     var handle = setInterval(function(){
       y = y - 50;
       if(y <= 0){
@@ -237,4 +463,22 @@ URLHelper.openURL(<span class="hljs-string">"http://www.taobao.com"</span>,<span
 })(window);
 
 
+
 </script>
+    <div class="doc_footer"></div>
+    <div class="playground">
+      <div class="playground_header">
+        <div class="playground_header_circle fl"></div>
+        <div class="playground_header_rect fr"></div>
+      </div>
+      <div class="playground_main">
+        Mobile Preview
+      </div>
+      <div class="playground_footer">
+        <div></div>
+      </div>
+      <div class="playground_go">Go To Playground</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -19,7 +19,7 @@ let commonJS = fs.readFileSync(MAIN_DIR + 'common.js').toString();
  * 2. highlight
  * 3. 以及一些其它的效果库 或者 公共基础库
  */
-let script = '<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>\n';
+let script = '\n<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>\n';
 
 
 /**
@@ -27,7 +27,7 @@ let script = '<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.
  * content：css内容纯文本
  */
 let wrapCSS = function(content){
-  return '<style type="text/css">' + content + '</style>\n';
+  return '\n<style type="text/css">\n' + content + '\n</style>\n';
 };
 
 /**
@@ -35,7 +35,7 @@ let wrapCSS = function(content){
  * content：js内容纯文本
  */
 let wrapScript = function(content){
-  return '<script type="text/javascript">' + content + '</script>';
+  return '\n<script type="text/javascript">\n' + content + '\n</script>';
 };
 
 

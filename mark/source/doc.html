@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+  <meta charset="UTF-8">
+  <title>weex document</title>
+  <!--这里处理css-->
+  <!--<link rel="stylesheet" href="doc.css"/>-->
+  <style type="text/css">
+    <%include @doc.css %>
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="fl logo">
+      <img src="./../source/imgs/logo.png"/>
+    </div>
+    <div class="fr menu">
+      <div>
+        <img src="./../source/imgs/search.png"/>
+      </div>
+      <div>Docs</div>
+      <div class="header_menu_active">Download</div>
+      <div>Community</div>
+      <div>
+        <img src="./../source/imgs/baichuan.png"/>
+      </div>
+      <div>
+        <img src="./../source/imgs/github.png"/>
+      </div>
+    </div>
+  </div>
+  <div class="tree_menu">
+    <div class="tree_menu_view">
+      <div>Components</div>
+      <div class="tree_menu_active tree_menu_level2">div</div>
+      <div class="tree_menu_level2">list</div>
+      <div>API</div>
+      <div class="tree_menu_level2">modal</div>
+      <div class="tree_menu_level2">webview</div>
+    </div>
+  </div>
+  <div class="doc_container">
+    <div id="_mx__gotop">Top</div>
+    <%include @doc_container %>
+    <div class="doc_footer"></div>
+    <div class="playground">
+      <div class="playground_header">
+        <div class="playground_header_circle fl"></div>
+        <div class="playground_header_rect fr"></div>
+      </div>
+      <div class="playground_main">
+        Mobile Preview
+      </div>
+      <div class="playground_footer">
+        <div></div>
+      </div>
+      <div class="playground_go">Go To Playground</div>
+    </div>
+  </div>
+</body>
+</html>

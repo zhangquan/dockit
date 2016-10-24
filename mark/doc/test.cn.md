@@ -1,4 +1,4 @@
-# 第3篇 初始化工程      
+# 第3篇 初始化工程 [cn](http://hhh) 
     
 mx_time    
   update time: 2016/10/12
