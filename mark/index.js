@@ -54,15 +54,16 @@ files.map(function(v){
     data = fs.readFileSync(v).toString();
     data = marked(data);
     data = '\n<div id="_mx__md_container">\n'
-    + util.wrapCSS(util.commonStyle) 
-    + util.script 
+    + util.wrapCSS(util.commonStyle)
     + data 
     + '</div>' 
     + util.wrapScript(util.commonJS);
     let html = fs.readFileSync('./source/doc.html').toString();
     let css = fs.readFileSync('./source/doc.css').toString();
+   
     html =  html.replace('<%include @doc.css %>', css);
     data =  html.replace('<%include @doc_container %>', data);
+    data += util.script;
 
   }else{
     //执行拷贝动作

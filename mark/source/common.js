@@ -46,7 +46,17 @@
       url = window.location.href.split('#')[0];
     }
     window.location.href = url + '#' + a;
-  }
+  };
+
+  var searchBtn = document.getElementById('menu_search');
+  searchBtn.onclick = function(){
+    searchBtn.style.height = '100px';
+    searchBtn.style.width = '100px';
+    searchBtn.style.textAlign = 'center';
+    searchBtn.style.backgroundColor = '#2792F4';
+
+    document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
+  };
 
 })(window);
 

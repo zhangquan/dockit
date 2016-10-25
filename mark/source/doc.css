@@ -29,17 +29,25 @@ html,body{
     margin-top:20px;
 }
 
+.header .menu{
+    height:100px;
+}
+
 .header .menu>div{
     display: inline-block;
-    line-height:30px;
+    height:100px;
     margin-right:52px;
     color: #2792F4;
-    margin-top:35px;
     cursor: pointer;
+    vertical-align: middle;
+}
+.header .menu>div>div{
+    height:30px;
+    margin-top:35px;
 }
 .header .menu>div img{
-    width:23px;
-    height:23px;
+    width:22px;
+    height:22px;
 }
 
 .header_menu_active{
@@ -56,6 +64,7 @@ html,body{
     top:101px;
     left:0;
     bottom:0;
+    overflow-y: scroll;
 }
 
 .tree_menu_view{
@@ -106,14 +115,14 @@ html,body{
 
 #_mx__gotop{
     position: fixed;
-    width:40px;
-    height:40px;
+    width:30px;
+    height:30px;
     border:1px solid #ddd;
-    border-radius:20px;
-    bottom:120px;
-    left: 1176px;
+    border-radius:15px;
+    bottom:140px;
+    left: 1186px;
     text-align: center;
-    line-height:40px;
+    line-height:30px;
     cursor:pointer;
     /*display: none;*/
 }
@@ -183,4 +192,5 @@ html,body{
     line-height:42px;
     margin-top:35px;
     margin-left:24px;
+    cursor: pointer;
 }

@@ -37,17 +37,25 @@
     margin-top:20px;
 }
 
+.header .menu{
+    height:100px;
+}
+
 .header .menu>div{
     display: inline-block;
-    line-height:30px;
+    height:100px;
     margin-right:52px;
     color: #2792F4;
-    margin-top:35px;
     cursor: pointer;
+    vertical-align: middle;
+}
+.header .menu>div>div{
+    height:30px;
+    margin-top:35px;
 }
 .header .menu>div img{
-    width:23px;
-    height:23px;
+    width:22px;
+    height:22px;
 }
 
 .header_menu_active{
@@ -64,6 +72,7 @@
     top:101px;
     left:0;
     bottom:0;
+    overflow-y: scroll;
 }
 
 .tree_menu_view{
@@ -114,14 +123,14 @@
 
 #_mx__gotop{
     position: fixed;
-    width:40px;
-    height:40px;
+    width:30px;
+    height:30px;
     border:1px solid #ddd;
-    border-radius:20px;
-    bottom:120px;
-    left: 1176px;
+    border-radius:15px;
+    bottom:140px;
+    left: 1186px;
     text-align: center;
-    line-height:40px;
+    line-height:30px;
     cursor:pointer;
     /*display: none;*/
 }
@@ -191,37 +200,99 @@
     line-height:42px;
     margin-top:35px;
     margin-left:24px;
+    cursor: pointer;
 }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="fl logo">
-      <img src="./../source/imgs/logo.png"/>
+      <img src="./../../source/imgs/logo.png"/>
     </div>
     <div class="fr menu">
-      <div>
-        <img src="./../source/imgs/search.png"/>
-      </div>
-      <div>Docs</div>
-      <div class="header_menu_active">Download</div>
-      <div>Community</div>
-      <div>
-        <img src="./../source/imgs/baichuan.png"/>
+      <div id="menu_search">
+        <div>
+          <img id="menu_search_img" src="./../../source/imgs/search.png"/>
+        </div>
       </div>
       <div>
-        <img src="./../source/imgs/github.png"/>
+        <div>Docs</div>
+      </div>
+      <div>
+        <div class="header_menu_active">Download</div>
+      </div>
+      <div>
+        <div>Community</div>
+      </div>
+      <div>
+        <div><img src="./../../source/imgs/baichuan.png"/></div>
+      </div>
+      <div>
+        <div><img src="./../../source/imgs/github.png"/></div>
       </div>
     </div>
   </div>
   <div class="tree_menu">
     <div class="tree_menu_view">
+      <div>API</div>
+      <div class="tree_menu_level2">modal</div>
+      <div class="tree_menu_level2">webview</div>
       <div>Components</div>
-      <div class="tree_menu_active tree_menu_level2">div</div>
+      <div class="tree_menu_level2">div</div>
       <div class="tree_menu_level2">list</div>
       <div>API</div>
       <div class="tree_menu_level2">modal</div>
       <div class="tree_menu_level2">webview</div>
+      <div>Components</div>
+      <div class="tree_menu_level2">div</div>
+      <div class="tree_menu_level2">list</div>
+      <div>API</div>
+      <div class="tree_menu_level2">modal</div>
+      <div class="tree_menu_level2">webview</div>
+      <div>Components</div>
+      <div class="tree_menu_level2">div</div>
+      <div class="tree_menu_level2">list</div>
+      <div>API</div>
+      <div class="tree_menu_level2">modal</div>
+      <div class="tree_menu_level2">webview</div>
+      <div>Components</div>
+      <div class="tree_menu_level2">div</div>
+      <div class="tree_menu_level2">list</div>
+      <div>API</div>
+      <div class="tree_menu_level2">modal</div>
+      <div class="tree_menu_level2">webview</div>
+      <div>Components</div>
+      <div class="tree_menu_level2">div</div>
+      <div class="tree_menu_level2">list</div>
+      <div>API</div>
+      <div class="tree_menu_level2">modal</div>
+      <div class="tree_menu_level2">webview</div>
+      <div>Components</div>
+      <div class="tree_menu_active tree_menu_level2">div</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
+      <div class="tree_menu_level2">list</div>
     </div>
   </div>
   <div class="doc_container">
@@ -361,13 +432,11 @@
 	border-right:1px solid #DDDDDD;
 	padding-left:40px;
 	padding-right:40px;
-	padding-bottom:30px;
+	padding-bottom:140px;
 	margin-top:-19px;
 }
 
 </style>
-
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
 </div>
 <script type="text/javascript">
 (function(win, undefined){
@@ -418,7 +487,17 @@
       url = window.location.href.split('#')[0];
     }
     window.location.href = url + '#' + a;
-  }
+  };
+
+  var searchBtn = document.getElementById('menu_search');
+  searchBtn.onclick = function(){
+    searchBtn.style.height = '100px';
+    searchBtn.style.width = '100px';
+    searchBtn.style.textAlign = 'center';
+    searchBtn.style.backgroundColor = '#2792F4';
+
+    document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
+  };
 
 })(window);
 
@@ -442,3 +521,4 @@
   </div>
 </body>
 </html>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
