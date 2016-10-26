@@ -4,6 +4,8 @@ let colors = require('colors');
 let fsAdd = require('./fs_add');
 let marked = require('./markx');
 let util = require('./util');
+let minify = require('html-minifier').minify;
+
 
 const ORG_DIR = './doc';
 const DIST_DIR = './../website/doc';
@@ -53,23 +55,39 @@ files.map(function(v){
     //转换md
     data = fs.readFileSync(v).toString();
     data = marked(data);
-    data = '\n<div id="_mx__md_container">\n'
+    let page = util.script
+    + '\n<div id="_mx__md_container">\n'
     + util.wrapCSS(util.commonStyle)
     + data 
     + '</div>' 
     + util.wrapScript(util.commonJS);
+    
     let html = fs.readFileSync('./source/doc.html').toString();
     let css = fs.readFileSync('./source/doc.css').toString();
-   
+    
     html =  html.replace('<%include @doc.css %>', css);
-    data =  html.replace('<%include @doc_container %>', data);
-    data += util.script;
-
+    data =  html.replace('<%include @doc_container %>', page);
+    
+  
+    //执行压缩
+    // data = minify(data, {
+    //   minifyJS: true,
+    //   minifyCSS: true,
+    //   removeAttributeQuotes: true,
+    //   keepClosingSlash: true,
+    //   collapseWhitespace: true,
+    //   collapseInlineTagWhitespace: true,
+    //   conservativeCollapse: true
+    // });
+    
+    
   }else{
     //执行拷贝动作
     data = fs.readFileSync(v);
   }
   fs.writeFileSync(path, data);
 });
+
+
 console.log('..............批量网页构建成功..............'.yellow);
 

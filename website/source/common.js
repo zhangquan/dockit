@@ -26,6 +26,7 @@
 
   //滚动到顶部
   goTop.onclick = function(){
+    console.log(document.getElementById('_mx__md_container').scrollTop);
     var pos = getPagePosition();
     var y = pos.y;
     console.log(y);

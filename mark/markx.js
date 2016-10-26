@@ -34,13 +34,16 @@ renderer.heading = function (text, level) {
   tpl += level;
   if(level === 1){
     tpl += ' class="_mx__heading _mx__heading_border"><a name="';
+    console.log(text);
+  }else{
+    tpl += ' class="_mx__heading" onclick="addAnchor(\''+ text +'\')"><a name="';
   }
-  tpl += ' class="_mx__heading" onclick="addAnchor(\''+ text +'\')"><a name="';
   tpl += text;
   tpl += '" class="anchor" href="#';
   tpl += text;
   tpl += '"><span class="header-link"></span></a>';
   tpl += text;
+  
   if(img){
     tpl += '<a class=' + img;
   }
@@ -48,6 +51,7 @@ renderer.heading = function (text, level) {
   tpl += level;
   tpl += '>';
   return tpl;
+  // return text;
 };
 
 /**
