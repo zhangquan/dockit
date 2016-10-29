@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+  <meta charset="UTF-8">
+  <title>weex 文档</title>
+  <!--这里处理css-->
+  <!--<link rel="stylesheet" href="doc.css"/>-->
+  <style type="text/css">
+    html,body{
+    background-color:#F4F4F4;
+    margin:0;
+    padding:0;
+    font-size:14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+.header{
+    background:#ffffff;
+    border-bottom:1px solid #dddddd;
+    width:100%;
+    height:100px;
+}
+
+.header .logo{
+    margin-left: 41px;
+}
+
+.header .logo img{
+    max-height:59px;
+    margin-top:20px;
+}
+
+.header .menu{
+    height:100px;
+}
+
+.header .menu>div{
+    display: inline-block;
+    height:100px;
+    margin-right:52px;
+    color: #2792F4;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.header .menu>div>div{
+    height:30px;
+    margin-top:35px;
+}
+.header .menu>div img{
+    width:22px;
+    height:22px;
+}
+
+.header_menu_active{
+    font-weight: bold;
+    border-bottom:3px solid #2792F4;
+}
+
+/*tree_menu*/
+.tree_menu{
+    background:#F2F2F2;
+    border-right:1px solid #dddddd;
+    width:238px;
+    position: absolute;
+    top:101px;
+    left:0;
+    bottom:0;
+    overflow-y: scroll;
+}
+
+.tree_menu_view{
+    width:100%;
+    margin-top:31px;
+    color:#333333;
+    line-height:30px;
+}
+
+.tree_menu_view_title{
+    color:#1B90F7 !important;
+    font-weight:bold;
+    display: block;
+}
+
+.tree_menu_view>a{
+    padding-left:30px;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: #333333;
+}
+
+.tree_menu_view>a:active{
+    color: #333333;
+}
+
+.tree_menu_active{
+    background-color:#DCDCDC;
+    border-left:3px solid #1b90f7;
+}
+.tree_menu_level2{
+    padding-left:40px !important;
+    display: block;
+}
+.tree_menu_level3{
+    padding-left:60px !important;
+    display: block;
+}
+
+/*doc_container*/
+.doc_container{
+    background:#fafafa;
+    position: absolute;
+    left: 239px;
+    top:101px;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+}
+
+/*doc_footer*/
+.doc_footer{
+    background:#fafafa;
+    border-top:1px solid #dddddd;
+    width:100%;
+    height:120px;
+}
+
+
+#_mx__gotop{
+    position: fixed;
+    width:30px;
+    height:30px;
+    border:1px solid #ddd;
+    border-radius:15px;
+    bottom:140px;
+    left: 1186px;
+    text-align: center;
+    line-height:30px;
+    cursor:pointer;
+    /*display: none;*/
+}
+
+.playground{
+    position: absolute;
+    left:1000px;
+    top:81px;
+    width:198px;
+    height:394px;
+    border:2px solid #2792F4;
+    border-radius:15px;
+}
+.playground_header{
+    width:100%;
+    height:40px;
+}
+.playground_header_circle{
+    width:8px;
+    height:8px;
+    border:1px solid #2792F4;
+    border-radius:8px;
+    background-color:#B8DEFD;
+    margin-left:72px;
+    margin-top: 15px;
+}
+.playground_header_rect{
+    width:35px;
+    height:4px;
+    border:1px solid #2792F4;
+    border-radius:4px;
+    background-color:#B8DEFD;
+    margin-top: 16px;
+    margin-right:72px;
+}
+.playground_main{
+    width:178px;
+    height:304px;
+    border:1px solid #2792F4;
+    margin-left:10px;
+    border-radius:2px;
+    text-align: center;
+    line-height:304px;
+    color: #2792F4;
+}
+.playground_footer{
+    width:100%;
+    height:40px;
+}
+
+.playground_footer>div{
+    width:32px;
+    height:32px;
+    border:1px solid #2792F4;
+    background-color:#B8DEFD;
+    border-radius:32px;
+    margin-top:7px;
+    margin-left:85px;
+}
+.playground_go{
+    background:#1b90f7;
+    border-radius:2px;
+    width:160px;
+    height:42px;
+    color: #fff;
+    text-align: center;
+    line-height:42px;
+    margin-top:35px;
+    margin-left:24px;
+    cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="fl logo">
+      <img src="https://vczero.github.io/markdown-extension/website/source/imgs/logo.png"/>
+    </div>
+    <div class="fr menu">
+      <div id="menu_search">
+        <div>
+          <img id="menu_search_img" src="https://vczero.github.io/markdown-extension/website/source/imgs/search.png"/>
+        </div>
+      </div>
+      <div>
+        <div class="header_menu_active">文档</div>
+      </div>
+      <div>
+        <div>下载</div>
+      </div>
+      <div>
+        <div>社区</div>
+      </div>
+      <div>
+        <div><img src="https://vczero.github.io/markdown-extension/website/source/imgs/baichuan.png"/></div>
+      </div>
+      <div>
+        <div><img src="https://vczero.github.io/markdown-extension/website/source/imgs/github.png"/></div>
+      </div>
+    </div>
+  </div>
+  <div class="tree_menu">
+    <div class="tree_menu_view">
+      <a class="tree_menu_view_title">
+  入门指南
+</a>
+<a class="tree_menu_level2">Hello World</a>
+<a class="tree_menu_level2">初始化一个项目</a>
+<a class="tree_menu_level2">开发一个小应用</a>
+<a class="tree_menu_level2">定制 Web 组件</a>
+<a class="tree_menu_level2">定制 iOS 组件</a>
+<a class="tree_menu_level2">定制 Android 组件</a>
+<a class="tree_menu_level2">定制 iOS 模块</a>
+<a class="tree_menu_level2">定制 Android 模块</a>
+<a class="tree_menu_level2">如何引入第三方 js 库</a>
+<a class="tree_menu_level2">如何使用调试工具</a>
+<a class="tree_menu_level2">如何一键打包</a>
+
+<a class="tree_menu_view_title">
+  组件
+</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/common_attr.html">Common Attributes</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/common_style.html">Common Style</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/text_style.html">Text Style</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/div.html">div</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/common_events.html">common Event</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/scroller.html">scroller</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/list.html">list</a>
+<a class="tree_menu_level3" href="http://localhost:63342/markdown-extension/website/doc/components/cell.html">cell</a>
+<a class="tree_menu_level2">text</a>
+<a class="tree_menu_level2">image</a>
+<a class="tree_menu_level2">input</a>
+<a class="tree_menu_level2">switch</a>
+<a class="tree_menu_level2">slider</a>
+<a class="tree_menu_level3">indicator</a>
+<a class="tree_menu_level2">video</a>
+<a class="tree_menu_level2">a</a>
+<a class="tree_menu_level2">web</a>
+<a class="tree_menu_level2">wxc-tabbar</a>
+<a class="tree_menu_level2">wxc-navpage</a>
+
+<a class="tree_menu_view_title">
+  模块
+</a>
+<a class="tree_menu_level2">dom</a>
+<a class="tree_menu_level2">stream</a>
+<a class="tree_menu_level2">modal</a>
+<a class="tree_menu_level2">animation</a>
+<a class="tree_menu_level2">webview</a>
+<a class="tree_menu_level2">navigator</a>
+<a class="tree_menu_level2">storage</a>
+<a class="tree_menu_level2">timer</a>
+<a class="tree_menu_level2">clipboard</a>
+
+<a class="tree_menu_view_title">
+  高级用法
+</a>
+<a class="tree_menu_level2">运行原理</a>
+<a class="tree_menu_level2">数据绑定原理</a>
+<a class="tree_menu_level2">如何部署一个应用</a>
+<a class="tree_menu_level2">JS Framework APIs</a>
+<a class="tree_menu_level2">Instance APIs</a>
+<a class="tree_menu_level2">Virtual DOM APIs</a>
+<a class="tree_menu_level2">JS Bundle 格式</a>
+<script type="text/javascript">
+  var links = document.querySelectorAll('.tree_menu_view>a');
+  for(var i in links){
+    var a = links[i];
+    if(a.href && a.href === location.href){
+      var oldClass = a.getAttribute('class');
+      a.setAttribute('class', oldClass + ' tree_menu_active');
+    }
+  }
+
+</script>
+    </div>
+  </div>
+  <div class="doc_container">
+    <div id="_mx__gotop">Top</div>
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+
+<div id="_mx__md_container">
+
+<style type="text/css">
+.hljs-keyword{
+  color: #F92672;
+}
+.hljs-built_in{
+  color: #0071A6;
+}
+
+/*code*/
+._mx__code_pre{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #F2F2F2 !important;
+  overflow-x: auto;
+  /*border:1px solid #1D1E19;*/
+  padding:15px;
+  /*border-radius:3px;*/
+}
+._mx__code_pre code{
+  /*color: #F6F7EE;*/
+}
+/*code span*/
+._mx__code_span{
+  display: inline-block;
+  padding:3px;
+  color: #5151BE;
+	background-color: #F5F6FA;
+	border:1px solid #CBD2E0;
+	border-radius:2px;
+	margin-left: 3px;
+	margin-right:3px;
+}
+/*heading*/
+._mx__heading{
+  color: #434343;
+}
+
+._mx__heading_border{
+	border-bottom: 1px solid #D5D5D5;
+	color: #262626;
+	display: block;
+	height:92px;
+	line-height:92px;
+}
+/*._mx__heading:hover{
+  color:#3498db;
+}*/
+/*paragraph*/
+._mx__paragraph{
+  color: #4e5665;
+  font-size: 14px;
+	line-height:22px;
+}
+
+/*link*/
+._mx__link{
+  color: #317FBD;
+}
+
+/*image*/
+._mx__image{
+  max-width:800px;
+	max-height: 600px;
+	display: inline-block;
+}
+._mx__image_container{
+	max-width:900px;
+	text-align: center;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+/*作者信息*/
+._mx__time{
+	position: relative;
+	top: -45px;
+	width: 165px;
+	float: right;
+	color: #A9A9A9;
+	font-size:13px;
+}
+
+/*api*/
+._mx__api_stable{
+	height: 40px;
+	background-color:red;
+	line-height:40px;
+	color: #fff;
+	padding-left:10px;
+}
+
+/*toc*/
+._mx__toc{
+	position: relative;
+	right:30px;
+	width:200px;
+	border:1px solid #D5D5D5;
+	background-color: #fff;
+	float: right;
+	margin-right: -200px;
+}
+
+._mx__toc_ul{
+	list-style: none;
+	margin-left: -30px;
+}
+._mx__toc_ul a{
+	text-decoration:none;
+	color: #2468B2;
+}
+
+._mx_toc_level_3{
+	margin-left:10px;
+}
+
+._mx_toc_level_4{
+	margin-left:20px;
+}
+
+._mx_toc_level_5{
+	margin-left:30px;
+}
+
+._mx_toc_level_6{
+	margin-left:40px;
+}
+
+#_mx__md_container{
+	font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+	font-size:14px;
+	width:900px;
+	border-right:1px solid #DDDDDD;
+	padding-left:40px;
+	padding-right:40px;
+	padding-bottom:140px;
+	margin-top:-19px;
+}
+
+</style>
+<h1 class="_mx__heading _mx__heading_border"><a name="基本样式" class="anchor" href="#基本样式"><span class="header-link"></span></a>基本样式</h1><div class="_mx__paragraph">所有 weex 标签都有以下基本样式规则。</div><h2 class="_mx__heading" onclick="addAnchor('盒模型')"><a name="盒模型" class="anchor" href="#盒模型"><span class="header-link"></span></a>盒模型</h2><div class="_mx__paragraph"><div class="_mx__image_container"><img src="http://alibaba.github.io/weex/doc/images/css-boxmodel.png" alt="" class="_mx__image" /></div></div><div class="_mx__paragraph">weex 盒模型基于 CSS 盒模型，每个 weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。</div><div class="_mx__paragraph">元素实际的内容（content）、内边距（paddings）、边框（borders）、外边距（margins），形成一层层的盒子包裹起来，这就是盒模型大体上的含义。</div><ul>
+<li>width</li>
+<li>height</li>
+<li>padding (space around content, between element content and the element border)<ul>
+<li>padding-left</li>
+<li>padding-right</li>
+<li>padding-top</li>
+<li>padding-bottom</li>
+</ul>
+</li>
+<li>margin (space around elements, outside the border)<ul>
+<li>margin-left</li>
+<li>margin-right</li>
+<li>margin-top</li>
+<li>margin-bottom</li>
+</ul>
+</li>
+<li>border<ul>
+<li>border-style (solid, dashed, dotted)</li>
+<li>border-width<ul>
+<li>border-left-width</li>
+<li>border-top-width</li>
+<li>border-right-width</li>
+<li>border-bottom-width</li>
+</ul>
+</li>
+<li>border-color<ul>
+<li>border-left-color</li>
+<li>border-top-color</li>
+<li>border-right-color</li>
+<li>border-bottom-color</li>
+</ul>
+</li>
+<li>border-radius (rounded borders to elements, default value is 0 meaning right angle)<ul>
+<li>border-bottom-left-radius</li>
+<li>border-bottom-right-radius</li>
+<li>border-top-left-radius</li>
+<li>border-top-right-radius</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="_mx__paragraph">注意：目前在 <span class="_mx__code_span">&lt;image&gt;</span> 和 <span class="_mx__code_span">&lt;text&gt;</span> 组件上尚无法只定义一个或几个角的 border-radius。比如你无法在这两个组件上使用 <span class="_mx__code_span">border-top-left-radius</span>。</div><div class="_mx__paragraph">weex 盒模型的 <span class="_mx__code_span">box-sizing</span> 默认为 <span class="_mx__code_span">border-box</span>，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。</div><div class="_mx__paragraph">示例：</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 400; height: 200; margin-left: 20;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><h2 class="_mx__heading" onclick="addAnchor('Flexbox')"><a name="Flexbox" class="anchor" href="#Flexbox"><span class="header-link"></span></a>Flexbox</h2><div class="_mx__paragraph">weex 布局模型基于 CSS 的 Flexbox。以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。</div><div class="_mx__paragraph">Flexbox 包含 flex 容器和 flex 成员项。如果一个 weex 元素可以容纳其他元素，那么它就成为 flex 容器。需要注意的是，flexbox 的老版规范相较新版有些出入，比如是否能支持 wrapping。这些都描述在 W3C 的工作草案中了，你需要注意下新老版本之间的不同。另外，老版本只在安卓 4.4 版以下得到支持。</div><h3 class="_mx__heading" onclick="addAnchor('Flex 容器')"><a name="Flex 容器" class="anchor" href="#Flex 容器"><span class="header-link"></span></a>Flex 容器</h3><div class="_mx__paragraph">在 weex 中，Flexbox 是默认且唯一的样式模型，所以你不需要手动为元素添加 <span class="_mx__code_span">display: flex;</span> 属性。</div><ul>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">flex-direction</span>: <span class="_mx__code_span">row</span> | <span class="_mx__code_span">column</span><br>flex-direction 属性定义了 flex 容器中 flex 成员项的排列方向。默认值为 <span class="_mx__code_span">column</span>，即从左到右、从上到下。</div></li>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">justify-content</span>: <span class="_mx__code_span">flex-start</span> | <span class="_mx__code_span">flex-end</span> | <span class="_mx__code_span">center</span> | <span class="_mx__code_span">space-between</span><br>justify-content 属性定义了 flex 容器中 flex 成员项在水平方向上如何排列以处理空白部分。<span class="_mx__code_span">flex-start</span> 是默认值，即左对齐，所有的 flex 成员项都排列在容器的前部；<span class="_mx__code_span">flex-end</span> 则意味着右对齐，成员项排列在容器的后部；<span class="_mx__code_span">center</span> 即中间对齐，成员项排列在容器中间、两边留白；<span class="_mx__code_span">space-between</span> 表示两端对齐，空白均匀地填充到 flex 成员项之间。<br><div class="_mx__image_container"><img src="http://alibaba.github.io/weex/doc/images/css-flexbox-justify.svg" alt="" class="_mx__image" /></div></div></li>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">align-items</span>: <span class="_mx__code_span">stretch</span> | <span class="_mx__code_span">flex-start</span> | <span class="_mx__code_span">center</span> | <span class="_mx__code_span">flex-end</span><br>align-items 属性定义了 flex 容器中 flex 成员项在垂直方向上如何排列以处理空白部分。<span class="_mx__code_span">stretch</span> 是默认值，即拉伸高度至 flex 容器的大小；<span class="_mx__code_span">flex-start</span> 则是上对齐，所有的成员项排列在容器顶部；<span class="_mx__code_span">flex-end</span> 是下对齐，所有的成员项排列在容器底部；<span class="_mx__code_span">center</span> 是中间对齐，所有成员项都垂直地居中显示。<br><div class="_mx__image_container"><img src="http://alibaba.github.io/weex/doc/images/css-flexbox-align.jpg" alt="" class="_mx__image" /></div></div></li>
+</ul>
+<h3 class="_mx__heading" onclick="addAnchor('Flex 成员项')"><a name="Flex 成员项" class="anchor" href="#Flex 成员项"><span class="header-link"></span></a>Flex 成员项</h3><ul>
+<li>flex: &lt;number&gt;<br>flex 属性定义了 flex 成员项在容器中占据的尺寸。如果所有成员项都设置为 <span class="_mx__code_span">flex: 1</span>，那么它们就有相等的宽度（水平排列）或者相等的高度（垂直排列）。如果一共有两个成员项，其中一个 <span class="_mx__code_span">flex: 1</span>，另一个 <span class="_mx__code_span">flex: 2</span>，那么第一个将占据 1/3 的空间，另一个占据 2/3。如果所有 flex 成员项都不设置 <span class="_mx__code_span">flex</span> 属性，它们将根据容器的 <span class="_mx__code_span">justify-content</span> 属性来决定如何排列。</li>
+</ul>
+<h2 class="_mx__heading" onclick="addAnchor('示例')"><a name="示例" class="anchor" href="#示例"><span class="header-link"></span></a>示例</h2><div class="_mx__paragraph">一组平分了容器的图片。</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 300; height: 100;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex: 1;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex: 1;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex: 1;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><div class="_mx__paragraph">一张固定宽度的图片加上一段流动布局的文本。</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 300; height: 100;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100; height: 100;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex: 1;"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><div class="_mx__paragraph">复杂的混合布局。</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100; height: 100;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex-direction: row;"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex: 2; font-size: 32;"</span>&gt;</span>title<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex: 1; font-size: 16;"</span>&gt;</span>$100<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><div class="_mx__paragraph">一段文本左对齐，其他内容右对齐。</div><div class="_mx__paragraph"><div class="_mx__image_container"><img src="http://alibaba.github.io/weex/doc/images/css-flexbox-sample.png" alt="" class="_mx__image" /></div></div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex-direction: row; justify-content: space-between;"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>WEEX<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>2016-05-08<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><h2 class="_mx__heading" onclick="addAnchor('定位')"><a name="定位" class="anchor" href="#定位"><span class="header-link"></span></a>定位</h2><div class="_mx__paragraph">我们可以使用以下属性来定位一个 weex 元素。</div><ul>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">position</span>: <span class="_mx__code_span">relative</span> | <span class="_mx__code_span">absolute</span> | <span class="_mx__code_span">fixed</span> | <span class="_mx__code_span">sticky</span><br><span class="_mx__code_span">relative</span> 是默认值，指的是相对定位；<span class="_mx__code_span">absolute</span> 是绝对定位，以元素的容器作为参考系；<span class="_mx__code_span">fixed</span> 保证元素在页面窗口中的对应位置显示；<span class="_mx__code_span">sticky</span> 指的是仅当元素滚动到页面之外时，元素会固定在页面窗口的顶部。</div></li>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">top</span>:  &lt;number&gt;<br>距离上方的偏移量，默认为 0。</div></li>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">bottom</span>: &lt;number&gt;<br>距离下方的偏移量，默认为 0。</div></li>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">left</span>: &lt;number&gt;<br>距离左方的偏移量，默认为 0。</div></li>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">right</span>: &lt;number&gt;<br>距离右方的偏移量，默认为 0。</div></li>
+</ul>
+<h3 class="_mx__heading" onclick="addAnchor('示例')"><a name="示例" class="anchor" href="#示例"><span class="header-link"></span></a>示例</h3><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex-direction: column;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 3000;"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"top: 50; left: 50; ..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 3000;"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"position: sticky; ..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 3000;"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"position: absolute; top: 50; left: 50; ..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><h2 class="_mx__heading" onclick="addAnchor('其他基本样式')"><a name="其他基本样式" class="anchor" href="#其他基本样式"><span class="header-link"></span></a>其他基本样式</h2><ul>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">opacity</span>:  &lt;number&gt;<br>取值范围为 [0, 1]。默认值是 1，即完全不透明；0 是完全透明；0.5 是 50% 的透明度。</div></li>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">background-color</span>: &lt;colors&gt;<br>设定元素的背景色，默认值是 <span class="_mx__code_span">transparent</span>。</div></li>
+</ul>
+<h2 class="_mx__heading" onclick="addAnchor('样式属性取值可用的类型')"><a name="样式属性取值可用的类型" class="anchor" href="#样式属性取值可用的类型"><span class="header-link"></span></a>样式属性取值可用的类型</h2><ul>
+<li>长度：数字后跟着 <span class="_mx__code_span">px</span> 作为单位，<span class="_mx__code_span">px</span> 也可以省略。</li>
+<li>颜色：有多种取值类型。RGB（<span class="_mx__code_span">rgb(255, 0, 0)</span>）；RGBA（<span class="_mx__code_span">rgba(255, 0, 0, 0.5)</span>）；十六进制（<span class="_mx__code_span">#ff0000</span>）；精简写法的十六进制（<span class="_mx__code_span">#f00</span>）；色值关键字（<span class="_mx__code_span">red</span>）。</li>
+<li>枚举值：特定可选的几个字符串。</li>
+</ul>
+<div class="_mx__paragraph"><strong>注意：</strong> <a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/doc/doc/references/color-names.md" >色值的关键字列表</a>。</div><h2 class="_mx__heading" onclick="addAnchor('上手样式')"><a name="上手样式" class="anchor" href="#上手样式"><span class="header-link"></span></a>上手样式</h2><div class="_mx__paragraph">你可以按照以下步骤来规划 weex 页面的样式。</div><ol>
+<li>全局样式规划：将整个页面分割成合适的模块。</li>
+<li>flex 布局：排列和对齐页面模块。</li>
+<li>定位盒子：定位并设置偏移量。</li>
+<li>细节样式处理：增加特定的具体样式。</li>
+</ol>
+</div>
+<script type="text/javascript">
+(function(win, undefined){
+  var goTop = document.getElementById('_mx__gotop');
+  function getPagePosition() { 
+    var x = 0, y = 0;
+    if(window.pageYOffset){   
+      y = window.pageYOffset;    
+      x = window.pageXOffset; 
+    } else if(document.documentElement && document.documentElement.scrollTop){
+      y = document.documentElement.scrollTop;    
+      x = document.documentElement.scrollLeft; 
+    } else if(document.body) {
+      y = document.body.scrollTop;    
+      x = document.body.scrollLeft;   
+    } 
+    return {x:x, y:y};
+  }
+  
+  window.onscroll = function(){
+    var pos = getPagePosition();
+    if(pos.y > document.body.clientHeight){
+      goTop.style.display = 'block';
+    }else{
+      goTop.style.display = 'none';
+    }
+  };
+
+  //滚动到顶部
+  goTop.onclick = function(){
+    console.log(document.getElementById('_mx__md_container').scrollTop);
+    var pos = getPagePosition();
+    var y = pos.y;
+    console.log(y);
+    var handle = setInterval(function(){
+      y = y - 50;
+      if(y <= 0){
+        window.scrollTo(0, 0);
+        clearInterval(handle);
+      }else{
+        window.scrollTo(0, y);
+      }
+    }, 1);
+  };
+
+  win.addAnchor = function(a){
+    var url = window.location.href;
+    if(window.location.href.indexOf('#') > -1){
+      url = window.location.href.split('#')[0];
+    }
+    window.location.href = url + '#' + a;
+  };
+
+  var searchBtn = document.getElementById('menu_search');
+  searchBtn.onclick = function(){
+    searchBtn.style.height = '100px';
+    searchBtn.style.width = '100px';
+    searchBtn.style.textAlign = 'center';
+    searchBtn.style.backgroundColor = '#2792F4';
+
+    document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
+  };
+
+})(window);
+
+
+
+</script>
+    <div class="doc_footer"></div>
+    <div class="playground">
+      <div class="playground_header">
+        <div class="playground_header_circle fl"></div>
+        <div class="playground_header_rect fr"></div>
+      </div>
+      <div class="playground_main">
+        Mobile Preview
+      </div>
+      <div class="playground_footer">
+        <div></div>
+      </div>
+      <div class="playground_go">Go To Playground</div>
+    </div>
+  </div>
+</body>
+</html>
