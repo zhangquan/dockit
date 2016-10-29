@@ -502,23 +502,47 @@
 }
 
 </style>
-<h1 class="_mx__heading _mx__heading_border"><a name="通用事件" class="anchor" href="#通用事件"><span class="header-link"></span></a>通用事件</h1><h2 class="_mx__heading _mx__heading_border2"><a name="Click 事件" class="anchor" href="#Click 事件"><span class="header-link"></span></a>Click 事件</h2><div class="_mx__paragraph">如果某个组件绑定了 <span class="_mx__code_span">click</span> 事件，那么该事件会在用户点击时触发。</div><div class="_mx__paragraph"><strong>注解：</strong>  <span class="_mx__code_span">input</span>组件  和 <span class="_mx__code_span">switch</span>组件目前并不支持 click 事件，请使用 <span class="_mx__code_span">change</span> 或 <span class="_mx__code_span">input</span> 事件代替。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
-<li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">click</span>；</li>
-<li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
-<li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳。</li>
+<h1 class="_mx__heading _mx__heading_border"><a name="<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a>" class="anchor" href="#<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a>"><span class="header-link"></span></a><a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a></h1><h2 class="_mx__heading _mx__heading_border2"><a name="&lt; slider &gt; 组件" class="anchor" href="#&lt; slider &gt; 组件"><span class="header-link"></span></a>&lt; slider &gt; 组件</h2><h2>概述</h2>
+
+<div class="_mx__paragraph">轮播组件用于在一个网页中展示多个图片。初始设置是3秒内在2个图片做切换。</div><h2 class="_mx__heading _mx__heading_border2"><a name="子组件" class="anchor" href="#子组件"><span class="header-link"></span></a>子组件</h2><div class="_mx__paragraph">weex 所有的组件都支持轮播，特定的<code>indicator</code>组件只能是<code>slider</code>的子组件。</div><h2 class="_mx__heading _mx__heading_border2"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h2><ul>
+<li><code>auto-play</code>:&lt;布尔值&gt; <code>true</code> | <code>false</code>.该值决定网页渲染完成之后是否自动播放。初始值的是关。</li>
 </ul>
-<h2 class="_mx__heading _mx__heading_border2"><a name="Appear 事件" class="anchor" href="#Appear 事件"><span class="header-link"></span></a>Appear 事件</h2><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">appear</span> 事件被绑定到某个滚动区内的组件上，当组件可见时该事件触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
-<li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">appear</span>；</li>
-<li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
-<li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳；</li>
-<li><span class="_mx__code_span">direction</span>: 屏幕滚动时的滚动方向，<span class="_mx__code_span">up</span> 或 <span class="_mx__code_span">down</span>。</li>
+<div class="_mx__paragraph">其他属性请查阅<a href="http://alibaba.github.io/weex/doc/references/common-attrs.html" >基本属性</a></div><h2 class="_mx__heading _mx__heading_border2"><a name="样式" class="anchor" href="#样式"><span class="header-link"></span></a>样式</h2><div class="_mx__paragraph"><b>基础样式</b>：请查阅<a href="http://alibaba.github.io/weex/doc/references/common-style.html" >基本样式</a></div><ul>
+<li>支持flexbox相关样式</li>
+<li>支持盒模型相关样式</li>
+<li>支持<code>position</code>相关样式</li>
+<li>支持<code>opacity</code>,<code>background-color</code>等.</li>
 </ul>
-<h2 class="_mx__heading _mx__heading_border2"><a name="Disappear 事件" class="anchor" href="#Disappear 事件"><span class="header-link"></span></a>Disappear 事件</h2><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">disappear</span> 事件被绑定到某个滚动区内的组件上，该事件将在组件滚动出视口，并从你的视线中消失时触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
-<li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">disappear</span>；</li>
-<li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
-<li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳；</li>
-<li><span class="_mx__code_span">direction</span>: 屏幕滚动时的滚动方向，<span class="_mx__code_span">up</span> 或 <span class="_mx__code_span">down</span>。</li>
+<h2 class="_mx__heading _mx__heading_border2"><a name="事件" class="anchor" href="#事件"><span class="header-link"></span></a>事件</h2><ul>
+<li><code>change</code>:当轮播索引改变时的钩子。事件对象包含<code>index</code>属性，他显示正在展示的图片的索引序号。</li>
 </ul>
+<div class="_mx__paragraph"><b>基本事件</b>：查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a></div><ul>
+<li>支持<code>click</code>事件:查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a></li>
+<li>支持<code>appear</code> / <code>disapper</code>事件:查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a></li>
+</ul>
+<h2 class="_mx__heading _mx__heading_border2"><a name="例子" class="anchor" href="#例子"><span class="header-link"></span></a>例子</h2><pre><code> 
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;slider auto-play="true" onchange="change" style="..."&gt;
+      &lt;image repeat="{{imageList}}" src="{{src}}" style="..."&gt;&lt;/image&gt;
+      &lt;indicator&gt;&lt;/indicator&gt;
+    &lt;/slider&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  module.exports = {
+    data: {
+      imageList: [{src: '...'}, {src: '...'}, ...]
+    },
+    methods: {
+      change: function (e) {
+        // e.index
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre>
 </div>
 <script type="text/javascript">
 (function(win, undefined){

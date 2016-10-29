@@ -1,4 +1,3 @@
-> 查看[原文](http://alibaba.github.io/weex/doc/components/scroller.html)
 
 ## 概述
 
@@ -55,3 +54,7 @@
   }
 </script>
 ```
+
+
+[英文文档](http://alibaba.github.io/weex/doc/components/scroller.html)
+

@@ -502,22 +502,79 @@
 }
 
 </style>
-<h1 class="_mx__heading _mx__heading_border"><a name="通用事件" class="anchor" href="#通用事件"><span class="header-link"></span></a>通用事件</h1><h2 class="_mx__heading _mx__heading_border2"><a name="Click 事件" class="anchor" href="#Click 事件"><span class="header-link"></span></a>Click 事件</h2><div class="_mx__paragraph">如果某个组件绑定了 <span class="_mx__code_span">click</span> 事件，那么该事件会在用户点击时触发。</div><div class="_mx__paragraph"><strong>注解：</strong>  <span class="_mx__code_span">input</span>组件  和 <span class="_mx__code_span">switch</span>组件目前并不支持 click 事件，请使用 <span class="_mx__code_span">change</span> 或 <span class="_mx__code_span">input</span> 事件代替。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
-<li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">click</span>；</li>
-<li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
-<li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳。</li>
+<h1 class="_mx__heading _mx__heading_border"><a name="Storage" class="anchor" href="#Storage"><span class="header-link"></span></a>Storage</h1><div class="_mx__paragraph">Tip: weex版本 &gt;= 0.7</div><div class="_mx__paragraph">storage 是 Weex 的一个模块，提供本地数据的存储、修改、删除等功能，没有时间限制。但是需要注意的是，在 H5/Web 端的实现是采用 HTML5 LocalStorage API。因此，就会存在数据大小的限制。一般而言，现代浏览器提供 5M 的存储空间。storage 可以存储一些关键数据，例如一些轻量的服务接口数据。</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span></span><span class="hljs-template-variable">{{weex}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">data</span>: {
+      <span class="hljs-attr">weex</span>: <span class="hljs-string">''</span>
+    },
+    <span class="hljs-attr">created</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+      <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+      <span class="hljs-keyword">var</span> storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
+      <span class="hljs-comment">//setItem</span>
+      storage.setItem(<span class="hljs-string">'weex'</span>, <span class="hljs-string">'A framework for building Mobile cross-platform UI'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+        <span class="hljs-keyword">if</span>(e.result === <span class="hljs-string">'success'</span>){
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'存储数据成功'</span>);
+          <span class="hljs-comment">//getItem</span>
+          storage.getItem(<span class="hljs-string">'weex'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-keyword">if</span>(e.result === <span class="hljs-string">'success'</span>){
+              self.weex = e.data
+            }
+          });
+        }
+      });
+    }
+  };
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></a></code></pre><h2 class="_mx__heading _mx__heading_border2"><a name="API" class="anchor" href="#API"><span class="header-link"></span></a>API</h2><div class="_mx__paragraph">storage 提供了一系列的 API 供我们调用。我们只需要引入该模块，然后调用对应的 API 即可。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('setItem(key, value, callback)')"><a name="setItem(key, value, callback)" class="anchor" href="#setItem(key, value, callback)"><span class="header-link"></span></a>setItem(key, value, callback)</h3><div class="_mx__paragraph">该方法可以通过键值对的形式将数据存储到本地。同时可以通过该方法，更新已有的数据。</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
+<li><div class="_mx__paragraph">key(string): 要存储的值的名称，不允许是&quot;&quot;或null.</div></li>
+<li><div class="_mx__paragraph">value(string): 要换存的值，不允许是&quot;&quot;或null.</div></li>
+<li><div class="_mx__paragraph">callback(object): 执行操作成功后的回调.</div></li>
 </ul>
-<h2 class="_mx__heading _mx__heading_border2"><a name="Appear 事件" class="anchor" href="#Appear 事件"><span class="header-link"></span></a>Appear 事件</h2><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">appear</span> 事件被绑定到某个滚动区内的组件上，当组件可见时该事件触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
-<li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">appear</span>；</li>
-<li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
-<li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳；</li>
-<li><span class="_mx__code_span">direction</span>: 屏幕滚动时的滚动方向，<span class="_mx__code_span">up</span> 或 <span class="_mx__code_span">down</span>。</li>
+<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a>var storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
+storage.setItem(<span class="hljs-string">'bar'</span>, <span class="hljs-string">'bar-value'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span> {
+    // <span class="hljs-string">'e'</span>是一个包含<span class="hljs-string">'result'</span>和<span class="hljs-string">'data'</span>的对象. e.result判断<span class="hljs-string">'setItem'</span>操作是否执行成功.
+    // e.data返回<span class="hljs-string">'undefined'</span>表示设置成功，返回<span class="hljs-string">'invalid_param'</span>表示key/value为<span class="hljs-string">""</span>/null
+});</a></code></pre><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('getItem(key, callback)')"><a name="getItem(key, callback)" class="anchor" href="#getItem(key, callback)"><span class="header-link"></span></a>getItem(key, callback)</h3><div class="_mx__paragraph">传入键名返回对应的键值</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
+<li><div class="_mx__paragraph">key(string): 要获取的值的名称，不允许是&quot;&quot;或null.</div></li>
+<li><div class="_mx__paragraph">callback(object): 执行操作成功后的回调.</div></li>
 </ul>
-<h2 class="_mx__heading _mx__heading_border2"><a name="Disappear 事件" class="anchor" href="#Disappear 事件"><span class="header-link"></span></a>Disappear 事件</h2><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">disappear</span> 事件被绑定到某个滚动区内的组件上，该事件将在组件滚动出视口，并从你的视线中消失时触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
-<li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">disappear</span>；</li>
-<li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
-<li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳；</li>
-<li><span class="_mx__code_span">direction</span>: 屏幕滚动时的滚动方向，<span class="_mx__code_span">up</span> 或 <span class="_mx__code_span">down</span>。</li>
+<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a>var storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
+storage.getItem(<span class="hljs-string">'foo'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span> {
+    // <span class="hljs-string">'e'</span>是一个包含<span class="hljs-string">'result'</span>和<span class="hljs-string">'data'</span>的对象.
+    // 使用<span class="hljs-string">'e.data'</span>获取键的值，如果没有找到对应的键值则返回<span class="hljs-string">'undefined'</span>.
+});</a></code></pre><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('removeItem(key, callback)')"><a name="removeItem(key, callback)" class="anchor" href="#removeItem(key, callback)"><span class="header-link"></span></a>removeItem(key, callback)</h3><div class="_mx__paragraph">传入一个键名将会删除本地存储中对应的键值</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
+<li><div class="_mx__paragraph">key(string): 要删除的值的名称，不允许是&quot;&quot;或null.</div></li>
+<li><div class="_mx__paragraph">callback(object): 执行操作成功后的回调.</div></li>
+</ul>
+<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a>var storage = require(<span class="hljs-string">'@weex-module/storage'</span>);
+storage.removeItem(<span class="hljs-string">'foo'</span>, <span class="hljs-keyword">function</span>(e) {
+    <span class="hljs-regexp">//</span> <span class="hljs-string">'e'</span>是一个包含<span class="hljs-string">'result'</span>和<span class="hljs-string">'data'</span>的对象.
+    <span class="hljs-regexp">//</span> e.result返回执行结果<span class="hljs-string">'success'</span>或<span class="hljs-string">'failed'</span>.
+    <span class="hljs-regexp">//</span> e.data在成功执行后返回<span class="hljs-string">'undefined'</span>.
+});</a></code></pre><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('length(callback)')"><a name="length(callback)" class="anchor" href="#length(callback)"><span class="header-link"></span></a>length(callback)</h3><div class="_mx__paragraph">返回本地存储的数据中所有存储项数量的整数</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
+<li>callback(object): 执行操作成功后的回调.</li>
+</ul>
+<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">var</span> storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
+storage.length(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-comment">// 'e'是一个包含'result'和'data'的对象.</span>
+    <span class="hljs-comment">// e.data返回所有已存储项的数量.</span>
+});</a></code></pre><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('getAllKeys(callback)')"><a name="getAllKeys(callback)" class="anchor" href="#getAllKeys(callback)"><span class="header-link"></span></a>getAllKeys(callback)</h3><div class="_mx__paragraph">返回一个包含全部已存储项键名的数组</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
+<li>callback(object): 执行操作成功后的回调.</li>
+</ul>
+<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">var</span> storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
+storage.getAllKeys(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-comment">// 'e'是一个包含'result'和'data'的对象.</span>
+    <span class="hljs-comment">// e.data返回键名组成的数组.</span>
+});</a></code></pre><h2 class="_mx__heading _mx__heading_border2"><a name="扩展和参考" class="anchor" href="#扩展和参考"><span class="header-link"></span></a>扩展和参考</h2><ul>
+<li><a class="_mx__link" title="null" href="http://www.w3school.com.cn/html5/html_5_webstorage.asp" >html5 localStorage: http://www.w3school.com.cn/html5/html_5_webstorage.asp</a>       </li>
 </ul>
 </div>
 <script type="text/javascript">

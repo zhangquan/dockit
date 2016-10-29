@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ch">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <title>weex 文档</title>
@@ -130,14 +130,30 @@
     border-top:1px solid #dddddd;
     width:100%;
     height:120px;
+    font-size:12px;
+    color:#999999;
+    text-align:center;
+}
+.doc_footer>div:first-child{
+    margin-top:40px;
+}
+.doc_footer>div span{
+    color: #333333;
 }
 
+.doc_footer img{
+    width:21px;
+}
+
+.doc_footer_img>div{
+    display:inline-block;height:21px;
+}
 
 #_mx__gotop{
     position: fixed;
     width:30px;
     height:30px;
-    border:1px solid #ddd;
+    /*border:1px solid #ddd;*/
     border-radius:15px;
     bottom:140px;
     left: 1186px;
@@ -145,6 +161,10 @@
     line-height:30px;
     cursor:pointer;
     /*display: none;*/
+}
+#_mx__gotop>img{
+    width:30px;
+    height:30px;
 }
 
 .playground{
@@ -273,16 +293,16 @@
 <a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/list.html">list</a>
 <a class="tree_menu_level3" href="http://localhost:63342/markdown-extension/website/doc/components/cell.html">cell</a>
 <a class="tree_menu_level2">text</a>
-<a class="tree_menu_level2">image</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/image.html">image</a>
 <a class="tree_menu_level2">input</a>
 <a class="tree_menu_level2">switch</a>
-<a class="tree_menu_level2">slider</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/slider.html">slider</a>
 <a class="tree_menu_level3">indicator</a>
 <a class="tree_menu_level2">video</a>
 <a class="tree_menu_level2">a</a>
 <a class="tree_menu_level2">web</a>
 <a class="tree_menu_level2">wxc-tabbar</a>
-<a class="tree_menu_level2">wxc-navpage</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/wxc_navpage.html">wxc-navpage</a>
 
 <a class="tree_menu_view_title">
   模块
@@ -293,7 +313,7 @@
 <a class="tree_menu_level2">animation</a>
 <a class="tree_menu_level2">webview</a>
 <a class="tree_menu_level2">navigator</a>
-<a class="tree_menu_level2">storage</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/modules/storage.html">storage</a>
 <a class="tree_menu_level2">timer</a>
 <a class="tree_menu_level2">clipboard</a>
 
@@ -311,7 +331,7 @@
   var links = document.querySelectorAll('.tree_menu_view>a');
   for(var i in links){
     var a = links[i];
-    if(a.href && a.href === location.href){
+    if(a.href && a.href === location.origin + location.pathname){
       var oldClass = a.getAttribute('class');
       a.setAttribute('class', oldClass + ' tree_menu_active');
     }
@@ -322,7 +342,7 @@
   </div>
   <div class="doc_container">
     <div id="_mx__gotop">
-      <img src="https://vczero.github.io/markdown-extension/website/source/imgs/goto_top.png"/>
+      <img src="https://vczero.github.io/markdown-extension/mark/source/imgs/goto_top.png"/>
     </div>
     
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
@@ -365,11 +385,26 @@
   color: #434343;
 }
 
+._mx__heading_color{
+	height:30px;
+	line-height:30px;
+	border-left:4px solid #1B90F7;
+	padding-left:5px;
+}
+
 ._mx__heading_border{
 	border-bottom: 1px solid #D5D5D5;
 	color: #262626;
 	display: block;
 	height:92px;
+	line-height:92px;
+}
+
+._mx__heading_border2{
+	border-bottom: 1px solid #D5D5D5;
+	color: #262626;
+	display: block;
+	height:72px;
 	line-height:92px;
 }
 /*._mx__heading:hover{
@@ -380,6 +415,7 @@
   color: #4e5665;
   font-size: 14px;
 	line-height:22px;
+	margin-top:5px;
 }
 
 /*link*/
@@ -466,7 +502,7 @@
 }
 
 </style>
-<h1 class="_mx__heading _mx__heading_border"><a name="基本样式" class="anchor" href="#基本样式"><span class="header-link"></span></a>基本样式</h1><div class="_mx__paragraph">所有 weex 标签都有以下基本样式规则。</div><h2 class="_mx__heading" onclick="addAnchor('盒模型')"><a name="盒模型" class="anchor" href="#盒模型"><span class="header-link"></span></a>盒模型</h2><div class="_mx__paragraph"><div class="_mx__image_container"><img src="http://alibaba.github.io/weex/doc/images/css-boxmodel.png" alt="" class="_mx__image" /></div></div><div class="_mx__paragraph">weex 盒模型基于 CSS 盒模型，每个 weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。</div><div class="_mx__paragraph">元素实际的内容（content）、内边距（paddings）、边框（borders）、外边距（margins），形成一层层的盒子包裹起来，这就是盒模型大体上的含义。</div><ul>
+<h1 class="_mx__heading _mx__heading_border"><a name="基本样式" class="anchor" href="#基本样式"><span class="header-link"></span></a>基本样式</h1><div class="_mx__paragraph">所有 weex 标签都有以下基本样式规则。</div><h2 class="_mx__heading _mx__heading_border2"><a name="盒模型" class="anchor" href="#盒模型"><span class="header-link"></span></a>盒模型</h2><div class="_mx__paragraph"><div class="_mx__image_container"><img src="http://alibaba.github.io/weex/doc/images/css-boxmodel.png" alt="" class="_mx__image" /></div></div><div class="_mx__paragraph">weex 盒模型基于 CSS 盒模型，每个 weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。</div><div class="_mx__paragraph">元素实际的内容（content）、内边距（paddings）、边框（borders）、外边距（margins），形成一层层的盒子包裹起来，这就是盒模型大体上的含义。</div><ul>
 <li>width</li>
 <li>height</li>
 <li>padding (space around content, between element content and the element border)<ul>
@@ -513,15 +549,15 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 400; height: 200; margin-left: 20;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><h2 class="_mx__heading" onclick="addAnchor('Flexbox')"><a name="Flexbox" class="anchor" href="#Flexbox"><span class="header-link"></span></a>Flexbox</h2><div class="_mx__paragraph">weex 布局模型基于 CSS 的 Flexbox。以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。</div><div class="_mx__paragraph">Flexbox 包含 flex 容器和 flex 成员项。如果一个 weex 元素可以容纳其他元素，那么它就成为 flex 容器。需要注意的是，flexbox 的老版规范相较新版有些出入，比如是否能支持 wrapping。这些都描述在 W3C 的工作草案中了，你需要注意下新老版本之间的不同。另外，老版本只在安卓 4.4 版以下得到支持。</div><h3 class="_mx__heading" onclick="addAnchor('Flex 容器')"><a name="Flex 容器" class="anchor" href="#Flex 容器"><span class="header-link"></span></a>Flex 容器</h3><div class="_mx__paragraph">在 weex 中，Flexbox 是默认且唯一的样式模型，所以你不需要手动为元素添加 <span class="_mx__code_span">display: flex;</span> 属性。</div><ul>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><h2 class="_mx__heading _mx__heading_border2"><a name="Flexbox" class="anchor" href="#Flexbox"><span class="header-link"></span></a>Flexbox</h2><div class="_mx__paragraph">weex 布局模型基于 CSS 的 Flexbox。以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。</div><div class="_mx__paragraph">Flexbox 包含 flex 容器和 flex 成员项。如果一个 weex 元素可以容纳其他元素，那么它就成为 flex 容器。需要注意的是，flexbox 的老版规范相较新版有些出入，比如是否能支持 wrapping。这些都描述在 W3C 的工作草案中了，你需要注意下新老版本之间的不同。另外，老版本只在安卓 4.4 版以下得到支持。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('Flex 容器')"><a name="Flex 容器" class="anchor" href="#Flex 容器"><span class="header-link"></span></a>Flex 容器</h3><div class="_mx__paragraph">在 weex 中，Flexbox 是默认且唯一的样式模型，所以你不需要手动为元素添加 <span class="_mx__code_span">display: flex;</span> 属性。</div><ul>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">flex-direction</span>: <span class="_mx__code_span">row</span> | <span class="_mx__code_span">column</span><br>flex-direction 属性定义了 flex 容器中 flex 成员项的排列方向。默认值为 <span class="_mx__code_span">column</span>，即从左到右、从上到下。</div></li>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">justify-content</span>: <span class="_mx__code_span">flex-start</span> | <span class="_mx__code_span">flex-end</span> | <span class="_mx__code_span">center</span> | <span class="_mx__code_span">space-between</span><br>justify-content 属性定义了 flex 容器中 flex 成员项在水平方向上如何排列以处理空白部分。<span class="_mx__code_span">flex-start</span> 是默认值，即左对齐，所有的 flex 成员项都排列在容器的前部；<span class="_mx__code_span">flex-end</span> 则意味着右对齐，成员项排列在容器的后部；<span class="_mx__code_span">center</span> 即中间对齐，成员项排列在容器中间、两边留白；<span class="_mx__code_span">space-between</span> 表示两端对齐，空白均匀地填充到 flex 成员项之间。<br><div class="_mx__image_container"><img src="http://alibaba.github.io/weex/doc/images/css-flexbox-justify.svg" alt="" class="_mx__image" /></div></div></li>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">align-items</span>: <span class="_mx__code_span">stretch</span> | <span class="_mx__code_span">flex-start</span> | <span class="_mx__code_span">center</span> | <span class="_mx__code_span">flex-end</span><br>align-items 属性定义了 flex 容器中 flex 成员项在垂直方向上如何排列以处理空白部分。<span class="_mx__code_span">stretch</span> 是默认值，即拉伸高度至 flex 容器的大小；<span class="_mx__code_span">flex-start</span> 则是上对齐，所有的成员项排列在容器顶部；<span class="_mx__code_span">flex-end</span> 是下对齐，所有的成员项排列在容器底部；<span class="_mx__code_span">center</span> 是中间对齐，所有成员项都垂直地居中显示。<br><div class="_mx__image_container"><img src="http://alibaba.github.io/weex/doc/images/css-flexbox-align.jpg" alt="" class="_mx__image" /></div></div></li>
 </ul>
-<h3 class="_mx__heading" onclick="addAnchor('Flex 成员项')"><a name="Flex 成员项" class="anchor" href="#Flex 成员项"><span class="header-link"></span></a>Flex 成员项</h3><ul>
+<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('Flex 成员项')"><a name="Flex 成员项" class="anchor" href="#Flex 成员项"><span class="header-link"></span></a>Flex 成员项</h3><ul>
 <li>flex: &lt;number&gt;<br>flex 属性定义了 flex 成员项在容器中占据的尺寸。如果所有成员项都设置为 <span class="_mx__code_span">flex: 1</span>，那么它们就有相等的宽度（水平排列）或者相等的高度（垂直排列）。如果一共有两个成员项，其中一个 <span class="_mx__code_span">flex: 1</span>，另一个 <span class="_mx__code_span">flex: 2</span>，那么第一个将占据 1/3 的空间，另一个占据 2/3。如果所有 flex 成员项都不设置 <span class="_mx__code_span">flex</span> 属性，它们将根据容器的 <span class="_mx__code_span">justify-content</span> 属性来决定如何排列。</li>
 </ul>
-<h2 class="_mx__heading" onclick="addAnchor('示例')"><a name="示例" class="anchor" href="#示例"><span class="header-link"></span></a>示例</h2><div class="_mx__paragraph">一组平分了容器的图片。</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<h2 class="_mx__heading _mx__heading_border2"><a name="示例" class="anchor" href="#示例"><span class="header-link"></span></a>示例</h2><div class="_mx__paragraph">一组平分了容器的图片。</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 300; height: 100;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex: 1;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex: 1;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
@@ -545,14 +581,14 @@
    <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>WEEX<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
    <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>2016-05-08<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><h2 class="_mx__heading" onclick="addAnchor('定位')"><a name="定位" class="anchor" href="#定位"><span class="header-link"></span></a>定位</h2><div class="_mx__paragraph">我们可以使用以下属性来定位一个 weex 元素。</div><ul>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><h2 class="_mx__heading _mx__heading_border2"><a name="定位" class="anchor" href="#定位"><span class="header-link"></span></a>定位</h2><div class="_mx__paragraph">我们可以使用以下属性来定位一个 weex 元素。</div><ul>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">position</span>: <span class="_mx__code_span">relative</span> | <span class="_mx__code_span">absolute</span> | <span class="_mx__code_span">fixed</span> | <span class="_mx__code_span">sticky</span><br><span class="_mx__code_span">relative</span> 是默认值，指的是相对定位；<span class="_mx__code_span">absolute</span> 是绝对定位，以元素的容器作为参考系；<span class="_mx__code_span">fixed</span> 保证元素在页面窗口中的对应位置显示；<span class="_mx__code_span">sticky</span> 指的是仅当元素滚动到页面之外时，元素会固定在页面窗口的顶部。</div></li>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">top</span>:  &lt;number&gt;<br>距离上方的偏移量，默认为 0。</div></li>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">bottom</span>: &lt;number&gt;<br>距离下方的偏移量，默认为 0。</div></li>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">left</span>: &lt;number&gt;<br>距离左方的偏移量，默认为 0。</div></li>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">right</span>: &lt;number&gt;<br>距离右方的偏移量，默认为 0。</div></li>
 </ul>
-<h3 class="_mx__heading" onclick="addAnchor('示例')"><a name="示例" class="anchor" href="#示例"><span class="header-link"></span></a>示例</h3><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('示例')"><a name="示例" class="anchor" href="#示例"><span class="header-link"></span></a>示例</h3><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"flex-direction: column;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 3000;"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"top: 50; left: 50; ..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
@@ -564,16 +600,16 @@
       <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"position: absolute; top: 50; left: 50; ..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><h2 class="_mx__heading" onclick="addAnchor('其他基本样式')"><a name="其他基本样式" class="anchor" href="#其他基本样式"><span class="header-link"></span></a>其他基本样式</h2><ul>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><h2 class="_mx__heading _mx__heading_border2"><a name="其他基本样式" class="anchor" href="#其他基本样式"><span class="header-link"></span></a>其他基本样式</h2><ul>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">opacity</span>:  &lt;number&gt;<br>取值范围为 [0, 1]。默认值是 1，即完全不透明；0 是完全透明；0.5 是 50% 的透明度。</div></li>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">background-color</span>: &lt;colors&gt;<br>设定元素的背景色，默认值是 <span class="_mx__code_span">transparent</span>。</div></li>
 </ul>
-<h2 class="_mx__heading" onclick="addAnchor('样式属性取值可用的类型')"><a name="样式属性取值可用的类型" class="anchor" href="#样式属性取值可用的类型"><span class="header-link"></span></a>样式属性取值可用的类型</h2><ul>
+<h2 class="_mx__heading _mx__heading_border2"><a name="样式属性取值可用的类型" class="anchor" href="#样式属性取值可用的类型"><span class="header-link"></span></a>样式属性取值可用的类型</h2><ul>
 <li>长度：数字后跟着 <span class="_mx__code_span">px</span> 作为单位，<span class="_mx__code_span">px</span> 也可以省略。</li>
 <li>颜色：有多种取值类型。RGB（<span class="_mx__code_span">rgb(255, 0, 0)</span>）；RGBA（<span class="_mx__code_span">rgba(255, 0, 0, 0.5)</span>）；十六进制（<span class="_mx__code_span">#ff0000</span>）；精简写法的十六进制（<span class="_mx__code_span">#f00</span>）；色值关键字（<span class="_mx__code_span">red</span>）。</li>
 <li>枚举值：特定可选的几个字符串。</li>
 </ul>
-<div class="_mx__paragraph"><strong>注意：</strong> <a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/doc/doc/references/color-names.md" >色值的关键字列表</a>。</div><h2 class="_mx__heading" onclick="addAnchor('上手样式')"><a name="上手样式" class="anchor" href="#上手样式"><span class="header-link"></span></a>上手样式</h2><div class="_mx__paragraph">你可以按照以下步骤来规划 weex 页面的样式。</div><ol>
+<div class="_mx__paragraph"><strong>注意：</strong> <a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/doc/doc/references/color-names.md" >色值的关键字列表</a>。</div><h2 class="_mx__heading _mx__heading_border2"><a name="上手样式" class="anchor" href="#上手样式"><span class="header-link"></span></a>上手样式</h2><div class="_mx__paragraph">你可以按照以下步骤来规划 weex 页面的样式。</div><ol>
 <li>全局样式规划：将整个页面分割成合适的模块。</li>
 <li>flex 布局：排列和对齐页面模块。</li>
 <li>定位盒子：定位并设置偏移量。</li>
@@ -642,12 +678,29 @@
     document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
   };
 
+  document.querySelectorAll('h3').insertBefore();
+
 })(window);
 
 
 
 </script>
-    <div class="doc_footer"></div>
+    <div class="doc_footer">
+      <div>Released under <span>Apache License 2.0</span></div>
+      <div class="doc_footer_img" style="height:30px;">
+        <div>
+          Copyright(c) 2016
+          <span>Alibaba Group</span>
+          Proudly Produced by
+          <span>Alibaichuan</span>
+        </div>
+        <div>
+          <!--<div>-->
+            <!--<img src="https://vczero.github.io/markdown-extension/website/source/imgs/baichuan.png"/>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
     <div class="playground">
       <div class="playground_header">
         <div class="playground_header_circle fl"></div>

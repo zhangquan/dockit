@@ -32,9 +32,14 @@ renderer.heading = function (text, level) {
   let tpl = '';
   tpl += '<h';
   tpl += level;
-  if(level === 1){
+  if(level == 1){
     tpl += ' class="_mx__heading _mx__heading_border"><a name="';
     console.log(text);
+  }else if(level == 2){
+    tpl += ' class="_mx__heading _mx__heading_border2"><a name="';
+    console.log(text);
+  }else if(level == 3){
+    tpl += ' class="_mx__heading _mx__heading_color" onclick="addAnchor(\''+ text +'\')"><a name="';
   }else{
     tpl += ' class="_mx__heading" onclick="addAnchor(\''+ text +'\')"><a name="';
   }

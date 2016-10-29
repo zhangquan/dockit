@@ -33,11 +33,26 @@
   color: #434343;
 }
 
+._mx__heading_color{
+	height:30px;
+	line-height:30px;
+	border-left:4px solid #1B90F7;
+	padding-left:5px;
+}
+
 ._mx__heading_border{
 	border-bottom: 1px solid #D5D5D5;
 	color: #262626;
 	display: block;
 	height:92px;
+	line-height:92px;
+}
+
+._mx__heading_border2{
+	border-bottom: 1px solid #D5D5D5;
+	color: #262626;
+	display: block;
+	height:72px;
 	line-height:92px;
 }
 /*._mx__heading:hover{
@@ -48,6 +63,7 @@
   color: #4e5665;
   font-size: 14px;
 	line-height:22px;
+	margin-top:5px;
 }
 
 /*link*/

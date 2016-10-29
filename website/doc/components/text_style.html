@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ch">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <title>weex 文档</title>
@@ -130,14 +130,30 @@
     border-top:1px solid #dddddd;
     width:100%;
     height:120px;
+    font-size:12px;
+    color:#999999;
+    text-align:center;
+}
+.doc_footer>div:first-child{
+    margin-top:40px;
+}
+.doc_footer>div span{
+    color: #333333;
 }
 
+.doc_footer img{
+    width:21px;
+}
+
+.doc_footer_img>div{
+    display:inline-block;height:21px;
+}
 
 #_mx__gotop{
     position: fixed;
     width:30px;
     height:30px;
-    border:1px solid #ddd;
+    /*border:1px solid #ddd;*/
     border-radius:15px;
     bottom:140px;
     left: 1186px;
@@ -145,6 +161,10 @@
     line-height:30px;
     cursor:pointer;
     /*display: none;*/
+}
+#_mx__gotop>img{
+    width:30px;
+    height:30px;
 }
 
 .playground{
@@ -273,16 +293,16 @@
 <a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/list.html">list</a>
 <a class="tree_menu_level3" href="http://localhost:63342/markdown-extension/website/doc/components/cell.html">cell</a>
 <a class="tree_menu_level2">text</a>
-<a class="tree_menu_level2">image</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/image.html">image</a>
 <a class="tree_menu_level2">input</a>
 <a class="tree_menu_level2">switch</a>
-<a class="tree_menu_level2">slider</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/slider.html">slider</a>
 <a class="tree_menu_level3">indicator</a>
 <a class="tree_menu_level2">video</a>
 <a class="tree_menu_level2">a</a>
 <a class="tree_menu_level2">web</a>
 <a class="tree_menu_level2">wxc-tabbar</a>
-<a class="tree_menu_level2">wxc-navpage</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/wxc_navpage.html">wxc-navpage</a>
 
 <a class="tree_menu_view_title">
   模块
@@ -293,7 +313,7 @@
 <a class="tree_menu_level2">animation</a>
 <a class="tree_menu_level2">webview</a>
 <a class="tree_menu_level2">navigator</a>
-<a class="tree_menu_level2">storage</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/modules/storage.html">storage</a>
 <a class="tree_menu_level2">timer</a>
 <a class="tree_menu_level2">clipboard</a>
 
@@ -311,7 +331,7 @@
   var links = document.querySelectorAll('.tree_menu_view>a');
   for(var i in links){
     var a = links[i];
-    if(a.href && a.href === location.href){
+    if(a.href && a.href === location.origin + location.pathname){
       var oldClass = a.getAttribute('class');
       a.setAttribute('class', oldClass + ' tree_menu_active');
     }
@@ -322,7 +342,7 @@
   </div>
   <div class="doc_container">
     <div id="_mx__gotop">
-      <img src="https://vczero.github.io/markdown-extension/website/source/imgs/goto_top.png"/>
+      <img src="https://vczero.github.io/markdown-extension/mark/source/imgs/goto_top.png"/>
     </div>
     
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
@@ -365,11 +385,26 @@
   color: #434343;
 }
 
+._mx__heading_color{
+	height:30px;
+	line-height:30px;
+	border-left:4px solid #1B90F7;
+	padding-left:5px;
+}
+
 ._mx__heading_border{
 	border-bottom: 1px solid #D5D5D5;
 	color: #262626;
 	display: block;
 	height:92px;
+	line-height:92px;
+}
+
+._mx__heading_border2{
+	border-bottom: 1px solid #D5D5D5;
+	color: #262626;
+	display: block;
+	height:72px;
 	line-height:92px;
 }
 /*._mx__heading:hover{
@@ -380,6 +415,7 @@
   color: #4e5665;
   font-size: 14px;
 	line-height:22px;
+	margin-top:5px;
 }
 
 /*link*/
@@ -466,7 +502,7 @@
 }
 
 </style>
-<div class="_mx__paragraph">原文<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/references/text-style.html" >连接</a></div><div class="_mx__paragraph">文档类组件共享一些共同特性, 这类组件目前包括<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/text.html" ><span class="_mx__code_span">text</span></a> and <a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/input.html" ><span class="_mx__code_span">input</span></a>.</div><h2 class="_mx__heading" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h2><ul>
+<div class="_mx__paragraph">原文<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/references/text-style.html" >连接</a></div><div class="_mx__paragraph">文档类组件共享一些共同特性, 这类组件目前包括<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/text.html" ><span class="_mx__code_span">text</span></a> and <a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/input.html" ><span class="_mx__code_span">input</span></a>.</div><h2 class="_mx__heading _mx__heading_border2"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h2><ul>
 <li><span class="_mx__code_span">color</span>: &lt;colors&gt; 前景颜色.</li>
 <li><span class="_mx__code_span">font-size</span>: &lt;length&gt; 文字大小.</li>
 <li><span class="_mx__code_span">font-style</span>: &lt;enum&gt; <span class="_mx__code_span">normal</span> | <span class="_mx__code_span">italic</span>. 字体类别，默认为 <span class="_mx__code_span">normal</span>.</li>
@@ -480,7 +516,7 @@
 <span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-number">#f00</span>; }
 <span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>; }
 <span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(255, 0, 0); }
-<span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(255, 0, 0, 0.5); }</a></code></pre><h2 class="_mx__heading" onclick="addAnchor('值类型')"><a name="值类型" class="anchor" href="#值类型"><span class="header-link"></span></a>值类型</h2><ul>
+<span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(255, 0, 0, 0.5); }</a></code></pre><h2 class="_mx__heading _mx__heading_border2"><a name="值类型" class="anchor" href="#值类型"><span class="header-link"></span></a>值类型</h2><ul>
 <li>长度:  单位为<span class="_mx__code_span">px</span>, <span class="_mx__code_span">px</span> 能被省略.</li>
 <li>颜色:  支持多种格式，例如 rgb (<span class="_mx__code_span">rgb(255, 0, 0)</span>), rgba (<span class="_mx__code_span">rgba(255, 0, 0, 0.5)</span>), 十六进制 (<span class="_mx__code_span">#ff0000</span>), 短十六进制 (<span class="_mx__code_span">#f00</span>), 颜色名字 (<span class="_mx__code_span">red</span>).</li>
 <li>枚举类型: 有限几个名字中的一个.</li>
@@ -548,12 +584,29 @@
     document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
   };
 
+  document.querySelectorAll('h3').insertBefore();
+
 })(window);
 
 
 
 </script>
-    <div class="doc_footer"></div>
+    <div class="doc_footer">
+      <div>Released under <span>Apache License 2.0</span></div>
+      <div class="doc_footer_img" style="height:30px;">
+        <div>
+          Copyright(c) 2016
+          <span>Alibaba Group</span>
+          Proudly Produced by
+          <span>Alibaichuan</span>
+        </div>
+        <div>
+          <!--<div>-->
+            <!--<img src="https://vczero.github.io/markdown-extension/website/source/imgs/baichuan.png"/>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
     <div class="playground">
       <div class="playground_header">
         <div class="playground_header_circle fl"></div>
