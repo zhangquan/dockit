@@ -64,8 +64,10 @@ files.map(function(v){
     
     let html = fs.readFileSync('./source/doc.html').toString();
     let css = fs.readFileSync('./source/doc.css').toString();
+    let tree_menu = fs.readFileSync('./source/tree_menu.html').toString();
     
     html =  html.replace('<%include @doc.css %>', css);
+    html = html.replace('<%include @tree_menu.css %>', tree_menu);
     data =  html.replace('<%include @doc_container %>', page);
     
   

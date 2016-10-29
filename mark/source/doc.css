@@ -74,10 +74,22 @@ html,body{
     line-height:30px;
 }
 
-.tree_menu_view>div{
+.tree_menu_view_title{
+    color:#1B90F7 !important;
+    font-weight:bold;
+    display: block;
+}
+
+.tree_menu_view>a{
     padding-left:30px;
     cursor: pointer;
-    /*font-weight: bold;*/
+    display: block;
+    text-decoration: none;
+    color: #333333;
+}
+
+.tree_menu_view>a:active{
+    color: #333333;
 }
 
 .tree_menu_active{
@@ -86,11 +98,11 @@ html,body{
 }
 .tree_menu_level2{
     padding-left:40px !important;
-    /*font-weight: normal !important;*/
+    display: block;
 }
 .tree_menu_level3{
     padding-left:60px !important;
-    /*font-weight: normal !important;*/
+    display: block;
 }
 
 /*doc_container*/
