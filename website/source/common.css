@@ -11,7 +11,7 @@
 	color: #399D3E;
 }
 .hljs-name{
-	color: #333333;
+	color: #AC2A66;
 }
 .hljs-tag{
 	color: #AC2A66;
@@ -24,6 +24,12 @@
 }
 .hljs-params{
 
+}
+.hljs-number{
+	color: #F5871E;
+} 
+.hljs-attribute{
+	color:#C99E00;
 }
 /*code*/
 ._mx__code_pre{

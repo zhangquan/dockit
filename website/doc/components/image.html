@@ -325,12 +325,12 @@
 <a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/common_style.html">Common Style</a>
 <a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/text_style.html">Text Style</a>
 <a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/div.html">div</a>
+<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/image.html">image</a>
 <a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/common_events.html">common Event</a>
 <a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/scroller.html">scroller</a>
 <a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/list.html">list</a>
 <a class="tree_menu_level3" href="http://localhost:63342/markdown-extension/website/doc/components/cell.html">cell</a>
 <a class="tree_menu_level2">text</a>
-<a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/image.html">image</a>
 <a class="tree_menu_level2">input</a>
 <a class="tree_menu_level2">switch</a>
 <a class="tree_menu_level2" href="http://localhost:63342/markdown-extension/website/doc/components/slider.html">slider</a>
@@ -431,7 +431,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 	color: #399D3E;
 }
 .hljs-name{
-	color: #333333;
+	color: #AC2A66;
 }
 .hljs-tag{
 	color: #AC2A66;
@@ -444,6 +444,12 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 }
 .hljs-params{
 
+}
+.hljs-number{
+	color: #F5871E;
+} 
+.hljs-attribute{
+	color:#C99E00;
 }
 /*code*/
 ._mx__code_pre{
@@ -593,37 +599,117 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 }
 
 </style>
-<h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('&lt; image &gt; 组件')"><a name="&lt; image &gt; 组件" class="anchor" href="#&lt; image &gt; 组件"><span class="header-link"></span></a>&lt; image &gt; 组件</h2><h2>概述</h2>
-
-<div class="_mx__paragraph"><code>image</code> 标签用于渲染一个特定的图片，并且它不能包含任何子组件。可以用<code>img</code> 作简写。</div><div class="_mx__paragraph"><b>注意:</b> <code>width</code>和<code>height</code>需要指定，否则会不工作。</div><div class="_mx__paragraph">简写：<img></div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('子组件')"><a name="子组件" class="anchor" href="#子组件"><span class="header-link"></span></a>子组件</h2><div class="_mx__paragraph">这个组件不支持子组件。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h2><ul>
-<li><code>src</code>:&lt;字符串&gt;属性 图片原始链接</li>
-<li><code>resize</code>: &lt;字符串&gt;  组件的拉伸属性。默认值是<code>stretch</code>,如果此属性不指定，该值可能是<code>cover</code>,<code>contain</code> , 值行为和W3C标准一致。</li>
+<h1 class="_mx__heading _mx__heading_border"><a name="&lt;image&gt; 组件" class="anchor" href="#&lt;image&gt; 组件"><span class="header-link"></span></a>&lt;image&gt; 组件</h1><div class="_mx__time">任何版本都支持
+</div><div class="_mx__paragraph">image标签用于渲染图片，并且它不能包含任何子组件。可以用img作简写。需要注意的事，需要明确指定width和height，否则图片不会显示出来。简写：&lt;img&gt;&lt;/img&gt;   </div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:100;height:230;"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://gtms04.alicdn.com/tps/i4/TB1ehtqMFXXXXcOXXXX1odaOXXX-370-664.gif"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="http://www.baidu.com?123=test" >体验一下</a></div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('子组件')"><a name="子组件" class="anchor" href="#子组件"><span class="header-link"></span></a>子组件</h3><div class="_mx__paragraph">image组件不支持任何子组件，因此不要尝试在image组件中添加任何组件。如果需要实现<span class="_mx__code_span">background-image</span>的效果，可以使用image组件和div/text组件配合，然后采用position定位来现实，如下面代码。</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:100;height:180;"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://gtms04.alicdn.com/tps/i4/TB1ehtqMFXXXXcOXXXX1odaOXXX-370-664.gif"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"title"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size:10;"</span>&gt;</span>你好，image<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.title</span>{
+    <span class="hljs-attribute">position</span>:absolute;
+    <span class="hljs-attribute">top</span>:<span class="hljs-number">50</span>;
+    <span class="hljs-attribute">left</span>:<span class="hljs-number">10</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></a></code></pre><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="http://www.baidu.com?123=test" >体验一下</a></div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h3><div class="_mx__paragraph">image组件，包含src和resize两个重要的属性。</div><ul>
+<li><div class="_mx__paragraph">src: 类型是&lt;字符串&gt;， 图片链接。</div></li>
+<li><div class="_mx__paragraph">resize: 类型是&lt;字符串&gt; ，可以控制图片的拉伸状态。默认值是stretch，如果此属性不指定，该值可能是cover，contain 。值行为和W3C标准一致。</div></li>
 </ul>
-<div class="_mx__paragraph">其他属性请查阅<a href="http://alibaba.github.io/weex/doc/references/common-attrs.html" >基本属性</a></div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('样式')"><a name="样式" class="anchor" href="#样式"><span class="header-link"></span></a>样式</h2><ul>
-<li><code>width</code> : &lt;长度&gt;属性 组件的宽度，需指定。</li>
-<li><code>height</code>: &lt;长度&gt;属性 组件的高度，需指定。</li>
+<div class="_mx__paragraph">例如，使用cover属性，则出现图片大于容器大小时，显示一部分图片（默认从左上角开始截取）。</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:100;height:480;"</span> <span class="hljs-attr">resize</span>=<span class="hljs-string">"cover"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://gtms04.alicdn.com/tps/i4/TB1ehtqMFXXXXcOXXXX1odaOXXX-370-664.gif"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></a></code></pre><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="http://www.baidu.com?123=test" >体验一下</a><br>其他属性请查阅<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/common-attrs.html" >基本属性</a>。  </div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('样式')"><a name="样式" class="anchor" href="#样式"><span class="header-link"></span></a>样式</h3><ul>
+<li><div class="_mx__paragraph">width : &lt;长度&gt;属性 组件的宽度，需指定。</div></li>
+<li><div class="_mx__paragraph">height: &lt;长度&gt;属性 组件的高度，需指定。</div></li>
 </ul>
-<div class="_mx__paragraph"><b>基本样式</b>： 查看<a href="http://alibaba.github.io/weex/doc/references/common-attrs.html">基本样式</a></div><ul>
-<li>支持 flexbox 相关样式</li>
-<li>支持 box 模型相关样式</li>
-<li>支持 <code>position</code> 相关属性</li>
-<li>支持 <code>opacity</code>,<code>background-color</code> 等。</li>
+<div class="_mx__paragraph">基本样式，查看<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/common-attrs.html" >基本样式</a>。</div><ul>
+<li><div class="_mx__paragraph">支持 flexbox 相关样式</div></li>
+<li><div class="_mx__paragraph">支持 box 模型相关样式</div></li>
+<li><div class="_mx__paragraph">支持 position相关属性</div></li>
+<li><div class="_mx__paragraph">支持 opacity，background-color等。</div></li>
 </ul>
-<h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('事件')"><a name="事件" class="anchor" href="#事件"><span class="header-link"></span></a>事件</h2><div class="_mx__paragraph"><b>基本事件</b>：查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a></div><ul>
-<li>支持 <code>click</code> 事件。查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a></li>
-<li>支持 <code>appear</code> / <code>disappear</code> 事件。查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a></li>
+<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('事件')"><a name="事件" class="anchor" href="#事件"><span class="header-link"></span></a>事件</h3><div class="_mx__paragraph">基本事件，查阅<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/common-event.html" >基本事件</a>。</div><ul>
+<li><div class="_mx__paragraph">支持 click 事件。查阅<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/common-event.html" >基本事件</a>。</div></li>
+<li><div class="_mx__paragraph">支持 appear / disappear 事件。查阅<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/common-event.html" >基本事件</a>。        </div></li>
 </ul>
-<h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('例子')"><a name="例子" class="anchor" href="#例子"><span class="header-link"></span></a>例子</h2><pre><code>&lt;div&gt;
-  &lt;image src="..." &gt;&lt;/image&gt;
-  &lt;text&gt;...&lt;/text&gt;
-&lt;/div&gt;
-</code></pre>
-
-<div class="_mx__paragraph">简写：</div><pre><code>&lt;div&gt;
-  &lt;img src="..." &gt;&lt;/img&gt;
-  &lt;text&gt;...&lt;/text&gt;
-&lt;/div&gt;
-</code></pre></div>
+<pre class="_mx__code_pre" id="__aa"><code><a> <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"showTip"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:100;height:100;"</span> <span class="hljs-attr">resize</span>=<span class="hljs-string">"contain"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://gtms04.alicdn.com/tps/i4/TB1ehtqMFXXXXcOXXXX1odaOXXX-370-664.gif"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">methods</span>: {
+      <span class="hljs-attr">showTip</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        alert(<span class="hljs-string">'hello image'</span>);
+      }
+    }
+  };
+ </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></a></code></pre><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="http://www.baidu.com?123=test" >体验一下</a>   </div><ul>
+<li>weex 0.8及其以上版本，支持onload事件。需要注意的是，目前在Android、iOS上支持，H5不支持。具体代码如下：</li>
+</ul>
+<pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">onload</span>=<span class="hljs-string">"load"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"img"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://img.alicdn.com/tps/TB1BF2hNXXXXXbgaXXXXXXXXXXX-1125-352.jpg_q50.jpg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.img</span>{
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">750</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">200</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">methods</span>:{
+      <span class="hljs-attr">load</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'---load---'</span>,e);
+      }
+    }
+  };
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></a></code></pre><div class="_mx__paragraph">onload返回的结果e是json对象，如下所示：   </div><pre class="_mx__code_pre" id="__aa"><code><a>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-string">"true"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1473763310591</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"load"</span>,
+    <span class="hljs-attr">"target"</span>: {
+        <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"20"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"image"</span>,
+        <span class="hljs-attr">"attr"</span>: {
+            <span class="hljs-attr">"src"</span>: <span class="hljs-string">"http://img.alicdn.com/tps/TB1BF2hNXXXXXbgaXXXXXXXXXXX-1125-352.jpg_q50.jpg"</span>
+        },
+        <span class="hljs-attr">"style"</span>: {
+            <span class="hljs-attr">"width"</span>: <span class="hljs-number">750</span>,
+            <span class="hljs-attr">"height"</span>: <span class="hljs-number">200</span>
+        },
+        <span class="hljs-attr">"event"</span>: [
+            <span class="hljs-string">"load"</span>
+        ]
+    }
+}</a></code></pre><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('例子')"><a name="例子" class="anchor" href="#例子"><span class="header-link"></span></a>例子</h3><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">resize</span>=<span class="hljs-string">"..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></a></code></pre><div class="_mx__paragraph">简写：</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span>  <span class="hljs-attr">onclick</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">resize</span>=<span class="hljs-string">"..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></a></code></pre><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('其它参考')"><a name="其它参考" class="anchor" href="#其它参考"><span class="header-link"></span></a>其它参考</h2><ul>
+<li><a class="_mx__link" target="_blank"title="null" href="https://github.com/alibaba/weex/issues/1381" >image 的 resize=&quot;contain&quot; 在 Android 没有效果</a></li>
+<li><a class="_mx__link" target="_blank"title="null" href="https://github.com/alibaba/weex/blob/dev/examples/component/image-demo.we" >image组件使用demo</a></li>
+</ul>
+<div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="http://gtms04.alicdn.com/tps/i4/TB1ehtqMFXXXXcOXXXX1odaOXXX-370-664.gif" >mobile_preview</a></div></div>
     <div class="doc_footer">
       <div>Released under <span>Apache License 2.0</span></div>
       <div class="doc_footer_img" style="height:30px;">
