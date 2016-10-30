@@ -151,16 +151,16 @@
 
 #_mx__gotop{
     position: fixed;
-    width:30px;
-    height:30px;
-    /*border:1px solid #ddd;*/
+    width:28px;
+    height:28px;
+    /*border:1px solid #2792F4;*/
     border-radius:15px;
     bottom:140px;
     left: 1186px;
     text-align: center;
     line-height:30px;
     cursor:pointer;
-    /*display: none;*/
+    display: none;
 }
 #_mx__gotop>img{
     width:30px;
@@ -626,48 +626,28 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 </html>
 <script type="text/javascript">
 (function(win, undefined){
-  var goTop = document.getElementById('_mx__gotop');
-  function getPagePosition() { 
-    var x = 0, y = 0;
-    if(window.pageYOffset){   
-      y = window.pageYOffset;    
-      x = window.pageXOffset; 
-    } else if(document.documentElement && document.documentElement.scrollTop){
-      y = document.documentElement.scrollTop;    
-      x = document.documentElement.scrollLeft; 
-    } else if(document.body) {
-      y = document.body.scrollTop;    
-      x = document.body.scrollLeft;   
-    } 
-    return {x:x, y:y};
-  }
-  
-  window.onscroll = function(){
-    var pos = getPagePosition();
-    if(pos.y > document.body.clientHeight){
-      goTop.style.display = 'block';
+
+  //回到顶部
+  var goto_top = $('#_mx__gotop');
+  var doc_container = $('.doc_container');
+  var screenHeight =  document.body.scrollHeight;
+  var containerHeight = $('#_mx__md_container').height();
+  goto_top.on('click', function(){
+    doc_container.animate({scrollTop: '0px'}, 400);
+  });
+  doc_container.on('scroll',function(){
+    //滚动条件预设
+    var top = doc_container.scrollTop();
+    if(containerHeight > screenHeight && top > 200){
+      goto_top.css('display', 'block');
     }else{
-      goTop.style.display = 'none';
+      //隐藏滚动按钮
+      goto_top.css('display', 'none');
     }
-  };
+  });
 
-  //滚动到顶部
-  goTop.onclick = function(){
-    console.log(document.getElementById('_mx__md_container').scrollTop);
-    var pos = getPagePosition();
-    var y = pos.y;
-    console.log(y);
-    var handle = setInterval(function(){
-      y = y - 50;
-      if(y <= 0){
-        window.scrollTo(0, 0);
-        clearInterval(handle);
-      }else{
-        window.scrollTo(0, y);
-      }
-    }, 1);
-  };
 
+  //增加锚点
   win.addAnchor = function(a){
     var url = window.location.href;
     if(window.location.href.indexOf('#') > -1){

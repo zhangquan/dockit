@@ -143,16 +143,16 @@ html,body{
 
 #_mx__gotop{
     position: fixed;
-    width:30px;
-    height:30px;
-    /*border:1px solid #ddd;*/
+    width:28px;
+    height:28px;
+    /*border:1px solid #2792F4;*/
     border-radius:15px;
     bottom:140px;
     left: 1186px;
     text-align: center;
     line-height:30px;
     cursor:pointer;
-    /*display: none;*/
+    display: none;
 }
 #_mx__gotop>img{
     width:30px;
