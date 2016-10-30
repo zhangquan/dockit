@@ -37,4 +37,6 @@
   <image src="..."></image>
   <text>...</text>
 </div>
-```
+```    
+
+[mobile_preview](http://gtms04.alicdn.com/tps/i4/TB1ehtqMFXXXXcOXXXX1odaOXXX-370-664.gif)

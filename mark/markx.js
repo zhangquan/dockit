@@ -106,7 +106,7 @@ renderer.paragraph = function(text){
 
 renderer.link = function(href, title, text){
   let str = '';
-  str += '<a class="_mx__link" ';
+  str += '<a class="_mx__link" target="_blank"';
   str += 'title="' + title + '" ';
   str += 'href="' + href + '" >';
   str += text;

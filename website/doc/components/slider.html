@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>weex 文档</title>
+  <title>weex, 跨平台移动动态解决方案</title>
   <!--这里处理css-->
   <!--<link rel="stylesheet" href="doc.css"/>-->
   <style type="text/css">
@@ -175,6 +175,7 @@
     height:394px;
     border:2px solid #2792F4;
     border-radius:15px;
+    display: none;
 }
 .playground_header{
     width:100%;
@@ -444,7 +445,6 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 .hljs-params{
 
 }
-
 /*code*/
 ._mx__code_pre{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -461,12 +461,13 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 ._mx__code_span{
   display: inline-block;
   padding:3px;
-  color: #5151BE;
+  color: #555555;
 	background-color: #F5F6FA;
-	border:1px solid #CBD2E0;
+	border:1px solid #D5D5D5;
 	border-radius:2px;
 	margin-left: 3px;
 	margin-right:3px;
+	height:20px;
 }
 /*heading*/
 ._mx__heading{
@@ -532,6 +533,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 	font-size:13px;
 	padding-left:7px;
 	border-left: 10px solid #17A05E;
+	/*color: #A71D5D;*/
 }
 
 /*api*/
@@ -591,7 +593,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 }
 
 </style>
-<h1 class="_mx__heading _mx__heading_border"><a name="<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a>" class="anchor" href="#<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a>"><span class="header-link"></span></a><a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a></h1><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('&lt; slider &gt; 组件')"><a name="&lt; slider &gt; 组件" class="anchor" href="#&lt; slider &gt; 组件"><span class="header-link"></span></a>&lt; slider &gt; 组件</h2><h2>概述</h2>
+<h1 class="_mx__heading _mx__heading_border"><a name="<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a>" class="anchor" href="#<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a>"><span class="header-link"></span></a><a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a></h1><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('&lt; slider &gt; 组件')"><a name="&lt; slider &gt; 组件" class="anchor" href="#&lt; slider &gt; 组件"><span class="header-link"></span></a>&lt; slider &gt; 组件</h2><h2>概述</h2>
 
 <div class="_mx__paragraph">轮播组件用于在一个网页中展示多个图片。初始设置是3秒内在2个图片做切换。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('子组件')"><a name="子组件" class="anchor" href="#子组件"><span class="header-link"></span></a>子组件</h2><div class="_mx__paragraph">weex 所有的组件都支持轮播，特定的<code>indicator</code>组件只能是<code>slider</code>的子组件。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h2><ul>
 <li><code>auto-play</code>:&lt;布尔值&gt; <code>true</code> | <code>false</code>.该值决定网页渲染完成之后是否自动播放。初始值的是关。</li>
@@ -655,7 +657,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
         <div class="playground_header_rect fr"></div>
       </div>
       <div class="playground_main">
-        <img src="https://vczero.github.io/markdown-extension/mark/source/imgs/pr.jpg"/>
+        <img />
       </div>
       <div class="playground_footer">
         <div></div>
@@ -755,6 +757,18 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
     }
   });
 
+  /*
+  * mobile preview
+  *
+  * */
+  links.each(function(i){
+    var link = links[i];
+    if(link.innerText == 'mobile_preview'){
+      $('.playground').css('display', 'block');
+      $('.playground_main img')[0].src = link.href;
+      $(link).css('display', 'none');
+    }
+  });
 
 })(window);
 

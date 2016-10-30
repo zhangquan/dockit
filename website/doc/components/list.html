@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>weex 文档</title>
+  <title>weex, 跨平台移动动态解决方案</title>
   <!--这里处理css-->
   <!--<link rel="stylesheet" href="doc.css"/>-->
   <style type="text/css">
@@ -175,6 +175,7 @@
     height:394px;
     border:2px solid #2792F4;
     border-radius:15px;
+    display: none;
 }
 .playground_header{
     width:100%;
@@ -444,7 +445,6 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 .hljs-params{
 
 }
-
 /*code*/
 ._mx__code_pre{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -461,12 +461,13 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 ._mx__code_span{
   display: inline-block;
   padding:3px;
-  color: #5151BE;
+  color: #555555;
 	background-color: #F5F6FA;
-	border:1px solid #CBD2E0;
+	border:1px solid #D5D5D5;
 	border-radius:2px;
 	margin-left: 3px;
 	margin-right:3px;
+	height:20px;
 }
 /*heading*/
 ._mx__heading{
@@ -532,6 +533,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 	font-size:13px;
 	padding-left:7px;
 	border-left: 10px solid #17A05E;
+	/*color: #A71D5D;*/
 }
 
 /*api*/
@@ -596,12 +598,12 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 <li><span class="_mx__code_span">header</span> <sup class="wx-v">0.6.1</sup> 当 header到达屏幕顶部时，将会固定在屏幕顶部 .</li>
 <li><span class="_mx__code_span">refresh</span> 组件可以用来给列表添加下拉刷新的功能</li>
 <li><div class="_mx__paragraph"><span class="_mx__code_span">loading</span> 组件可以用来给列表添加上拉加载更多的功能</div></li>
-<li><div class="_mx__paragraph"><span class="_mx__code_span">refresh</span> and <span class="_mx__code_span">loading</span> 请查看 <a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/components/refresh-loading.md" >refresh-loading</a>.</div></li>
+<li><div class="_mx__paragraph"><span class="_mx__code_span">refresh</span> and <span class="_mx__code_span">loading</span> 请查看 <a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/refresh-loading.md" >refresh-loading</a>.</div></li>
 </ul>
 <h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h3><ul>
 <li><span class="_mx__code_span">loadmoreoffset</span>: &lt;number&gt; 触发loadmore事件所需要的滚动条距离list底部的垂直偏移距离.当list的滚动条滚动到足够接近list底部时将会触发loadmore这个事件</li>
 </ul>
-<div class="_mx__paragraph">其他属性请查看 <a class="_mx__link" title="null" href="https://github.com/weexteam/article/issues/13" >公共属性</a>.</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('样式')"><a name="样式" class="anchor" href="#样式"><span class="header-link"></span></a>样式</h3><div class="_mx__paragraph"><strong>公共样式</strong>: 查看 <a class="_mx__link" title="null" href="https://github.com/weexteam/article/issues/23" >组件公共样式</a></div><ul>
+<div class="_mx__paragraph">其他属性请查看 <a class="_mx__link" target="_blank"title="null" href="https://github.com/weexteam/article/issues/13" >公共属性</a>.</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('样式')"><a name="样式" class="anchor" href="#样式"><span class="header-link"></span></a>样式</h3><div class="_mx__paragraph"><strong>公共样式</strong>: 查看 <a class="_mx__link" target="_blank"title="null" href="https://github.com/weexteam/article/issues/23" >组件公共样式</a></div><ul>
 <li>支持flexbox 等样式</li>
 <li>支持box model 等样式</li>
 <li>支持<span class="_mx__code_span">position</span> 等样式</li>
@@ -610,11 +612,11 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 <h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('事件')"><a name="事件" class="anchor" href="#事件"><span class="header-link"></span></a>事件</h3><ul>
 <li><span class="_mx__code_span">loadmore</span> <sup class="wx-v">0.5</sup>: 如果列表滚动到底部将会立即触发这个事件，你可以在这个事件的处理函数中加载下一页的列表项.</li>
 </ul>
-<div class="_mx__paragraph"><strong>公共事件</strong>: 查看 <a class="_mx__link" title="null" href="https://github.com/weexteam/article/issues/33" >公共事件</a></div><ul>
-<li>支持<span class="_mx__code_span">click</span> 事件，查看 <a class="_mx__link" title="null" href="https://github.com/weexteam/article/issues/33" >common events</a></li>
-<li>支持 <span class="_mx__code_span">appear</span> / <span class="_mx__code_span">disappear</span> 事件. 查看<a class="_mx__link" title="null" href="https://github.com/weexteam/article/issues/33" >common events</a></li>
+<div class="_mx__paragraph"><strong>公共事件</strong>: 查看 <a class="_mx__link" target="_blank"title="null" href="https://github.com/weexteam/article/issues/33" >公共事件</a></div><ul>
+<li>支持<span class="_mx__code_span">click</span> 事件，查看 <a class="_mx__link" target="_blank"title="null" href="https://github.com/weexteam/article/issues/33" >common events</a></li>
+<li>支持 <span class="_mx__code_span">appear</span> / <span class="_mx__code_span">disappear</span> 事件. 查看<a class="_mx__link" target="_blank"title="null" href="https://github.com/weexteam/article/issues/33" >common events</a></li>
 </ul>
-<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('API')"><a name="API" class="anchor" href="#API"><span class="header-link"></span></a>API</h3><div class="_mx__paragraph">所以得cell或者类cell都支持 <span class="_mx__code_span">scrollToElement</span> API  <a class="_mx__link" title="null" href="https://github.com/weexteam/article/issues/52" >dom module</a></div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('约束')"><a name="约束" class="anchor" href="#约束"><span class="header-link"></span></a>约束</h3><div class="_mx__paragraph"><strong>不允许</strong>相同方向的list或者scroller互相嵌套.换句话说就是嵌套的lists/scroller必须是不同的方向</div><div class="_mx__paragraph">举个例子，<strong>不允许</strong>一个垂直方向的list嵌套的一个垂直方向的scroller中，但是一个垂直方向的list是可以嵌套的一个水平方向的list或者scroller中的.</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('示例')"><a name="示例" class="anchor" href="#示例"><span class="header-link"></span></a>示例</h3><div class="_mx__paragraph">查看 <a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/example/examples/component/list/list-basic.we" >list-basic demo</a></div></div>
+<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('API')"><a name="API" class="anchor" href="#API"><span class="header-link"></span></a>API</h3><div class="_mx__paragraph">所以得cell或者类cell都支持 <span class="_mx__code_span">scrollToElement</span> API  <a class="_mx__link" target="_blank"title="null" href="https://github.com/weexteam/article/issues/52" >dom module</a></div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('约束')"><a name="约束" class="anchor" href="#约束"><span class="header-link"></span></a>约束</h3><div class="_mx__paragraph"><strong>不允许</strong>相同方向的list或者scroller互相嵌套.换句话说就是嵌套的lists/scroller必须是不同的方向</div><div class="_mx__paragraph">举个例子，<strong>不允许</strong>一个垂直方向的list嵌套的一个垂直方向的scroller中，但是一个垂直方向的list是可以嵌套的一个水平方向的list或者scroller中的.</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('示例')"><a name="示例" class="anchor" href="#示例"><span class="header-link"></span></a>示例</h3><div class="_mx__paragraph">查看 <a class="_mx__link" target="_blank"title="null" href="https://github.com/alibaba/weex/blob/example/examples/component/list/list-basic.we" >list-basic demo</a></div></div>
     <div class="doc_footer">
       <div>Released under <span>Apache License 2.0</span></div>
       <div class="doc_footer_img" style="height:30px;">
@@ -637,7 +639,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
         <div class="playground_header_rect fr"></div>
       </div>
       <div class="playground_main">
-        <img src="https://vczero.github.io/markdown-extension/mark/source/imgs/pr.jpg"/>
+        <img />
       </div>
       <div class="playground_footer">
         <div></div>
@@ -737,6 +739,18 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
     }
   });
 
+  /*
+  * mobile preview
+  *
+  * */
+  links.each(function(i){
+    var link = links[i];
+    if(link.innerText == 'mobile_preview'){
+      $('.playground').css('display', 'block');
+      $('.playground_main img')[0].src = link.href;
+      $(link).css('display', 'none');
+    }
+  });
 
 })(window);
 

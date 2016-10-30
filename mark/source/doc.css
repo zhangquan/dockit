@@ -167,6 +167,7 @@ html,body{
     height:394px;
     border:2px solid #2792F4;
     border-radius:15px;
+    display: none;
 }
 .playground_header{
     width:100%;

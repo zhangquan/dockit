@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>weex 文档</title>
+  <title>weex, 跨平台移动动态解决方案</title>
   <!--这里处理css-->
   <!--<link rel="stylesheet" href="doc.css"/>-->
   <style type="text/css">
@@ -175,6 +175,7 @@
     height:394px;
     border:2px solid #2792F4;
     border-radius:15px;
+    display: none;
 }
 .playground_header{
     width:100%;
@@ -444,7 +445,6 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 .hljs-params{
 
 }
-
 /*code*/
 ._mx__code_pre{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -461,12 +461,13 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 ._mx__code_span{
   display: inline-block;
   padding:3px;
-  color: #5151BE;
+  color: #555555;
 	background-color: #F5F6FA;
-	border:1px solid #CBD2E0;
+	border:1px solid #D5D5D5;
 	border-radius:2px;
 	margin-left: 3px;
 	margin-right:3px;
+	height:20px;
 }
 /*heading*/
 ._mx__heading{
@@ -532,6 +533,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 	font-size:13px;
 	padding-left:7px;
 	border-left: 10px solid #17A05E;
+	/*color: #A71D5D;*/
 }
 
 /*api*/
@@ -592,10 +594,10 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 
 </style>
 <h1 class="_mx__heading _mx__heading_border"><a name="基本属性" class="anchor" href="#基本属性"><span class="header-link"></span></a>基本属性</h1><div class="_mx__paragraph">所有的 weex 标签都有以下的基本属性。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('id')"><a name="id" class="anchor" href="#id"><span class="header-link"></span></a>id</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">id</span>=<span class="hljs-string">"logo"</span>
-<span class="hljs-attr">id</span>=<span class="hljs-string">"item-{{index}}"</span></a></code></pre><div class="_mx__paragraph"><span class="_mx__code_span">id</span> 是一个 weex 标签在 <span class="_mx__code_span">&lt;template&gt;</span> 下的唯一标识符。你可以使用 id 属性来引用对应的 weex 标签。</div><div class="_mx__paragraph"><a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/id.md" >参考关于 id 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('style')"><a name="style" class="anchor" href="#style"><span class="header-link"></span></a>style</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">style</span>=<span class="hljs-string">"width: 200; height: 200"</span>
-<span class="hljs-attr">style</span>=<span class="hljs-string">"padding: {{x}}; margin: 0"</span></a></code></pre><div class="_mx__paragraph">为 weex 标签增加内联样式。</div><div class="_mx__paragraph"><a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/style-n-class.md" >参考关于 style 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('class')"><a name="class" class="anchor" href="#class"><span class="header-link"></span></a>class</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">class</span>=<span class="hljs-string">"button"</span>
-<span class="hljs-keyword">class</span>=<span class="hljs-string">"button {{btnStatus}}"</span></a></code></pre><div class="_mx__paragraph">为 weex 标签增加类别。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('repeat')"><a name="repeat" class="anchor" href="#repeat"><span class="header-link"></span></a>repeat</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">repeat</span>=<span class="hljs-string">"{{items}}"</span></a></code></pre><div class="_mx__paragraph">以 <span class="_mx__code_span">{{items}}</span> 作为循环项，迭代地生成当前的 weex 标签。</div><div class="_mx__paragraph"><a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/display-logic.md" >参考关于 repeat 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('if')"><a name="if" class="anchor" href="#if"><span class="header-link"></span></a>if</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">if</span>=<span class="hljs-string">"{{opened}}"</span></a></code></pre><div class="_mx__paragraph"><span class="_mx__code_span">{{opened}}</span> 返回一个 boolean 值。若为 true，则显示当前标签；否则不显示。</div><div class="_mx__paragraph"><a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/display-logic.md" >参考关于 if 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('append')"><a name="append" class="anchor" href="#append"><span class="header-link"></span></a>append</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">append</span>=<span class="hljs-string">"tree/node"</span></a></code></pre><div class="_mx__paragraph"><span class="_mx__code_span">append</span> 属性的可选值为 <span class="_mx__code_span">tree</span> 或 <span class="_mx__code_span">node</span>。不同的值会走不同的渲染过程。</div><div class="_mx__paragraph"><a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/render-logic.md" >参考关于 append 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('on... 事件处理')"><a name="on... 事件处理" class="anchor" href="#on... 事件处理"><span class="header-link"></span></a>on... 事件处理</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">onclick</span>=<span class="hljs-string">"gotoDetail"</span>
-<span class="hljs-attr">onappear</span>=<span class="hljs-string">"loadMore"</span></a></code></pre><div class="_mx__paragraph">为当前 weex 标签注册事件处理函数。</div><div class="_mx__paragraph"><a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/events.md" >参考关于事件处理的更多内容</a>。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('注意')"><a name="注意" class="anchor" href="#注意"><span class="header-link"></span></a>注意</h3><div class="_mx__paragraph">weex 遵循 <a class="_mx__link" title="null" href="https://en.wikipedia.org/wiki/HTML_attribute" >HTML attribute</a> 命名规范，所以 <strong>不要在属性中使用驼峰风格（CamelCase）</strong>，使用 <span class="_mx__code_span">-</span> 连接符的 <strong>羊肉串风格（kebab-case）才是正确的打开方式</strong>。</div></div>
+<span class="hljs-attr">id</span>=<span class="hljs-string">"item-{{index}}"</span></a></code></pre><div class="_mx__paragraph"><span class="_mx__code_span">id</span> 是一个 weex 标签在 <span class="_mx__code_span">&lt;template&gt;</span> 下的唯一标识符。你可以使用 id 属性来引用对应的 weex 标签。</div><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/id.md" >参考关于 id 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('style')"><a name="style" class="anchor" href="#style"><span class="header-link"></span></a>style</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">style</span>=<span class="hljs-string">"width: 200; height: 200"</span>
+<span class="hljs-attr">style</span>=<span class="hljs-string">"padding: {{x}}; margin: 0"</span></a></code></pre><div class="_mx__paragraph">为 weex 标签增加内联样式。</div><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/style-n-class.md" >参考关于 style 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('class')"><a name="class" class="anchor" href="#class"><span class="header-link"></span></a>class</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">class</span>=<span class="hljs-string">"button"</span>
+<span class="hljs-keyword">class</span>=<span class="hljs-string">"button {{btnStatus}}"</span></a></code></pre><div class="_mx__paragraph">为 weex 标签增加类别。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('repeat')"><a name="repeat" class="anchor" href="#repeat"><span class="header-link"></span></a>repeat</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">repeat</span>=<span class="hljs-string">"{{items}}"</span></a></code></pre><div class="_mx__paragraph">以 <span class="_mx__code_span">{{items}}</span> 作为循环项，迭代地生成当前的 weex 标签。</div><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/display-logic.md" >参考关于 repeat 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('if')"><a name="if" class="anchor" href="#if"><span class="header-link"></span></a>if</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">if</span>=<span class="hljs-string">"{{opened}}"</span></a></code></pre><div class="_mx__paragraph"><span class="_mx__code_span">{{opened}}</span> 返回一个 boolean 值。若为 true，则显示当前标签；否则不显示。</div><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/display-logic.md" >参考关于 if 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('append')"><a name="append" class="anchor" href="#append"><span class="header-link"></span></a>append</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">append</span>=<span class="hljs-string">"tree/node"</span></a></code></pre><div class="_mx__paragraph"><span class="_mx__code_span">append</span> 属性的可选值为 <span class="_mx__code_span">tree</span> 或 <span class="_mx__code_span">node</span>。不同的值会走不同的渲染过程。</div><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/render-logic.md" >参考关于 append 的更多内容</a>。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('on... 事件处理')"><a name="on... 事件处理" class="anchor" href="#on... 事件处理"><span class="header-link"></span></a>on... 事件处理</h2><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-attr">onclick</span>=<span class="hljs-string">"gotoDetail"</span>
+<span class="hljs-attr">onappear</span>=<span class="hljs-string">"loadMore"</span></a></code></pre><div class="_mx__paragraph">为当前 weex 标签注册事件处理函数。</div><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="https://github.com/alibaba/weex/blob/doc/doc/syntax/events.md" >参考关于事件处理的更多内容</a>。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('注意')"><a name="注意" class="anchor" href="#注意"><span class="header-link"></span></a>注意</h3><div class="_mx__paragraph">weex 遵循 <a class="_mx__link" target="_blank"title="null" href="https://en.wikipedia.org/wiki/HTML_attribute" >HTML attribute</a> 命名规范，所以 <strong>不要在属性中使用驼峰风格（CamelCase）</strong>，使用 <span class="_mx__code_span">-</span> 连接符的 <strong>羊肉串风格（kebab-case）才是正确的打开方式</strong>。</div></div>
     <div class="doc_footer">
       <div>Released under <span>Apache License 2.0</span></div>
       <div class="doc_footer_img" style="height:30px;">
@@ -618,7 +620,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
         <div class="playground_header_rect fr"></div>
       </div>
       <div class="playground_main">
-        <img src="https://vczero.github.io/markdown-extension/mark/source/imgs/pr.jpg"/>
+        <img />
       </div>
       <div class="playground_footer">
         <div></div>
@@ -718,6 +720,18 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
     }
   });
 
+  /*
+  * mobile preview
+  *
+  * */
+  links.each(function(i){
+    var link = links[i];
+    if(link.innerText == 'mobile_preview'){
+      $('.playground').css('display', 'block');
+      $('.playground_main img')[0].src = link.href;
+      $(link).css('display', 'none');
+    }
+  });
 
 })(window);
 

@@ -83,6 +83,18 @@
     }
   });
 
+  /*
+  * mobile preview
+  *
+  * */
+  links.each(function(i){
+    var link = links[i];
+    if(link.innerText == 'mobile_preview'){
+      $('.playground').css('display', 'block');
+      $('.playground_main img')[0].src = link.href;
+      $(link).css('display', 'none');
+    }
+  });
 
 })(window);
 
