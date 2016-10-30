@@ -599,48 +599,68 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 }
 
 </style>
-<h1 class="_mx__heading _mx__heading_border"><a name="<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a>" class="anchor" href="#<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a>"><span class="header-link"></span></a><a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >http://alibaba.github.io/weex/doc/components/slider.html</a></h1><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('&lt; slider &gt; 组件')"><a name="&lt; slider &gt; 组件" class="anchor" href="#&lt; slider &gt; 组件"><span class="header-link"></span></a>&lt; slider &gt; 组件</h2><h2>概述</h2>
+<h1 class="_mx__heading _mx__heading_border"><a name="&lt;slider&gt; 组件" class="anchor" href="#&lt;slider&gt; 组件"><span class="header-link"></span></a>&lt;slider&gt; 组件</h1><div class="_mx__paragraph">轮播组件用于在一个网页中展示多个图片。初始设置是3秒内在2个图片做切换。下面代码可以运行在手机上，左右滑动滚动图片。</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slider</span> <span class="hljs-attr">auto-play</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">onchange</span>=<span class="hljs-string">"change"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:750;height:920;"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">repeat</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{imageList}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{src}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:750;height:920;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">indicator</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">indicator</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">slider</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<div class="_mx__paragraph">轮播组件用于在一个网页中展示多个图片。初始设置是3秒内在2个图片做切换。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('子组件')"><a name="子组件" class="anchor" href="#子组件"><span class="header-link"></span></a>子组件</h2><div class="_mx__paragraph">weex 所有的组件都支持轮播，特定的<code>indicator</code>组件只能是<code>slider</code>的子组件。</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h2><ul>
-<li><code>auto-play</code>:&lt;布尔值&gt; <code>true</code> | <code>false</code>.该值决定网页渲染完成之后是否自动播放。初始值的是关。</li>
-</ul>
-<div class="_mx__paragraph">其他属性请查阅<a href="http://alibaba.github.io/weex/doc/references/common-attrs.html" >基本属性</a></div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('样式')"><a name="样式" class="anchor" href="#样式"><span class="header-link"></span></a>样式</h2><div class="_mx__paragraph"><b>基础样式</b>：请查阅<a href="http://alibaba.github.io/weex/doc/references/common-style.html" >基本样式</a></div><ul>
-<li>支持flexbox相关样式</li>
-<li>支持盒模型相关样式</li>
-<li>支持<code>position</code>相关样式</li>
-<li>支持<code>opacity</code>,<code>background-color</code>等.</li>
-</ul>
-<h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('事件')"><a name="事件" class="anchor" href="#事件"><span class="header-link"></span></a>事件</h2><ul>
-<li><code>change</code>:当轮播索引改变时的钩子。事件对象包含<code>index</code>属性，他显示正在展示的图片的索引序号。</li>
-</ul>
-<div class="_mx__paragraph"><b>基本事件</b>：查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a></div><ul>
-<li>支持<code>click</code>事件:查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a></li>
-<li>支持<code>appear</code> / <code>disapper</code>事件:查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a></li>
-</ul>
-<h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('例子')"><a name="例子" class="anchor" href="#例子"><span class="header-link"></span></a>例子</h2><pre><code> 
-&lt;template&gt;
-  &lt;div&gt;
-    &lt;slider auto-play="true" onchange="change" style="..."&gt;
-      &lt;image repeat="{{imageList}}" src="{{src}}" style="..."&gt;&lt;/image&gt;
-      &lt;indicator&gt;&lt;/indicator&gt;
-    &lt;/slider&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-  module.exports = {
-    data: {
-      imageList: [{src: '...'}, {src: '...'}, ...]
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">data</span>: {
+      <span class="hljs-attr">imageList</span>: [
+        {<span class="hljs-attr">src</span>: <span class="hljs-string">'http://gtms03.alicdn.com/tps/i3/TB1pQENMXXXXXaLXVXXkIFHLVXX-624-1105.jpg'</span>}, 
+        {<span class="hljs-attr">src</span>: <span class="hljs-string">'http://gtms04.alicdn.com/tps/i4/TB19A30MpXXXXa.XVXXp.9cVpXX-278-424.gif'</span>},
+        {<span class="hljs-attr">src</span>: <span class="hljs-string">'http://gtms03.alicdn.com/tps/i3/TB1gCc.MpXXXXXAXFXXHO6y1XXX-319-615.png'</span>}
+      ]
     },
-    methods: {
-      change: function (e) {
-        // e.index
+    <span class="hljs-attr">methods</span>: {
+      <span class="hljs-attr">change</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+        <span class="hljs-comment">// e.index</span>
       }
     }
   }
-&lt;/script&gt;
-</code></pre>
-</div>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></a></code></pre><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="http://www.baidu.com?123=test" >体验一下</a></div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('子组件')"><a name="子组件" class="anchor" href="#子组件"><span class="header-link"></span></a>子组件</h3><div class="_mx__paragraph">weex 所有的组件都支持轮播，特定的indicator组件只能是slider的子组件。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h3><ul>
+<li>auto-play:&lt;布尔值&gt; true | false.该值决定网页渲染完成之后是否自动播放。初始值的是关。</li>
+</ul>
+<div class="_mx__paragraph">其他属性请查阅<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/common-attrs.html" >基本属性</a>。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('样式')"><a name="样式" class="anchor" href="#样式"><span class="header-link"></span></a>样式</h3><div class="_mx__paragraph">基础样式：请查阅<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/common-style.html" >基本样式</a>。</div><ul>
+<li><div class="_mx__paragraph">支持flexbox相关样式 </div></li>
+<li><div class="_mx__paragraph">支持盒模型相关样式</div></li>
+<li><div class="_mx__paragraph">支持position相关样式 </div></li>
+<li><div class="_mx__paragraph">支持opacity,background-color等.</div></li>
+</ul>
+<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('事件')"><a name="事件" class="anchor" href="#事件"><span class="header-link"></span></a>事件</h3><ul>
+<li><div class="_mx__paragraph">change: 当轮播索引改变时的钩子。事件对象包含index属性，他显示正在展示的图片的索引序号；</div></li>
+<li><div class="_mx__paragraph">支持click事件；</div></li>
+<li><div class="_mx__paragraph">支持appear / disapper事件。  </div></li>
+</ul>
+<div class="_mx__paragraph">基本事件：查阅<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/common-event.html" >基本事件</a>。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('例子')"><a name="例子" class="anchor" href="#例子"><span class="header-link"></span></a>例子</h3><pre class="_mx__code_pre" id="__aa"><code><a><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slider</span> <span class="hljs-attr">auto-play</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">onchange</span>=<span class="hljs-string">"change"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"..."</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">repeat</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{imageList}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{src}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">indicator</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">indicator</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">slider</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">data</span>: {
+      <span class="hljs-attr">imageList</span>: [{<span class="hljs-attr">src</span>: <span class="hljs-string">'...'</span>}, {<span class="hljs-attr">src</span>: <span class="hljs-string">'...'</span>}, ...]
+    },
+    <span class="hljs-attr">methods</span>: {
+      <span class="hljs-attr">change</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+        <span class="hljs-comment">// e.index</span>
+      }
+    }
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></a></code></pre><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('其它参考')"><a name="其它参考" class="anchor" href="#其它参考"><span class="header-link"></span></a>其它参考</h2><ul>
+<li><a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/slider.html" >英文文档</a></li>
+</ul>
+<div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="https://vczero.github.io/markdown-extension/mark/doc/source/imgs/slide.png" >mobile_preview</a></div></div>
     <div class="doc_footer">
       <div>Released under <span>Apache License 2.0</span></div>
       <div class="doc_footer_img" style="height:30px;">

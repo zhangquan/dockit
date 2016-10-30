@@ -1,50 +1,83 @@
-# http://alibaba.github.io/weex/doc/components/slider.html
-## < slider > 组件
 
-<h2>概述</h2>
+# &lt;slider&gt; 组件
 
-轮播组件用于在一个网页中展示多个图片。初始设置是3秒内在2个图片做切换。
+轮播组件用于在一个网页中展示多个图片。初始设置是3秒内在2个图片做切换。下面代码可以运行在手机上，左右滑动滚动图片。
+
+````html
+<template>
+  <div>
+    <slider auto-play="false" onchange="change" style="width:750;height:920;">
+      <image repeat="{{imageList}}" src="{{src}}" style="width:750;height:920;"></image>
+      <indicator></indicator>
+    </slider>
+  </div>
+</template>
+
+<script>
+  module.exports = {
+    data: {
+      imageList: [
+        {src: 'http://gtms03.alicdn.com/tps/i3/TB1pQENMXXXXXaLXVXXkIFHLVXX-624-1105.jpg'}, 
+        {src: 'http://gtms04.alicdn.com/tps/i4/TB19A30MpXXXXa.XVXXp.9cVpXX-278-424.gif'},
+        {src: 'http://gtms03.alicdn.com/tps/i3/TB1gCc.MpXXXXXAXFXXHO6y1XXX-319-615.png'}
+      ]
+    },
+    methods: {
+      change: function (e) {
+        // e.index
+      }
+    }
+  }
+</script>
+````  
+[体验一下](http://www.baidu.com?123=test)
 
 
-## 子组件
+### 子组件
 
-weex 所有的组件都支持轮播，特定的<code>indicator</code>组件只能是<code>slider</code>的子组件。
+weex 所有的组件都支持轮播，特定的indicator组件只能是slider的子组件。
 
-## 属性
-* <code>auto-play</code>:<布尔值> <code>true</code> | <code>false</code>.该值决定网页渲染完成之后是否自动播放。初始值的是关。
+### 属性
 
-其他属性请查阅<a href="http://alibaba.github.io/weex/doc/references/common-attrs.html" >基本属性</a>
+* auto-play:<布尔值> true | false.该值决定网页渲染完成之后是否自动播放。初始值的是关。
 
-## 样式
 
-<b>基础样式</b>：请查阅<a href="http://alibaba.github.io/weex/doc/references/common-style.html" >基本样式</a>
+其他属性请查阅[基本属性](http://alibaba.github.io/weex/doc/references/common-attrs.html)。
 
-* 支持flexbox相关样式
+### 样式
+
+基础样式：请查阅[基本样式](http://alibaba.github.io/weex/doc/references/common-style.html)。
+* 支持flexbox相关样式 
+
 * 支持盒模型相关样式
-* 支持<code>position</code>相关样式
-* 支持<code>opacity</code>,<code>background-color</code>等.
 
-## 事件
+* 支持position相关样式 
 
-* <code>change</code>:当轮播索引改变时的钩子。事件对象包含<code>index</code>属性，他显示正在展示的图片的索引序号。
+* 支持opacity,background-color等.
 
-<b>基本事件</b>：查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a>
+### 事件
 
-* 支持<code>click</code>事件:查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a>
-* 支持<code>appear</code> / <code>disapper</code>事件:查阅<a href="http://alibaba.github.io/weex/doc/references/common-event.html">基本事件</a>
+* change: 当轮播索引改变时的钩子。事件对象包含index属性，他显示正在展示的图片的索引序号；
 
-## 例子
-<pre><code> 
-&lt;template&gt;
-  &lt;div&gt;
-    &lt;slider auto-play="true" onchange="change" style="..."&gt;
-      &lt;image repeat="{{imageList}}" src="{{src}}" style="..."&gt;&lt;/image&gt;
-      &lt;indicator&gt;&lt;/indicator&gt;
-    &lt;/slider&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+* 支持click事件；
 
-&lt;script&gt;
+* 支持appear / disapper事件。  
+
+
+基本事件：查阅[基本事件](http://alibaba.github.io/weex/doc/references/common-event.html)。
+
+### 例子
+````html
+<template>
+  <div>
+    <slider auto-play="true" onchange="change" style="...">
+      <image repeat="{{imageList}}" src="{{src}}" style="..."></image>
+      <indicator></indicator>
+    </slider>
+  </div>
+</template>
+
+<script>
   module.exports = {
     data: {
       imageList: [{src: '...'}, {src: '...'}, ...]
@@ -55,5 +88,11 @@ weex 所有的组件都支持轮播，特定的<code>indicator</code>组件只�
       }
     }
   }
-&lt;/script&gt;
-</code></pre>
+</script>
+
+````
+
+## 其它参考
++ [英文文档](http://alibaba.github.io/weex/doc/components/slider.html)
+
+[mobile_preview](https://vczero.github.io/markdown-extension/mark/doc/source/imgs/slide.png)
