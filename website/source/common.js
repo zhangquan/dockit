@@ -59,6 +59,38 @@
     document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
   };
 
+  //生成二维码
+  //link.indexOf('123=test') > 0 作为测试使用
+  var links = $('._mx__link');
+  links.each(function(i){
+    var link = links[i];
+    if(link.innerText == '体验一下' && (link.href.indexOf('playground') > 0 || link.href.indexOf('123=test') > 0)){
+      var href = link.href;
+      var qrcode = $('.qrcode');
+      var qr_view = $('.qr_view');
+      $(link).on('mouseenter', function(){
+        qr_view.css('display', 'block');
+        qrcode.qrcode({
+          text: href,
+          width: 250,
+          height: 250
+        });
+
+        $('.qrcode').animate({
+          height:'+=15px',
+          width:'+=15px'
+        });
+      });
+      $(link).on('mouseleave', function(){
+        qr_view.css('display', 'none');
+        qrcode.empty();
+        qrcode.animate({
+          height:'-=15px',
+          width:'-=15px'
+        });
+      });
+    }
+  });
 
 
 })(window);

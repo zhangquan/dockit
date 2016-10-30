@@ -59,8 +59,8 @@ files.map(function(v){
     + '\n<div id="_mx__md_container">\n'
     + util.wrapCSS(util.commonStyle)
     + data 
-    + '</div>' 
-    + util.wrapScript(util.commonJS);
+    + '</div>';
+
     
     let html = fs.readFileSync('./source/doc.html').toString();
     let css = fs.readFileSync('./source/doc.css').toString();
@@ -69,6 +69,8 @@ files.map(function(v){
     html =  html.replace('<%include @doc.css %>', css);
     html = html.replace('<%include @tree_menu.css %>', tree_menu);
     data =  html.replace('<%include @doc_container %>', page);
+    //最后执行js脚本
+    data +=  util.wrapScript(util.commonJS);
     
   
     //执行压缩

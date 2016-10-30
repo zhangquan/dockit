@@ -38,7 +38,8 @@ storage 是 Weex 的一个模块，提供本地数据的存储、修改、删除
   };
   
 </script>
-```
+```   
+[体验一下](http://www.baidu.com?123=test)
 
 
 ## API  
@@ -141,7 +142,9 @@ storage.getAllKeys(function(e) {
 	// 'e'是一个包含'result'和'data'的对象.
 	// e.data返回键名组成的数组.
 });
-````
+````  
+
+[体验一下](https://m.taobao.com?123=test)
 
 ## 其它参考 
 

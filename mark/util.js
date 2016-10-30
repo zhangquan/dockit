@@ -19,7 +19,19 @@ let commonJS = fs.readFileSync(MAIN_DIR + 'common.js').toString();
  * 2. highlight
  * 3. 以及一些其它的效果库 或者 公共基础库
  */
-let script = '\n<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>\n';
+
+let script = (function(){
+  let js = [];
+  js.push('https://cdn.jsdelivr.net/highlight.js/9.6.0/highlight.min.js');
+  js.push('https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js');
+  for(var i in js){
+    js[i] = '\n<script src="' + js[i] + '"></script>\n';
+  }
+  //TODO: qrcode的地址应该换成cdn
+  let qrcode = fs.readFileSync('./source/jquery.qrcode.js').toString();
+  js.push('\n<script type="text/javascript">' + qrcode + '</script>\n');
+  return js.join('');
+})();
 
 
 /**
