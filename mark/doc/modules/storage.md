@@ -1,6 +1,8 @@
 # Storage
 
-Tip: weex版本 >= 0.7
+mx_time 
+	0.7及以上版本
+mx_time 
 
 storage 是 Weex 的一个模块，提供本地数据的存储、修改、删除等功能，没有时间限制。但是需要注意的是，在 H5/Web 端的实现是采用 HTML5 LocalStorage API。因此，就会存在数据大小的限制。一般而言，现代浏览器提供 5M 的存储空间。storage 可以存储一些关键数据，例如一些轻量的服务接口数据。
 ```javascript
@@ -48,9 +50,9 @@ storage 提供了一系列的 API 供我们调用。我们只需要引入该模�
 
 **参数**
 
-* key(string): 要存储的值的名称，不允许是""或null.
+* key(string): 要存储的键，不允许是""或null.
 
-* value(string): 要换存的值，不允许是""或null.
+* value(string): 要存储的值，不允许是""或null.
 
 * callback(object): 执行操作成功后的回调.
 
@@ -141,6 +143,11 @@ storage.getAllKeys(function(e) {
 });
 ````
 
-## 扩展和参考 
+## 其它参考 
 
 + [html5 localStorage: http://www.w3school.com.cn/html5/html_5_webstorage.asp](http://www.w3school.com.cn/html5/html_5_webstorage.asp)       
++ [add features to storage module(android)](https://github.com/alibaba/weex/pull/1296) 
++ [fix storage module in swift](https://github.com/alibaba/weex/pull/998)       
++ [storage 在 iPhone 上无效，在模拟器上有效，如何解决？](https://github.com/alibaba/weex/issues/1453) 
++ [storage 模块完整的 Demo](https://github.com/alibaba/weex/blob/dev/examples/module/storage-demo.we)
+      

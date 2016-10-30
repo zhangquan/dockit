@@ -68,7 +68,8 @@
 
 /*link*/
 ._mx__link{
-  color: #317FBD;
+  color: #2792F4;
+	text-decoration: none;
 }
 
 /*image*/
@@ -87,10 +88,10 @@
 ._mx__time{
 	position: relative;
 	top: -45px;
-	width: 165px;
 	float: right;
-	color: #A9A9A9;
 	font-size:13px;
+	padding-left:7px;
+	border-left: 10px solid #17A05E;
 }
 
 /*api*/
