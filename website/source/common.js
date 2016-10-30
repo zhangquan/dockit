@@ -59,7 +59,7 @@
     document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
   };
 
-  document.querySelectorAll('h3').insertBefore();
+
 
 })(window);
 
