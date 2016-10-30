@@ -2,7 +2,7 @@
 # &lt;image&gt; 组件   
 
 mx_time 
-	任何版本都支持
+	0.4及其以上版本支持
 mx_time 
 
 image标签用于渲染图片，并且它不能包含任何子组件。可以用img作简写。需要注意的事，需要明确指定width和height，否则图片不会显示出来。简写：&lt;img&gt;&lt;/img&gt;   

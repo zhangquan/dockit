@@ -1,6 +1,10 @@
 
 # &lt;slider&gt; 组件
 
+mx_time 
+	0.4及其以上版本支持
+mx_time 
+
 轮播组件用于在一个网页中展示多个图片。初始设置是3秒内在2个图片做切换。下面代码可以运行在手机上，左右滑动滚动图片。
 
 ````html
@@ -24,7 +28,8 @@
     },
     methods: {
       change: function (e) {
-        // e.index
+        //TODO: 
+        //e.index
       }
     }
   }
@@ -35,36 +40,35 @@
 
 ### 子组件
 
-weex 所有的组件都支持轮播，特定的indicator组件只能是slider的子组件。
+weex 所有的组件都支持轮播，特定的`indicator`组件只能是slider的子组件。
 
 ### 属性
 
-* auto-play:<布尔值> true | false.该值决定网页渲染完成之后是否自动播放。初始值的是关。
+auto-play: true 或者 false。该值决定网页渲染完成之后是否自动播放。默认的是false。
 
-
-其他属性请查阅[基本属性](http://alibaba.github.io/weex/doc/references/common-attrs.html)。
+其他属性，可以查阅 [基本属性](http://alibaba.github.io/weex/doc/references/common-attrs.html)。
 
 ### 样式
 
-基础样式：请查阅[基本样式](http://alibaba.github.io/weex/doc/references/common-style.html)。
+基础样式：请查阅 [基本样式](http://alibaba.github.io/weex/doc/references/common-style.html)。
 * 支持flexbox相关样式 
 
 * 支持盒模型相关样式
 
 * 支持position相关样式 
 
-* 支持opacity,background-color等.
+* 支持opacity，background-color等.
 
 ### 事件
 
-* change: 当轮播索引改变时的钩子。事件对象包含index属性，他显示正在展示的图片的索引序号；
+* change: 当轮播索引改变时，触发改事件。事件对象包含index属性，即展示的图片索引；
 
 * 支持click事件；
 
 * 支持appear / disapper事件。  
 
 
-基本事件：查阅[基本事件](http://alibaba.github.io/weex/doc/references/common-event.html)。
+基本事件：查阅 [基本事件](http://alibaba.github.io/weex/doc/references/common-event.html)。
 
 ### 例子
 ````html
@@ -95,4 +99,4 @@ weex 所有的组件都支持轮播，特定的indicator组件只能是slider的
 ## 其它参考
 + [英文文档](http://alibaba.github.io/weex/doc/components/slider.html)
 
-[mobile_preview](https://vczero.github.io/markdown-extension/mark/doc/source/imgs/slide.png)
+[mobile_preview](https://vczero.github.io/markdown-extension/mark/source/imgs/slide.png)
