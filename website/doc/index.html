@@ -571,8 +571,8 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 
 </style>
 <h1 class="_mx__heading _mx__heading_border"><a name="第3篇 初始化工程 " class="anchor" href="#第3篇 初始化工程 "><span class="header-link"></span></a>第3篇 初始化工程 <a class="_mx__link" title="null" href="http://hhh" >cn</a></h1><div class="_mx__time">update time: 2016/10/12
-</div><div class="_mx__paragraph">初始化工程是一个项目开发的第一步。迈出了这一步，你就成功了一半。我相信大部分同学构建了一个项目，是会拼着老命写完的（逃...）。      </div><div class="_mx__paragraph"> 这里，我尝试用简单的方式来说明一个工程的构建。然后，再将简单的方式工程化（复杂化），最后拼凑成目前weex开源的代码结构。   </div><h2 class="_mx__heading _mx__heading_border2"><a name="安装weex-toolkit" class="anchor" href="#安装weex-toolkit"><span class="header-link"></span></a>安装weex-toolkit</h2><div class="_mx__paragraph"><strong>style</strong> 0.8 [mx_api_stable]       </div><div class="_mx__paragraph">weex-toolkit是一个很好的工具供我们工程构建。首先，第一步是安装该工具：   </div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-meta"><span class="hljs-meta-keyword">$npm</span> install -g weex-toolkit       </span></a></code></pre><div class="_mx__paragraph">测试weex-toolkit是否安装成功，可以使用如下命令测试：       </div><pre class="_mx__code_pre" id="__aa"><code><a>$ weex --version       
-info <span class="hljs-number">0.4</span><span class="hljs-number">.4</span>      </a></code></pre><div class="_mx__paragraph">如果显示版本号即为成功。         </div><h2 class="_mx__heading _mx__heading_border2"><a name="创建项目" class="anchor" href="#创建项目"><span class="header-link"></span></a>创建项目</h2><div class="_mx__paragraph">这里，我们不再使用<span class="_mx__code_span">weex</span> 跑一个文件的形式。我们需要一个较为完整的方案，因此，这里采用weex init命令创建项目。         </div><div class="_mx__paragraph">首先，我们创建一个目录存放我们的项目，启动命令行：     </div><pre class="_mx__code_pre" id="__aa"><code><a>$ mkdir test      
+</div><div class="_mx__paragraph">初始化工程是一个项目开发的第一步。迈出了这一步，你就成功了一半。我相信大部分同学构建了一个项目，是会拼着老命写完的（逃...）。      </div><div class="_mx__paragraph"> 这里，我尝试用简单的方式来说明一个工程的构建。然后，再将简单的方式工程化（复杂化），最后拼凑成目前weex开源的代码结构。   </div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('安装weex-toolkit')"><a name="安装weex-toolkit" class="anchor" href="#安装weex-toolkit"><span class="header-link"></span></a>安装weex-toolkit</h2><div class="_mx__paragraph"><strong>style</strong> 0.8 [mx_api_stable]       </div><div class="_mx__paragraph">weex-toolkit是一个很好的工具供我们工程构建。首先，第一步是安装该工具：   </div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-meta"><span class="hljs-meta-keyword">$npm</span> install -g weex-toolkit       </span></a></code></pre><div class="_mx__paragraph">测试weex-toolkit是否安装成功，可以使用如下命令测试：       </div><pre class="_mx__code_pre" id="__aa"><code><a>$ weex --version       
+info <span class="hljs-number">0.4</span><span class="hljs-number">.4</span>      </a></code></pre><div class="_mx__paragraph">如果显示版本号即为成功。         </div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('创建项目')"><a name="创建项目" class="anchor" href="#创建项目"><span class="header-link"></span></a>创建项目</h2><div class="_mx__paragraph">这里，我们不再使用<span class="_mx__code_span">weex</span> 跑一个文件的形式。我们需要一个较为完整的方案，因此，这里采用weex init命令创建项目。         </div><div class="_mx__paragraph">首先，我们创建一个目录存放我们的项目，启动命令行：     </div><pre class="_mx__code_pre" id="__aa"><code><a>$ mkdir test      
 $ cd test    
 $ weex init 
     <span class="hljs-comment">//下面一路空格即可</span>
@@ -582,7 +582,7 @@ $ weex init
     file: index<span class="hljs-selector-class">.html</span> created.
     file: package<span class="hljs-selector-class">.json</span> created.
     file: src/main<span class="hljs-selector-class">.we</span> created.
-    file: webpack<span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.js</span> created.     </a></code></pre><h2 class="_mx__heading _mx__heading_border2"><a name="跑起项目" class="anchor" href="#跑起项目"><span class="header-link"></span></a>跑起项目</h2><div class="_mx__paragraph">首先，我们需要安装依赖。以后大家看到package.json文件，就可以直接npm i 安装模块了。<strong>但是</strong>, 有些项目需要确保下载的依赖和目前的版本一致，这就是工程一致性的后话了。           </div><pre class="_mx__code_pre" id="__aa"><code><a>$ npm <span class="hljs-keyword">install</span> </a></code></pre><div class="_mx__paragraph">依赖安装完成，启动项目编译。</div><pre class="_mx__code_pre" id="__aa"><code><a>$ npm <span class="hljs-keyword">run</span><span class="bash"> dev       </span></a></code></pre><div class="_mx__paragraph"> 启动轻量服务器。    </div><pre class="_mx__code_pre" id="__aa"><code><a> $ npm <span class="hljs-keyword">run</span><span class="bash"> serve            </span></a></code></pre><div class="_mx__paragraph"> 这时，打开浏览器，输入<a class="_mx__link" title="null" href="http://127.0.0.1:8080" >http://127.0.0.1:8080</a>, 就会看到如下界面效果:       </div><div class="_mx__paragraph"> <div class="_mx__image_container"><img src="http://alinode-assets.oss-cn-hangzhou.aliyuncs.com/6a95c4dc-b01d-4585-b574-7e706e2cc03e.png" alt="阿里云" class="_mx__image" style="width:600px;height:320px;"/></div>          </div><h2 class="_mx__heading _mx__heading_border2"><a name="npm run dev干了什么事儿" class="anchor" href="#npm run dev干了什么事儿"><span class="header-link"></span></a>npm run dev干了什么事儿</h2><div class="_mx__paragraph">当然这一些都是node/npm的常识了。首先，我们打开package.json文件。可以看到如下代码：     </div><div class="_mx__paragraph"> 我们可以看到scripts里面包含了build、dev、serve、test四个属性。例如dev属性,npm run dev实际上相当于 webpack --watch。即等同开发者做了这件事:   </div><pre class="_mx__code_pre" id="__aa"><code><a> $ webpack <span class="hljs-comment">--watch        </span></a></code></pre><div class="_mx__paragraph"> ok，看到这里明白了。npm run dev调用了webpack。那么，webpack实际上是执行了配置文件。webpack默认是webpack.config.js作为配置文件的。所以看一下webpack.config.js中的内容。       </div><div class="_mx__paragraph">  这个文件比较好理解。一个是引入了webpack的配置，一个是使用了weex-loader模块。<br>  entry属性是表示入口文件，output表示输出文件，默认输出到dist问价夹。所有打开dist就可以看到一个打包完成的main.js文件。      </div><h2 class="_mx__heading _mx__heading_border2"><a name="npm run serve" class="anchor" href="#npm run serve"><span class="header-link"></span></a>npm run serve</h2><div class="_mx__paragraph">这个同上，不做展开，主要是做一个服务器，提供浏览器访问静态资源。     </div><h2 class="_mx__heading _mx__heading_border2"><a name="入口文件index.html" class="anchor" href="#入口文件index.html"><span class="header-link"></span></a>入口文件index.html</h2><div class="_mx__paragraph">是时候，去了解我们index.html文件干了一件啥事。其实，index.html就是页面的入口文件。具体大码如下：            </div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+    file: webpack<span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.js</span> created.     </a></code></pre><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('跑起项目')"><a name="跑起项目" class="anchor" href="#跑起项目"><span class="header-link"></span></a>跑起项目</h2><div class="_mx__paragraph">首先，我们需要安装依赖。以后大家看到package.json文件，就可以直接npm i 安装模块了。<strong>但是</strong>, 有些项目需要确保下载的依赖和目前的版本一致，这就是工程一致性的后话了。           </div><pre class="_mx__code_pre" id="__aa"><code><a>$ npm <span class="hljs-keyword">install</span> </a></code></pre><div class="_mx__paragraph">依赖安装完成，启动项目编译。</div><pre class="_mx__code_pre" id="__aa"><code><a>$ npm <span class="hljs-keyword">run</span><span class="bash"> dev       </span></a></code></pre><div class="_mx__paragraph"> 启动轻量服务器。    </div><pre class="_mx__code_pre" id="__aa"><code><a> $ npm <span class="hljs-keyword">run</span><span class="bash"> serve            </span></a></code></pre><div class="_mx__paragraph"> 这时，打开浏览器，输入<a class="_mx__link" title="null" href="http://127.0.0.1:8080" >http://127.0.0.1:8080</a>, 就会看到如下界面效果:       </div><div class="_mx__paragraph"> <div class="_mx__image_container"><img src="http://alinode-assets.oss-cn-hangzhou.aliyuncs.com/6a95c4dc-b01d-4585-b574-7e706e2cc03e.png" alt="阿里云" class="_mx__image" style="width:600px;height:320px;"/></div>          </div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('npm run dev干了什么事儿')"><a name="npm run dev干了什么事儿" class="anchor" href="#npm run dev干了什么事儿"><span class="header-link"></span></a>npm run dev干了什么事儿</h2><div class="_mx__paragraph">当然这一些都是node/npm的常识了。首先，我们打开package.json文件。可以看到如下代码：     </div><div class="_mx__paragraph"> 我们可以看到scripts里面包含了build、dev、serve、test四个属性。例如dev属性,npm run dev实际上相当于 webpack --watch。即等同开发者做了这件事:   </div><pre class="_mx__code_pre" id="__aa"><code><a> $ webpack <span class="hljs-comment">--watch        </span></a></code></pre><div class="_mx__paragraph"> ok，看到这里明白了。npm run dev调用了webpack。那么，webpack实际上是执行了配置文件。webpack默认是webpack.config.js作为配置文件的。所以看一下webpack.config.js中的内容。       </div><div class="_mx__paragraph">  这个文件比较好理解。一个是引入了webpack的配置，一个是使用了weex-loader模块。<br>  entry属性是表示入口文件，output表示输出文件，默认输出到dist问价夹。所有打开dist就可以看到一个打包完成的main.js文件。      </div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('npm run serve')"><a name="npm run serve" class="anchor" href="#npm run serve"><span class="header-link"></span></a>npm run serve</h2><div class="_mx__paragraph">这个同上，不做展开，主要是做一个服务器，提供浏览器访问静态资源。     </div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('入口文件index.html')"><a name="入口文件index.html" class="anchor" href="#入口文件index.html"><span class="header-link"></span></a>入口文件index.html</h2><div class="_mx__paragraph">是时候，去了解我们index.html文件干了一件啥事。其实，index.html就是页面的入口文件。具体大码如下：            </div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
@@ -634,7 +634,7 @@ $ weex init
   })();
   </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></a></code></pre><div class="_mx__paragraph">作为入口和载体，htmk做了两件事：<br>1) 拿到页面的URL，根据page参数获得需要加载的js文件路径<br>2）初始化weex实例，加载文件。<br>此处文章可参考：<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/advanced/integrate-to-html5.html" >http://alibaba.github.io/weex/doc/advanced/integrate-to-html5.html</a>     </div><h2 class="_mx__heading _mx__heading_border2"><a name="是否可以更好的理解weex github源码结构" class="anchor" href="#是否可以更好的理解weex github源码结构"><span class="header-link"></span></a>是否可以更好的理解weex github源码结构</h2><div class="_mx__paragraph">到这里，整个weex项目的来龙去脉，应该是比较清楚了。那么，回过头来看，weex开源代码如何构建，应该是件水到渠成的事了。比如看这段打包的配置代码：<a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/dev/build/webpack.examples.config.js" >https://github.com/alibaba/weex/blob/dev/build/webpack.examples.config.js</a>          </div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></a></code></pre><div class="_mx__paragraph">作为入口和载体，htmk做了两件事：<br>1) 拿到页面的URL，根据page参数获得需要加载的js文件路径<br>2）初始化weex实例，加载文件。<br>此处文章可参考：<a class="_mx__link" title="null" href="http://alibaba.github.io/weex/doc/advanced/integrate-to-html5.html" >http://alibaba.github.io/weex/doc/advanced/integrate-to-html5.html</a>     </div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('是否可以更好的理解weex github源码结构')"><a name="是否可以更好的理解weex github源码结构" class="anchor" href="#是否可以更好的理解weex github源码结构"><span class="header-link"></span></a>是否可以更好的理解weex github源码结构</h2><div class="_mx__paragraph">到这里，整个weex项目的来龙去脉，应该是比较清楚了。那么，回过头来看，weex开源代码如何构建，应该是件水到渠成的事了。比如看这段打包的配置代码：<a class="_mx__link" title="null" href="https://github.com/alibaba/weex/blob/dev/build/webpack.examples.config.js" >https://github.com/alibaba/weex/blob/dev/build/webpack.examples.config.js</a>          </div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
 <span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
 
 <span class="hljs-keyword">var</span> entry = {};
@@ -724,8 +724,12 @@ walk();
 </html>
 <script type="text/javascript">
 (function(win, undefined){
-
-  //回到顶部
+  /*
+  * 回到顶部
+  * 1.当文档高度大于屏幕高度时才会显示滚动到顶部的按钮
+  * 2.当用户滚动一定距离时，才出现滚动按钮
+  * 3.滚动需要有一定的动画
+  * */
   var goto_top = $('#_mx__gotop');
   var doc_container = $('.doc_container');
   var screenHeight =  document.body.scrollHeight;
@@ -745,7 +749,10 @@ walk();
   });
 
 
-  //增加锚点
+  /*
+   * 增加锚点
+   * 1.截取的是标题的一部分
+   * */
   win.addAnchor = function(a){
     var url = window.location.href;
     if(window.location.href.indexOf('#') > -1){
@@ -754,18 +761,21 @@ walk();
     window.location.href = url + '#' + a;
   };
 
+
   var searchBtn = document.getElementById('menu_search');
   searchBtn.onclick = function(){
     searchBtn.style.height = '100px';
     searchBtn.style.width = '100px';
     searchBtn.style.textAlign = 'center';
     searchBtn.style.backgroundColor = '#2792F4';
-
     document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
   };
 
-  //生成二维码
-  //link.indexOf('123=test') > 0 作为测试使用
+  /*
+  * 生成二维码
+  * 1.正式环境需要替换成playground的地址
+  * 2.测试环境可以在url上加上参数123=test
+  * */
   var links = $('._mx__link');
   links.each(function(i){
     var link = links[i];

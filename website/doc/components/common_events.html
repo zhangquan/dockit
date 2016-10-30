@@ -570,18 +570,18 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 }
 
 </style>
-<h1 class="_mx__heading _mx__heading_border"><a name="通用事件" class="anchor" href="#通用事件"><span class="header-link"></span></a>通用事件</h1><h2 class="_mx__heading _mx__heading_border2"><a name="Click 事件" class="anchor" href="#Click 事件"><span class="header-link"></span></a>Click 事件</h2><div class="_mx__paragraph">如果某个组件绑定了 <span class="_mx__code_span">click</span> 事件，那么该事件会在用户点击时触发。</div><div class="_mx__paragraph"><strong>注解：</strong>  <span class="_mx__code_span">input</span>组件  和 <span class="_mx__code_span">switch</span>组件目前并不支持 click 事件，请使用 <span class="_mx__code_span">change</span> 或 <span class="_mx__code_span">input</span> 事件代替。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
+<h1 class="_mx__heading _mx__heading_border"><a name="通用事件" class="anchor" href="#通用事件"><span class="header-link"></span></a>通用事件</h1><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('Click 事件')"><a name="Click 事件" class="anchor" href="#Click 事件"><span class="header-link"></span></a>Click 事件</h2><div class="_mx__paragraph">如果某个组件绑定了 <span class="_mx__code_span">click</span> 事件，那么该事件会在用户点击时触发。</div><div class="_mx__paragraph"><strong>注解：</strong>  <span class="_mx__code_span">input</span>组件  和 <span class="_mx__code_span">switch</span>组件目前并不支持 click 事件，请使用 <span class="_mx__code_span">change</span> 或 <span class="_mx__code_span">input</span> 事件代替。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
 <li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">click</span>；</li>
 <li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
 <li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳。</li>
 </ul>
-<h2 class="_mx__heading _mx__heading_border2"><a name="Appear 事件" class="anchor" href="#Appear 事件"><span class="header-link"></span></a>Appear 事件</h2><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">appear</span> 事件被绑定到某个滚动区内的组件上，当组件可见时该事件触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
+<h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('Appear 事件')"><a name="Appear 事件" class="anchor" href="#Appear 事件"><span class="header-link"></span></a>Appear 事件</h2><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">appear</span> 事件被绑定到某个滚动区内的组件上，当组件可见时该事件触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
 <li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">appear</span>；</li>
 <li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
 <li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳；</li>
 <li><span class="_mx__code_span">direction</span>: 屏幕滚动时的滚动方向，<span class="_mx__code_span">up</span> 或 <span class="_mx__code_span">down</span>。</li>
 </ul>
-<h2 class="_mx__heading _mx__heading_border2"><a name="Disappear 事件" class="anchor" href="#Disappear 事件"><span class="header-link"></span></a>Disappear 事件</h2><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">disappear</span> 事件被绑定到某个滚动区内的组件上，该事件将在组件滚动出视口，并从你的视线中消失时触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
+<h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('Disappear 事件')"><a name="Disappear 事件" class="anchor" href="#Disappear 事件"><span class="header-link"></span></a>Disappear 事件</h2><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">disappear</span> 事件被绑定到某个滚动区内的组件上，该事件将在组件滚动出视口，并从你的视线中消失时触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
 <li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">disappear</span>；</li>
 <li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
 <li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳；</li>
@@ -626,8 +626,12 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 </html>
 <script type="text/javascript">
 (function(win, undefined){
-
-  //回到顶部
+  /*
+  * 回到顶部
+  * 1.当文档高度大于屏幕高度时才会显示滚动到顶部的按钮
+  * 2.当用户滚动一定距离时，才出现滚动按钮
+  * 3.滚动需要有一定的动画
+  * */
   var goto_top = $('#_mx__gotop');
   var doc_container = $('.doc_container');
   var screenHeight =  document.body.scrollHeight;
@@ -647,7 +651,10 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
   });
 
 
-  //增加锚点
+  /*
+   * 增加锚点
+   * 1.截取的是标题的一部分
+   * */
   win.addAnchor = function(a){
     var url = window.location.href;
     if(window.location.href.indexOf('#') > -1){
@@ -656,18 +663,21 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
     window.location.href = url + '#' + a;
   };
 
+
   var searchBtn = document.getElementById('menu_search');
   searchBtn.onclick = function(){
     searchBtn.style.height = '100px';
     searchBtn.style.width = '100px';
     searchBtn.style.textAlign = 'center';
     searchBtn.style.backgroundColor = '#2792F4';
-
     document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
   };
 
-  //生成二维码
-  //link.indexOf('123=test') > 0 作为测试使用
+  /*
+  * 生成二维码
+  * 1.正式环境需要替换成playground的地址
+  * 2.测试环境可以在url上加上参数123=test
+  * */
   var links = $('._mx__link');
   links.each(function(i){
     var link = links[i];

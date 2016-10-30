@@ -36,7 +36,7 @@ renderer.heading = function (text, level) {
     tpl += ' class="_mx__heading _mx__heading_border"><a name="';
     console.log(text);
   }else if(level == 2){
-    tpl += ' class="_mx__heading _mx__heading_border2"><a name="';
+    tpl += ' class="_mx__heading _mx__heading_border2" onclick="addAnchor(\''+ text +'\')"><a name="';
     console.log(text);
   }else if(level == 3){
     tpl += ' class="_mx__heading _mx__heading_color" onclick="addAnchor(\''+ text +'\')"><a name="';

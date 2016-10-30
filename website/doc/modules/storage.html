@@ -602,7 +602,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
     }
   };
 
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></a></code></pre><div class="_mx__paragraph"><a class="_mx__link" title="null" href="http://www.baidu.com?123=test" >体验一下</a></div><h2 class="_mx__heading _mx__heading_border2"><a name="API" class="anchor" href="#API"><span class="header-link"></span></a>API</h2><div class="_mx__paragraph">storage 提供了一系列的 API 供我们调用。我们只需要引入该模块，然后调用对应的 API 即可。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('setItem(key, value, callback)')"><a name="setItem(key, value, callback)" class="anchor" href="#setItem(key, value, callback)"><span class="header-link"></span></a>setItem(key, value, callback)</h3><div class="_mx__paragraph">该方法可以通过键值对的形式将数据存储到本地。同时可以通过该方法，更新已有的数据。</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></a></code></pre><div class="_mx__paragraph"><a class="_mx__link" title="null" href="http://www.baidu.com?123=test" >体验一下</a></div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('API')"><a name="API" class="anchor" href="#API"><span class="header-link"></span></a>API</h2><div class="_mx__paragraph">storage 提供了一系列的 API 供我们调用。我们只需要引入该模块，然后调用对应的 API 即可。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('setItem(key, value, callback)')"><a name="setItem(key, value, callback)" class="anchor" href="#setItem(key, value, callback)"><span class="header-link"></span></a>setItem(key, value, callback)</h3><div class="_mx__paragraph">该方法可以通过键值对的形式将数据存储到本地。同时可以通过该方法，更新已有的数据。</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
 <li><div class="_mx__paragraph">key(string): 要存储的键，不允许是&quot;&quot;或null.</div></li>
 <li><div class="_mx__paragraph">value(string): 要存储的值，不允许是&quot;&quot;或null.</div></li>
 <li><div class="_mx__paragraph">callback(object): 执行操作成功后的回调.</div></li>
@@ -642,7 +642,7 @@ storage.length(<span class="hljs-function"><span class="hljs-keyword">function</
 storage.getAllKeys(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
     <span class="hljs-comment">// 'e'是一个包含'result'和'data'的对象.</span>
     <span class="hljs-comment">// e.data返回键名组成的数组.</span>
-});</a></code></pre><div class="_mx__paragraph"><a class="_mx__link" title="null" href="https://m.taobao.com?123=test" >体验一下</a></div><h2 class="_mx__heading _mx__heading_border2"><a name="其它参考" class="anchor" href="#其它参考"><span class="header-link"></span></a>其它参考</h2><ul>
+});</a></code></pre><div class="_mx__paragraph"><a class="_mx__link" title="null" href="https://m.taobao.com?123=test" >体验一下</a></div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('其它参考')"><a name="其它参考" class="anchor" href="#其它参考"><span class="header-link"></span></a>其它参考</h2><ul>
 <li><a class="_mx__link" title="null" href="http://www.w3school.com.cn/html5/html_5_webstorage.asp" >html5 localStorage: http://www.w3school.com.cn/html5/html_5_webstorage.asp</a>       </li>
 <li><a class="_mx__link" title="null" href="https://github.com/alibaba/weex/pull/1296" >add features to storage module(android)</a> </li>
 <li><a class="_mx__link" title="null" href="https://github.com/alibaba/weex/pull/998" >fix storage module in swift</a>       </li>
@@ -688,8 +688,12 @@ storage.getAllKeys(<span class="hljs-function"><span class="hljs-keyword">functi
 </html>
 <script type="text/javascript">
 (function(win, undefined){
-
-  //回到顶部
+  /*
+  * 回到顶部
+  * 1.当文档高度大于屏幕高度时才会显示滚动到顶部的按钮
+  * 2.当用户滚动一定距离时，才出现滚动按钮
+  * 3.滚动需要有一定的动画
+  * */
   var goto_top = $('#_mx__gotop');
   var doc_container = $('.doc_container');
   var screenHeight =  document.body.scrollHeight;
@@ -709,7 +713,10 @@ storage.getAllKeys(<span class="hljs-function"><span class="hljs-keyword">functi
   });
 
 
-  //增加锚点
+  /*
+   * 增加锚点
+   * 1.截取的是标题的一部分
+   * */
   win.addAnchor = function(a){
     var url = window.location.href;
     if(window.location.href.indexOf('#') > -1){
@@ -718,18 +725,21 @@ storage.getAllKeys(<span class="hljs-function"><span class="hljs-keyword">functi
     window.location.href = url + '#' + a;
   };
 
+
   var searchBtn = document.getElementById('menu_search');
   searchBtn.onclick = function(){
     searchBtn.style.height = '100px';
     searchBtn.style.width = '100px';
     searchBtn.style.textAlign = 'center';
     searchBtn.style.backgroundColor = '#2792F4';
-
     document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
   };
 
-  //生成二维码
-  //link.indexOf('123=test') > 0 作为测试使用
+  /*
+  * 生成二维码
+  * 1.正式环境需要替换成playground的地址
+  * 2.测试环境可以在url上加上参数123=test
+  * */
   var links = $('._mx__link');
   links.each(function(i){
     var link = links[i];

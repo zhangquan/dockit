@@ -1,6 +1,10 @@
 (function(win, undefined){
-
-  //回到顶部
+  /*
+  * 回到顶部
+  * 1.当文档高度大于屏幕高度时才会显示滚动到顶部的按钮
+  * 2.当用户滚动一定距离时，才出现滚动按钮
+  * 3.滚动需要有一定的动画
+  * */
   var goto_top = $('#_mx__gotop');
   var doc_container = $('.doc_container');
   var screenHeight =  document.body.scrollHeight;
@@ -20,7 +24,11 @@
   });
 
 
-  //增加锚点
+  /*
+   * 增加锚点
+   * 1.截取的是标题的一部分
+   * 2.锚点是针对2级一下标题才起作用，1级标题不使用锚点
+   * */
   win.addAnchor = function(a){
     var url = window.location.href;
     if(window.location.href.indexOf('#') > -1){
@@ -29,18 +37,21 @@
     window.location.href = url + '#' + a;
   };
 
+
   var searchBtn = document.getElementById('menu_search');
   searchBtn.onclick = function(){
     searchBtn.style.height = '100px';
     searchBtn.style.width = '100px';
     searchBtn.style.textAlign = 'center';
     searchBtn.style.backgroundColor = '#2792F4';
-
     document.getElementById('menu_search_img').src = './../../source/imgs/search_blue_t.png';
   };
 
-  //生成二维码
-  //link.indexOf('123=test') > 0 作为测试使用
+  /*
+  * 生成二维码
+  * 1.正式环境需要替换成playground的地址
+  * 2.测试环境可以在url上加上参数123=test
+  * */
   var links = $('._mx__link');
   links.each(function(i){
     var link = links[i];
