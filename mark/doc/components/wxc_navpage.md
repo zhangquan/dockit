@@ -6,13 +6,19 @@ mx_time
 
 wxc-navpage组件是一个包含navbar的容器组件，可以根据业务场景定制navbar组件。同时，可以使用`navigator` 模块控制页面的跳转，具体参考 [navigator 模块](../modules/navigator.md)。一般情况，都是配合navbar组件使用。如果不了解navigator相关知识，建议先了解下iOS或者Android的相关组件。在H5上，其实是相当于导航栏。
 
+我们在使用wxc-navpage组件时，首先需要加载weex-components模块。因为wxc-navpage是独立模块发布的。
+
+````javascript
+require('weex-components');
+````
 
 ### 子组件
 wxc-navpage组件可以包含任意的weex组件。
 
 ### 属性
+wxc-navpage组件的属性其实是对navbar进行功能设置，如下图所示，是navbar的一个简单示意。
 
-![nav@300*50](https://vczero.github.io/markdown-extension/mark/source/imgs/nav.png)
+![nav@500*245](https://vczero.github.io/markdown-extension/mark/source/imgs/nav.png)
 
 - height: navbar的高度，默认是88。
 
@@ -86,6 +92,9 @@ wxc-navpage组件同时支持 [基础事件]()。
   }
 </script>
 ```
+
+## 其它参考
++ [wxc-tabbar]()   
 
 
 [mobile_preview](https://vczero.github.io/markdown-extension/mark/source/imgs/navigator.png)

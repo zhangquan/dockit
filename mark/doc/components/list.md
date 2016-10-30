@@ -1,6 +1,7 @@
 # &lt;list&gt;
-<span class="weex-version">0.4</span>
-
+mx_time 
+	0.4及其以上版本支持
+mx_time 
 
 ### 概括
 

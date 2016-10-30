@@ -906,7 +906,15 @@ Renderer.prototype.image = function(href, title, text) {
   if(text.indexOf('@') > -1) {
     var size = text.split('@')[1].split('*');
     alt = text.split('@')[0];
-    style = 'style="width:' + size[0] + 'px;height:' + size[1] +'px;"';
+    var width = size[0] || '';
+    var height =  size[1] || '';
+    if(width){
+      width = 'width:' + width + 'px;';    
+    }
+    if(height){
+      height = 'height:' + height + 'px;';
+    }
+    style = 'style="' + width + height + '"';  
   }
   var out = '<div class="_mx__image_container">'
   out += '<img src="' + href + '" alt="' + alt + '" class="_mx__image" ' + style;

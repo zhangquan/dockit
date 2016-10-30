@@ -599,26 +599,30 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 }
 
 </style>
-<div class="_mx__paragraph">原文<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/text-style.html" >连接</a></div><div class="_mx__paragraph">文档类组件共享一些共同特性, 这类组件目前包括<a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/text.html" ><span class="_mx__code_span">text</span></a> and <a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/components/input.html" ><span class="_mx__code_span">input</span></a>.</div><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h2><ul>
-<li><span class="_mx__code_span">color</span>: &lt;colors&gt; 前景颜色.</li>
-<li><span class="_mx__code_span">font-size</span>: &lt;length&gt; 文字大小.</li>
-<li><span class="_mx__code_span">font-style</span>: &lt;enum&gt; <span class="_mx__code_span">normal</span> | <span class="_mx__code_span">italic</span>. 字体类别，默认为 <span class="_mx__code_span">normal</span>.</li>
-<li><span class="_mx__code_span">font-weight</span>: &lt;enum&gt; <span class="_mx__code_span">normal</span> | <span class="_mx__code_span">bold</span>. 字体粗细程度，默认为 <span class="_mx__code_span">normal</span>.</li>
-<li><span class="_mx__code_span">text-decoration</span>: &lt;enum&gt; <span class="_mx__code_span">none</span> | <span class="_mx__code_span">underline</span> | <span class="_mx__code_span">line-through</span>. 字体装饰，默认值为 <span class="_mx__code_span">none</span>.</li>
-<li><span class="_mx__code_span">text-align</span>: &lt;enum&gt; <span class="_mx__code_span">left</span> | <span class="_mx__code_span">center</span> | <span class="_mx__code_span">right</span>. 对齐方式，默认值为 <span class="_mx__code_span">left</span>.</li>
-<li><span class="_mx__code_span">font-family</span>:&lt;string&gt; 字体家族， 这个设置 <strong>不保证</strong> 在不同平台，设备间的一致性. 如所选设置在平台上不可用，将会降级到平台默认字体家族.</li>
-<li><span class="_mx__code_span">text-overflow</span>:&lt;string&gt; <span class="_mx__code_span">clip</span> | <span class="_mx__code_span">ellipsis</span>. 内容超长时的省略样式 </li>
+<h1 class="_mx__heading _mx__heading_border"><a name="text 样式" class="anchor" href="#text 样式"><span class="header-link"></span></a>text 样式</h1><div class="_mx__paragraph">文档类组件共享一些共同特性, 这类组件目前包括<a class="_mx__link" target="_blank"title="null" href="http://alibaba。github。io/weex/doc/components/text。html" >text</a> and <a class="_mx__link" target="_blank"title="null" href="http://alibaba。github。io/weex/doc/components/input。html" >input</a>。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h3><ul>
+<li><div class="_mx__paragraph">color: &lt;colors&gt; 前景颜色。</div></li>
+<li><div class="_mx__paragraph">font-size: &lt;length&gt; 文字大小。</div></li>
+<li><div class="_mx__paragraph">font-style: &lt;enum&gt; normal | italic。 字体类别，默认为 normal。</div></li>
+<li><div class="_mx__paragraph">font-weight: &lt;enum&gt; normal | bold。 字体粗细程度，默认为 normal。</div></li>
+<li><div class="_mx__paragraph">text-decoration: &lt;enum&gt; none | underline | line-through。 字体装饰，默认值为 none。</div></li>
+<li><div class="_mx__paragraph">text-align: &lt;enum&gt; left | center | right。 对齐方式，默认值为 left。</div></li>
+<li><div class="_mx__paragraph">font-family:&lt;string&gt; 字体家族， 这个设置 <strong>不保证</strong> 在不同平台，设备间的一致性。 如所选设置在平台上不可用，将会降级到平台默认字体家族。</div></li>
+<li><div class="_mx__paragraph">text-overflow:&lt;string&gt; clip | ellipsis。 内容超长时的省略样式 </div></li>
 </ul>
-<div class="_mx__paragraph"><span class="_mx__code_span">color</span>属性支持多种颜色表达方法: rgb, rgba, #fff, #ffffff, 或颜色名.</div><div class="_mx__paragraph">例子:</div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: red; }
+<div class="_mx__paragraph">color属性支持多种颜色表达方法: rgb, rgba, #fff, #ffffff, 或颜色名。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('例子:')"><a name="例子:" class="anchor" href="#例子:"><span class="header-link"></span></a>例子:</h3><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: red; }
 <span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-number">#f00</span>; }
 <span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>; }
 <span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(255, 0, 0); }
-<span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(255, 0, 0, 0.5); }</a></code></pre><h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('值类型')"><a name="值类型" class="anchor" href="#值类型"><span class="header-link"></span></a>值类型</h2><ul>
-<li>长度:  单位为<span class="_mx__code_span">px</span>, <span class="_mx__code_span">px</span> 能被省略.</li>
-<li>颜色:  支持多种格式，例如 rgb (<span class="_mx__code_span">rgb(255, 0, 0)</span>), rgba (<span class="_mx__code_span">rgba(255, 0, 0, 0.5)</span>), 十六进制 (<span class="_mx__code_span">#ff0000</span>), 短十六进制 (<span class="_mx__code_span">#f00</span>), 颜色名字 (<span class="_mx__code_span">red</span>).</li>
-<li>枚举类型: 有限几个名字中的一个.</li>
+<span class="hljs-selector-class">.my-class</span> { <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(255, 0, 0, 0。5); }</a></code></pre><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('值类型')"><a name="值类型" class="anchor" href="#值类型"><span class="header-link"></span></a>值类型</h3><ul>
+<li>长度:  单位为px, px 能被省略。</li>
+<li>颜色:  支持多种格式，例如 rgb (rgb(255, 0, 0)), rgba (rgba(255, 0, 0, 0.5)), 十六进制 (#ff0000), 短十六进制 (#f00), 颜色名字 (red)。</li>
+<li>枚举类型: 有限几个名字中的一个。</li>
 </ul>
-<div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/color-names.html" >颜色关键字列表</a></div></div>
+<h2 class="_mx__heading _mx__heading_border2" onclick="addAnchor('其它参考')"><a name="其它参考" class="anchor" href="#其它参考"><span class="header-link"></span></a>其它参考</h2><ul>
+<li><a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/color-names.html" >颜色关键字列表</a>。</li>
+<li><a class="_mx__link" target="_blank"title="null" href="http://alibaba.github.io/weex/doc/references/text-style.html" >英文文档</a>。</li>
+</ul>
+</div>
     <div class="doc_footer">
       <div>Released under <span>Apache License 2.0</span></div>
       <div class="doc_footer_img" style="height:30px;">

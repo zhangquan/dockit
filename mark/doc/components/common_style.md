@@ -4,7 +4,7 @@
 
 ## 盒模型
 
-![box model](http://alibaba.github.io/weex/doc/images/css-boxmodel.png)
+![box model @300*](http://alibaba.github.io/weex/doc/images/css-boxmodel.png)
 
 weex 盒模型基于 CSS 盒模型，每个 weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。
 
@@ -44,7 +44,7 @@ weex 盒模型基于 CSS 盒模型，每个 weex 元素都可视作一个盒子�
 
 weex 盒模型的 `box-sizing` 默认为 `border-box`，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。
 
-示例：
+### 示例：
 
 ```html
 <template>
@@ -69,18 +69,18 @@ flex-direction 属性定义了 flex 容器中 flex 成员项的排列方向。�
 
 - `justify-content`: `flex-start` | `flex-end` | `center` | `space-between`
 justify-content 属性定义了 flex 容器中 flex 成员项在水平方向上如何排列以处理空白部分。`flex-start` 是默认值，即左对齐，所有的 flex 成员项都排列在容器的前部；`flex-end` 则意味着右对齐，成员项排列在容器的后部；`center` 即中间对齐，成员项排列在容器中间、两边留白；`space-between` 表示两端对齐，空白均匀地填充到 flex 成员项之间。
-![justify-content](http://alibaba.github.io/weex/doc/images/css-flexbox-justify.svg)
+![justify-content @400*](http://alibaba.github.io/weex/doc/images/css-flexbox-justify.svg)
 
 - `align-items`: `stretch` | `flex-start` | `center` | `flex-end`
 align-items 属性定义了 flex 容器中 flex 成员项在垂直方向上如何排列以处理空白部分。`stretch` 是默认值，即拉伸高度至 flex 容器的大小；`flex-start` 则是上对齐，所有的成员项排列在容器顶部；`flex-end` 是下对齐，所有的成员项排列在容器底部；`center` 是中间对齐，所有成员项都垂直地居中显示。
-![align-items](http://alibaba.github.io/weex/doc/images/css-flexbox-align.jpg)
+![align-items @400*](http://alibaba.github.io/weex/doc/images/css-flexbox-align.jpg)
 
 ### Flex 成员项
 
 - flex: &lt;number&gt;
 flex 属性定义了 flex 成员项在容器中占据的尺寸。如果所有成员项都设置为 `flex: 1`，那么它们就有相等的宽度（水平排列）或者相等的高度（垂直排列）。如果一共有两个成员项，其中一个 `flex: 1`，另一个 `flex: 2`，那么第一个将占据 1/3 的空间，另一个占据 2/3。如果所有 flex 成员项都不设置 `flex` 属性，它们将根据容器的 `justify-content` 属性来决定如何排列。
 
-## 示例
+### 示例
 
 一组平分了容器的图片。
 

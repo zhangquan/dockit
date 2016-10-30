@@ -2,7 +2,7 @@
 
 所有的 weex 标签都有以下的基本属性。
 
-## id
+### id
 
 ```
 id="logo"
@@ -13,7 +13,7 @@ id="item-{{index}}"
 
 [参考关于 id 的更多内容][more-id]。
 
-## style
+### style
 
 ```
 style="width: 200; height: 200"
@@ -24,7 +24,7 @@ style="padding: {{x}}; margin: 0"
 
 [参考关于 style 的更多内容][more-style]。
 
-## class
+### class
 
 ```
 class="button"
@@ -33,7 +33,7 @@ class="button {{btnStatus}}"
 
 为 weex 标签增加类别。
 
-## repeat
+### repeat
 
 ```
 repeat="{{items}}"
@@ -43,7 +43,7 @@ repeat="{{items}}"
 
 [参考关于 repeat 的更多内容][more-repeat]。
 
-## if
+### if
 
 ```
 if="{{opened}}"
@@ -53,7 +53,7 @@ if="{{opened}}"
 
 [参考关于 if 的更多内容][more-if]。
 
-## append
+### append
 
 ```
 append="tree/node"
@@ -63,7 +63,7 @@ append="tree/node"
 
 [参考关于 append 的更多内容][more-append]。
 
-## on... 事件处理
+### on... 事件处理
 
 ```
 onclick="gotoDetail"
