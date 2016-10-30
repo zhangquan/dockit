@@ -599,24 +599,52 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 }
 
 </style>
-<h1 class="_mx__heading _mx__heading_border"><a name="通用事件" class="anchor" href="#通用事件"><span class="header-link"></span></a>通用事件</h1><div class="_mx__paragraph">weex 所有组件都支持通用事件。  </div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('click 事件')"><a name="click 事件" class="anchor" href="#click 事件"><span class="header-link"></span></a>click 事件</h3><div class="_mx__paragraph">如果某个组件绑定了 <span class="_mx__code_span">click</span> 事件，那么该事件会在用户点击时触发。</div><div class="_mx__paragraph"><strong>注解：</strong>  <span class="_mx__code_span">input</span>组件  和 <span class="_mx__code_span">switch</span>组件目前并不支持 click 事件，请使用 <span class="_mx__code_span">change</span> 或 <span class="_mx__code_span">input</span> 事件代替。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
-<li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">click</span>；</li>
-<li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
-<li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳。</li>
+<h1 class="_mx__heading _mx__heading_border"><a name="&lt;wxc-navpage&gt; 组件" class="anchor" href="#&lt;wxc-navpage&gt; 组件"><span class="header-link"></span></a>&lt;wxc-navpage&gt; 组件</h1><div class="_mx__time">0.5及其以上版本支持
+</div><div class="_mx__paragraph">wxc-navpage组件是一个包含navbar的容器组件，可以根据业务场景定制navbar组件。同时，可以使用<span class="_mx__code_span">navigator</span> 模块控制页面的跳转，具体参考 <a class="_mx__link" target="_blank"title="null" href="../modules/navigator.md" >navigator 模块</a>。一般情况，都是配合navbar组件使用。如果不了解navigator相关知识，建议先了解下iOS或者Android的相关组件。在H5上，其实是相当于导航栏。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('子组件')"><a name="子组件" class="anchor" href="#子组件"><span class="header-link"></span></a>子组件</h3><div class="_mx__paragraph">wxc-navpage组件可以包含任意的weex组件。</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('属性')"><a name="属性" class="anchor" href="#属性"><span class="header-link"></span></a>属性</h3><ul>
+<li><div class="_mx__paragraph">height: navbar的高度，默认是88。</div></li>
+<li><div class="_mx__paragraph">background-color: navbar的背景颜色，默认是白色。</div></li>
+<li><div class="_mx__paragraph">title: navbar的标题。</div></li>
+<li><div class="_mx__paragraph">title-color: navbar标题的颜色，默认黑色。</div></li>
+<li><div class="_mx__paragraph">left-item-title: leftItem的标题。</div></li>
+<li><div class="_mx__paragraph">left-item-color: leftItem标题颜色，默认黑色。</div></li>
+<li><div class="_mx__paragraph">right-item-title: rightItem标题。</div></li>
+<li><div class="_mx__paragraph">right-item-color: rightItem标题颜色，默认黑色。</div></li>
+<li><div class="_mx__paragraph">left-item-src: leftItem的图标。</div></li>
+<li><div class="_mx__paragraph">right-item-src: rightItem的图标。    </div></li>
 </ul>
-<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('appear 事件')"><a name="appear 事件" class="anchor" href="#appear 事件"><span class="header-link"></span></a>appear 事件</h3><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">appear</span> 事件被绑定到某个滚动区内的组件上，当组件可见时该事件触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
-<li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">appear</span>；</li>
-<li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
-<li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳；</li>
-<li><span class="_mx__code_span">direction</span>: 屏幕滚动时的滚动方向，<span class="_mx__code_span">up</span> 或 <span class="_mx__code_span">down</span>。</li>
+<div class="_mx__paragraph"><div class="_mx__image_container"><img src="https://vczero.github.io/markdown-extension/mark/source/imgs/nav.png" alt="" class="_mx__image" /></div></div><div class="_mx__paragraph">其它公共属性，可参考 <a class="_mx__link" target="_blank"title="null" href="../references/common-attrs.md" >公共属性</a>.</div><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('样式')"><a name="样式" class="anchor" href="#样式"><span class="header-link"></span></a>样式</h3><div class="_mx__paragraph">wxc-navpage组件支持所有的 <a class="_mx__link" target="_blank"title="null" href="" >公共样式</a>。</div><ul>
+<li><div class="_mx__paragraph">flexbox布局相关样式；</div></li>
+<li><div class="_mx__paragraph">盒子模型相关样式；</div></li>
+<li><div class="_mx__paragraph">position相关样式；</div></li>
+<li><div class="_mx__paragraph">opacity，background-color样式等。</div></li>
 </ul>
-<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('disappear 事件')"><a name="disappear 事件" class="anchor" href="#disappear 事件"><span class="header-link"></span></a>disappear 事件</h3><div class="_mx__paragraph">如果一个 <span class="_mx__code_span">disappear</span> 事件被绑定到某个滚动区内的组件上，该事件将在组件滚动出视口，并从你的视线中消失时触发。</div><div class="_mx__paragraph"><strong>事件对象</strong></div><ul>
-<li><span class="_mx__code_span">type</span>: <span class="_mx__code_span">disappear</span>；</li>
-<li><span class="_mx__code_span">target</span>: 触发事件的目标组件；</li>
-<li><span class="_mx__code_span">timestamp</span>: 事件触发的时间戳；</li>
-<li><span class="_mx__code_span">direction</span>: 屏幕滚动时的滚动方向，<span class="_mx__code_span">up</span> 或 <span class="_mx__code_span">down</span>。</li>
+<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('事件')"><a name="事件" class="anchor" href="#事件"><span class="header-link"></span></a>事件</h3><div class="_mx__paragraph">wxc-navpage组件支持左右两项点击事件。</div><ul>
+<li><div class="_mx__paragraph">naviBar.leftItem.click: 当navbar的leftItem被点击时触发事件，需要在created时期注册事件。</div></li>
+<li><div class="_mx__paragraph">naviBar.rightItem.click: 当navbar的rightItem被点击时触发事件，需要在created时期注册事件。</div></li>
 </ul>
-</div>
+<div class="_mx__paragraph">wxc-navpage组件同时支持 <a class="_mx__link" target="_blank"title="null" href="" >基础事件</a>。</div><ul>
+<li><div class="_mx__paragraph">支持点击事件；</div></li>
+<li><div class="_mx__paragraph">支持appear，disappear事件</div></li>
+</ul>
+<h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('列子')"><a name="列子" class="anchor" href="#列子"><span class="header-link"></span></a>列子</h3><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">wxc-navpage</span> <span class="hljs-attr">height</span>=<span class="hljs-string">{{...}}</span> <span class="hljs-attr">background-color</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">title-color</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">left-item-title</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">left-item-color</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">right-item-src</span>=<span class="hljs-string">"..."</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">content</span>&gt;</span> ...<span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">wxc-navpage</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">require</span>(<span class="hljs-string">'weex-components'</span>);
+  <span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">created</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">this</span>.$on(<span class="hljs-string">'naviBar.rightItem.click'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+           <span class="hljs-comment">//当rightItem被点击时处理事件</span>
+        });
+
+        <span class="hljs-keyword">this</span>.$on(<span class="hljs-string">'naviBar.leftItem.click'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+          <span class="hljs-comment">//当leftItem被点击时处理事件</span>
+        });
+    }
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></a></code></pre><div class="_mx__paragraph"><a class="_mx__link" target="_blank"title="null" href="https://vczero.github.io/markdown-extension/mark/source/imgs/navigator.png" >mobile_preview</a></div></div>
     <div class="doc_footer">
       <div>Released under <span>Apache License 2.0</span></div>
       <div class="doc_footer_img" style="height:30px;">
