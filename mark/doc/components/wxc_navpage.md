@@ -12,6 +12,8 @@ wxc-navpage组件可以包含任意的weex组件。
 
 ### 属性
 
+![nav@300*50](https://vczero.github.io/markdown-extension/mark/source/imgs/nav.png)
+
 - height: navbar的高度，默认是88。
 
 - background-color: navbar的背景颜色，默认是白色。
@@ -32,7 +34,7 @@ wxc-navpage组件可以包含任意的weex组件。
 
 - right-item-src: rightItem的图标。    
 
-![](https://vczero.github.io/markdown-extension/mark/source/imgs/nav.png)
+
 
 其它公共属性，可参考 [公共属性](../references/common-attrs.md).
 
