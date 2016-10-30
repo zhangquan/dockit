@@ -418,10 +418,31 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 
 <style type="text/css">
 .hljs-keyword{
-  color: #F92672;
+  color: #A71D5D;
 }
 .hljs-built_in{
   color: #0071A6;
+}
+.hljs-comment{
+	color: #989A98;
+}
+.hljs-string{
+	color: #399D3E;
+}
+.hljs-name{
+	color: #333333;
+}
+.hljs-tag{
+	color: #AC2A66;
+}
+.hljs-template-variable{
+	color: #A71D5D;
+}
+.hljs-function .hljs-keyword{
+	color: #A71D5D;
+}
+.hljs-params{
+
 }
 
 /*code*/
@@ -430,7 +451,7 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
   background-color: #F2F2F2 !important;
   overflow-x: auto;
   /*border:1px solid #1D1E19;*/
-  padding:15px;
+  padding:10px;
   /*border-radius:3px;*/
 }
 ._mx__code_pre code{
@@ -591,7 +612,6 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
       storage.setItem(<span class="hljs-string">'weex'</span>, <span class="hljs-string">'A framework for building Mobile cross-platform UI'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
         <span class="hljs-keyword">if</span>(e.result === <span class="hljs-string">'success'</span>){
           <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'存储数据成功'</span>);
-          <span class="hljs-comment">//getItem</span>
           storage.getItem(<span class="hljs-string">'weex'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
             <span class="hljs-keyword">if</span>(e.result === <span class="hljs-string">'success'</span>){
               self.weex = e.data
@@ -607,27 +627,27 @@ j.getBCHDigit(j.G18);)c^=j.G18<<j.getBCHDigit(c)-j.getBCHDigit(j.G18);return a<<
 <li><div class="_mx__paragraph">value(string): 要存储的值，不允许是&quot;&quot;或null.</div></li>
 <li><div class="_mx__paragraph">callback(object): 执行操作成功后的回调.</div></li>
 </ul>
-<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a>var storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
-storage.setItem(<span class="hljs-string">'bar'</span>, <span class="hljs-string">'bar-value'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span> {
-    // <span class="hljs-string">'e'</span>是一个包含<span class="hljs-string">'result'</span>和<span class="hljs-string">'data'</span>的对象. e.result判断<span class="hljs-string">'setItem'</span>操作是否执行成功.
-    // e.data返回<span class="hljs-string">'undefined'</span>表示设置成功，返回<span class="hljs-string">'invalid_param'</span>表示key/value为<span class="hljs-string">""</span>/null
+<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">var</span> storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
+storage.setItem(<span class="hljs-string">'bar'</span>, <span class="hljs-string">'bar-value'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-comment">//'e'是一个包含'result'和data的对象。可以通过e.result判断setItem操作是否执行成功。</span>
+  <span class="hljs-comment">//e.data返回undefined表示设置成功，返回invalid_param表示key/value 为 "" 或者 null</span>
 });</a></code></pre><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('getItem(key, callback)')"><a name="getItem(key, callback)" class="anchor" href="#getItem(key, callback)"><span class="header-link"></span></a>getItem(key, callback)</h3><div class="_mx__paragraph">传入键名返回对应的键值</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
 <li><div class="_mx__paragraph">key(string): 要获取的值的名称，不允许是&quot;&quot;或null.</div></li>
 <li><div class="_mx__paragraph">callback(object): 执行操作成功后的回调.</div></li>
 </ul>
-<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a>var storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
-storage.getItem(<span class="hljs-string">'foo'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span> {
-    // <span class="hljs-string">'e'</span>是一个包含<span class="hljs-string">'result'</span>和<span class="hljs-string">'data'</span>的对象.
-    // 使用<span class="hljs-string">'e.data'</span>获取键的值，如果没有找到对应的键值则返回<span class="hljs-string">'undefined'</span>.
+<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">var</span> storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
+storage.getItem(<span class="hljs-string">'foo'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-comment">//'e'是一个包含result和data的对象.</span>
+    <span class="hljs-comment">//使用e.data获取键的值，如果没有找到对应的键值则返回undefined.</span>
 });</a></code></pre><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('removeItem(key, callback)')"><a name="removeItem(key, callback)" class="anchor" href="#removeItem(key, callback)"><span class="header-link"></span></a>removeItem(key, callback)</h3><div class="_mx__paragraph">传入一个键名将会删除本地存储中对应的键值</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
 <li><div class="_mx__paragraph">key(string): 要删除的值的名称，不允许是&quot;&quot;或null.</div></li>
 <li><div class="_mx__paragraph">callback(object): 执行操作成功后的回调.</div></li>
 </ul>
-<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a>var storage = require(<span class="hljs-string">'@weex-module/storage'</span>);
-storage.removeItem(<span class="hljs-string">'foo'</span>, <span class="hljs-keyword">function</span>(e) {
-    <span class="hljs-regexp">//</span> <span class="hljs-string">'e'</span>是一个包含<span class="hljs-string">'result'</span>和<span class="hljs-string">'data'</span>的对象.
-    <span class="hljs-regexp">//</span> e.result返回执行结果<span class="hljs-string">'success'</span>或<span class="hljs-string">'failed'</span>.
-    <span class="hljs-regexp">//</span> e.data在成功执行后返回<span class="hljs-string">'undefined'</span>.
+<div class="_mx__paragraph"><strong>示例</strong></div><pre class="_mx__code_pre" id="__aa"><code><a><span class="hljs-keyword">var</span> storage = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@weex-module/storage'</span>);
+storage.removeItem(<span class="hljs-string">'foo'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-comment">// 'e'是一个包含result和data的对象.</span>
+    <span class="hljs-comment">// e.result返回执行结果success或failed.</span>
+    <span class="hljs-comment">// e.data在成功执行后返回undefined.</span>
 });</a></code></pre><h3 class="_mx__heading _mx__heading_color" onclick="addAnchor('length(callback)')"><a name="length(callback)" class="anchor" href="#length(callback)"><span class="header-link"></span></a>length(callback)</h3><div class="_mx__paragraph">返回本地存储的数据中所有存储项数量的整数</div><div class="_mx__paragraph"><strong>参数</strong></div><ul>
 <li>callback(object): 执行操作成功后的回调.</li>
 </ul>
@@ -716,6 +736,7 @@ storage.getAllKeys(<span class="hljs-function"><span class="hljs-keyword">functi
   /*
    * 增加锚点
    * 1.截取的是标题的一部分
+   * 2.锚点是针对2级一下标题才起作用，1级标题不使用锚点
    * */
   win.addAnchor = function(a){
     var url = window.location.href;

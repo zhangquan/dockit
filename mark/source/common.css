@@ -1,8 +1,29 @@
 .hljs-keyword{
-  color: #F92672;
+  color: #A71D5D;
 }
 .hljs-built_in{
   color: #0071A6;
+}
+.hljs-comment{
+	color: #989A98;
+}
+.hljs-string{
+	color: #399D3E;
+}
+.hljs-name{
+	color: #333333;
+}
+.hljs-tag{
+	color: #AC2A66;
+}
+.hljs-template-variable{
+	color: #A71D5D;
+}
+.hljs-function .hljs-keyword{
+	color: #A71D5D;
+}
+.hljs-params{
+
 }
 
 /*code*/
@@ -11,7 +32,7 @@
   background-color: #F2F2F2 !important;
   overflow-x: auto;
   /*border:1px solid #1D1E19;*/
-  padding:15px;
+  padding:10px;
   /*border-radius:3px;*/
 }
 ._mx__code_pre code{

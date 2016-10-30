@@ -5,7 +5,7 @@ mx_time
 mx_time 
 
 storage 是 Weex 的一个模块，提供本地数据的存储、修改、删除等功能，没有时间限制。但是需要注意的是，在 H5/Web 端的实现是采用 HTML5 LocalStorage API。因此，就会存在数据大小的限制。一般而言，现代浏览器提供 5M 的存储空间。storage 可以存储一些关键数据，例如一些轻量的服务接口数据。
-```javascript
+````javascript
 <template>
   <div>
     <text>{{weex}}</text>
@@ -26,7 +26,6 @@ storage 是 Weex 的一个模块，提供本地数据的存储、修改、删除
       storage.setItem('weex', 'A framework for building Mobile cross-platform UI', function(e) {
         if(e.result === 'success'){
           console.log('存储数据成功');
-          //getItem
           storage.getItem('weex', function(e) {
             if(e.result === 'success'){
               self.weex = e.data
@@ -38,7 +37,7 @@ storage 是 Weex 的一个模块，提供本地数据的存储、修改、删除
   };
   
 </script>
-```   
+````   
 [体验一下](http://www.baidu.com?123=test)
 
 
@@ -62,10 +61,10 @@ storage 提供了一系列的 API 供我们调用。我们只需要引入该模�
 ````javascript
 var storage = require('@weex-module/storage');
 storage.setItem('bar', 'bar-value', function(e) {
-	// 'e'是一个包含'result'和'data'的对象. e.result判断'setItem'操作是否执行成功.
-	// e.data返回'undefined'表示设置成功，返回'invalid_param'表示key/value为""/null
+  //'e'是一个包含'result'和data的对象。可以通过e.result判断setItem操作是否执行成功。
+  //e.data返回undefined表示设置成功，返回invalid_param表示key/value 为 "" 或者 null
 });
-````
+````      
 
 ### getItem(key, callback)
 
@@ -82,8 +81,8 @@ storage.setItem('bar', 'bar-value', function(e) {
 ````javascript
 var storage = require('@weex-module/storage');
 storage.getItem('foo', function(e) {
-	// 'e'是一个包含'result'和'data'的对象.
-	// 使用'e.data'获取键的值，如果没有找到对应的键值则返回'undefined'.
+	//'e'是一个包含result和data的对象.
+	//使用e.data获取键的值，如果没有找到对应的键值则返回undefined.
 });
 ````
 
@@ -102,9 +101,9 @@ storage.getItem('foo', function(e) {
 ````javascript
 var storage = require('@weex-module/storage');
 storage.removeItem('foo', function(e) {
-	// 'e'是一个包含'result'和'data'的对象.
-	// e.result返回执行结果'success'或'failed'.
-	// e.data在成功执行后返回'undefined'.
+	// 'e'是一个包含result和data的对象.
+	// e.result返回执行结果success或failed.
+	// e.data在成功执行后返回undefined.
 });
 ````
 

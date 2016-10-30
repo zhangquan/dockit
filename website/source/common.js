@@ -27,6 +27,7 @@
   /*
    * 增加锚点
    * 1.截取的是标题的一部分
+   * 2.锚点是针对2级一下标题才起作用，1级标题不使用锚点
    * */
   win.addAnchor = function(a){
     var url = window.location.href;
