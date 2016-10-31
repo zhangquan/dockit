@@ -72,17 +72,16 @@ files.map(function(v){
     //最后执行js脚本
     data +=  util.wrapScript(util.commonJS);
     
-  
-    //执行压缩
-    // data = minify(data, {
-    //   minifyJS: true,
-    //   minifyCSS: true,
-    //   removeAttributeQuotes: true,
-    //   keepClosingSlash: true,
-    //   collapseWhitespace: true,
-    //   collapseInlineTagWhitespace: true,
-    //   conservativeCollapse: true
-    // });
+    //压缩代码
+    data = minify(data, {
+       minifyJS: true,
+       minifyCSS: true,
+       removeAttributeQuotes: true,
+       keepClosingSlash: true,
+       collapseWhitespace: true,
+       collapseInlineTagWhitespace: true,
+       conservativeCollapse: true
+    });
     
     
   }else{

@@ -131,7 +131,9 @@ storage.length(function(e) {
 
 **参数**
 
-* callback(object): 执行操作成功后的回调.
+* callback(object): 执行操作成功后的回调。   
+
+
 
 **示例**
 

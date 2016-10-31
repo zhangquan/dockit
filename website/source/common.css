@@ -58,6 +58,7 @@
 /*heading*/
 ._mx__heading{
   color: #434343;
+	font-family: "Courier New";
 }
 
 ._mx__heading_color{
@@ -168,7 +169,7 @@
 }
 
 #_mx__md_container{
-	font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+	font-family: "Courier New", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:14px;
 	width:900px;
 	border-right:1px solid #DDDDDD;
