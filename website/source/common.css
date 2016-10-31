@@ -58,8 +58,8 @@
 }
 /*heading*/
 ._mx__heading{
-  color: #434343;
-	font-family: "Courier New";
+	color: #2E2E2E;
+	font-family: "Courier New", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 ._mx__heading_color{
@@ -178,4 +178,5 @@
 	padding-right:40px;
 	padding-bottom:140px;
 	margin-top:-19px;
+	color: #2E2E2E;
 }
