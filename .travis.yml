@@ -5,7 +5,6 @@ env:
  global:
    - GH_REF: github.com/vczero/dockit.git
 
-# S: Build Lifecycle
 install:
   - cd ./mark
   - npm install
@@ -13,6 +12,8 @@ install:
 
 script:
   - node index.js
+
+after_script:
   - cd ..
   - git init
   - git config user.name "vczero"
@@ -21,9 +22,6 @@ script:
   - git commit -m "Update docs"
   - git push --force --quiet "https://${gh_token}@${GH_REF}" gh-pages:gh-pages
 
-#after_script:
-  
-# E: Build LifeCycle
 
 branches:
   only:
