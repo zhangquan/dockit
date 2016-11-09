@@ -19,7 +19,7 @@ after_script:
   - git config user.email "wlhmyit@126.com"
   - git add .
   - git commit -m "update website"
-  - git push --force --quiet "https://${gh-pages}@${GH_REF}" doc:gh-pages
+  - git push --force --quiet "https://${gh-pages}@${GH_REF}" gh-pages:gh-pages
 # E: Build LifeCycle
 
 branches:
@@ -27,5 +27,5 @@ branches:
     - doc
 env:
  global:
-   - GH_REF: https://github.com/vczero/dockit.git 
+   - GH_REF: github.com/vczero/dockit.git 
   
