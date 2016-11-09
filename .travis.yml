@@ -19,7 +19,7 @@ script:
   - git merge doc
   - git add .
   - git commit -am 'update website'
-  - git push "https://${gh_token}@github.com/vczero/dockit.git" gh-pages  
+  - git push --force --quiet "https://${gh_token}@github.com/vczero/dockit.git" gh-pages:gh-pages  
 
 #after_script:
   
