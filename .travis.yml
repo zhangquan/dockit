@@ -1,38 +1,29 @@
 language: node_js
 node_js: stable
 
+env:
+ global:
+   - GH_REF: github.com/lifengsofts/lifengsofts.github.io.git
 
+# S: Build Lifecycle
 install:
   - cd ./mark
   - npm install
 
-script:  
+
+script:
   - node index.js
+
+after_script:
   - cd ..
   - git init
   - git config user.name "vczero"
-  - git config user.email "wlhmyit@126.com" 
-  - ls
+  - git config user.email "wlhmyit@126.com"
   - git add .
-  - git commit -am 'update docs; docs -> website'
-  - git checkout gh-pages
-  - git merge doc
-  - git add .
-  - git commit -am 'update website'
-  - git push --force --quiet "https://${gh_token}@github.com/vczero/dockit.git" gh-pages:gh-pages  
-
-#after_script:
-  
-
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${gh_token}@${GH_REF}" gh-pages:gh-pages
+# E: Build LifeCycle
 
 branches:
   only:
     - doc
-  env:
-    global:
-    - GH_REF: github.com/vczero/dockit.git 
-
-
-
-
-
