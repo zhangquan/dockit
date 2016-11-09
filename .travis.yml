@@ -18,9 +18,8 @@ script:
   - git checkout gh-pages
   - git merge doc
   - git add .
-  - curl -u "vczero":${gh_token} https://api.github.com/user
   - git commit -am 'update website'
-  - git push origin gh-pages  
+  - git push "https://${gh_token}@github.com/vczero/dockit.git" gh-pages  
 
 #after_script:
   
