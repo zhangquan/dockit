@@ -28,7 +28,7 @@ after_script:
 
 branches:
   only:
-    - doc 
+    - gh-pages
 
 env:
  global:
