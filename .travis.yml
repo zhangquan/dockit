@@ -3,6 +3,8 @@ node_js: stable
 
 # S: Build Lifecycle
 install:
+  - git checkout gh-pages
+  - git merge doc
   - cd ./mark
   - npm install
 
@@ -14,12 +16,14 @@ script:
   - node index.js
   
   
-after_script:
+after_script: 
+  - cd ..
   - git config user.name "vczero"
-  - git config user.email "wlhmyit@126.com"
+  - git config user.email "wlhmyit@126.com" 
   - git add .
   - git commit -m "update website"
-  - git push --force --quiet "https://${gh-pages}@${GH_REF}" gh-pages:gh-pages
+  - git push origin gh-pages
+
 # E: Build LifeCycle
 
 branches:
