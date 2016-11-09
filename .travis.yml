@@ -1,9 +1,31 @@
 language: node_js
-node_js:
-  - "6"
-before_script:
+node_js: stable
+
+# S: Build Lifecycle
+install:
+  - cd ./mark
   - npm install
 
-scripts: {
-    "test": "node ./mark/index.j"
-}
+
+#before_script:
+ # - npm install -g gulp
+
+script:
+  - node index.js
+  
+  
+after_script:
+  - git config user.name "vczero"
+  - git config user.email "wlhmyit@126.com"
+  - git add .
+  - git commit -m "update website"
+  - git push --force --quiet "https://${gh-pages}@${GH_REF}" doc:gh-pages
+# E: Build LifeCycle
+
+branches:
+  only:
+    - doc
+env:
+ global:
+   - GH_REF: https://github.com/vczero/dockit.git 
+  
