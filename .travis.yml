@@ -28,7 +28,8 @@ after_script:
 
 branches:
   only:
-    - doc
+    - doc 
+    - gh-pages
 env:
  global:
    - GH_REF: github.com/vczero/dockit.git 
