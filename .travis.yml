@@ -15,7 +15,7 @@ script:
   - ls
   - git add .
   - git commit -am 'update docs; docs -> website'
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}"  gh-pages:gh-pages  
+  - git push --force --quiet "https://${gh_token}@${GH_REF}"  gh-pages:gh-pages  
 
 #after_script:
   
