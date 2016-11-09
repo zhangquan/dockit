@@ -13,7 +13,8 @@ after_script:
   - cd ..
   - git init
   - git config user.name "vczero"
-  - git config user.email "wlhmyit@126.com"
+  - git config user.email "wlhmyit@126.com" 
+  - ls
   - git add .
   - git commit -am 'update docs; docs -> website'
   - git push --force --quiet "https://${gh-pages}@${GH_REF}" gh-pages:gh-pages  
