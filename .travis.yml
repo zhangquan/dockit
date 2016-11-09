@@ -2,7 +2,8 @@ language: node_js
 node_js: stable
 
 # S: Build Lifecycle
-install:
+install:  
+  - git status
   - git checkout gh-pages
   - git merge doc
   - cd ./mark
