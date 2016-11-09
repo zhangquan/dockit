@@ -5,10 +5,11 @@ node_js: stable
 install:   
   - git config user.name "vczero"
   - git config user.email "wlhmyit@126.com" 
-  - git checkout --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages
-  - git merge doc
-  - cd ./mark
-  - npm install
+  - ls
+#  - git checkout --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages
+#  - git merge doc
+#  - cd ./mark
+#  - npm install
 
 
 #before_script:
@@ -19,10 +20,10 @@ script:
   
   
 after_script: 
-  - cd ..
-  - git add .
-  - git commit -m "update website"
-  - git push origin gh-pages
+#  - cd ..
+#  - git add .
+#  - git commit -m "update website"
+#  - git push origin gh-pages
 
 # E: Build LifeCycle
 
