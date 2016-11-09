@@ -99,4 +99,4 @@ auto-play: true 或者 false。该值决定网页渲染完成之后是否自动�
 ## 其它参考
 + [英文文档](http://alibaba.github.io/weex/doc/components/slider.html)
 
-[mobile_preview](https://vczero.github.io/markdown-extension/mark/source/imgs/slide.png)
+[mobile_preview](https://vczero.github.io/dockit/mark/source/imgs/slide.png)
