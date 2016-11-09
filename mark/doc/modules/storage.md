@@ -4,6 +4,9 @@ mx_time
 	0.7及以上版本
 mx_time 
 
+
+
+
 storage 是 Weex 的一个模块，提供本地数据的存储、修改、删除等功能，没有时间限制。但是需要注意的是，在 H5/Web 端的实现是采用 `HTML5 LocalStorage API`。因此，就会存在数据大小的限制。一般而言，现代浏览器提供 5M 的存储空间。storage 可以存储一些关键数据，例如一些轻量的服务接口数据。
 ````javascript
 <template>
