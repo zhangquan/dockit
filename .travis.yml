@@ -2,7 +2,9 @@ language: node_js
 node_js: stable
 
 # S: Build Lifecycle
-install:  
+install:   
+  - git config user.name "vczero"
+  - git config user.email "wlhmyit@126.com" 
   - git checkout gh-pages
   - git merge doc
   - cd ./mark
@@ -18,8 +20,6 @@ script:
   
 after_script: 
   - cd ..
-  - git config user.name "vczero"
-  - git config user.email "wlhmyit@126.com" 
   - git add .
   - git commit -m "update website"
   - git push origin gh-pages
@@ -27,7 +27,6 @@ after_script:
 # E: Build LifeCycle
 
 branches:
-  only:
     - doc 
     - gh-pages
 env:
