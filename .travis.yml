@@ -5,6 +5,16 @@ env:
  global:
    - GH_REF: github.com/vczero/dockit.git
 
+before_install:
+  - openssl aes-256-cbc -K $encrypted_3db71d9c9ac7_key -iv $encrypted_3db71d9c9ac7_iv -in .travis/id_rsa_bot.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - eval $(ssh-agent)
+  - ssh-add ~/.ssh/id_rsa
+  - cp .travis/ssh_config ~/.ssh/config
+  - git config --global user.name "vczero"
+  - git config --global user.email "wlhmyit@126.com"
+  - git config --global push.default simple
+
 install:
   - cd ./mark
   - npm install
@@ -20,7 +30,8 @@ after_script:
   - git config user.email "wlhmyit@126.com"
   - git add .
   - git commit -m "Update docs"
-  - git push --force --quiet "https://${gh_token}@${GH_REF}" gh-pages:gh-pages
+  - git push origin gh-pages
+  #- git push --force --quiet "https://${gh_token}@${GH_REF}" gh-pages:gh-pages
 
 
 branches:
