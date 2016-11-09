@@ -22,7 +22,7 @@ script:
   - git status
   - git commit -am 'update website'
   - git status
-  - git push -f -q https://vczero:${gh_token}@github.com/vczero/dockit-gh-pages gh-pages &2>/dev/null
+  - git push -f -q https://vczero:${gh_token}@github.com/vczero/dockit-gh-pages gh-pages
 
 
 # after_script:
