@@ -1,7 +1,7 @@
 language: node_js
 node_js: stable
 
-# S: Build Lifecycle
+
 install:
   - cd ./mark
   - npm install
@@ -17,6 +17,7 @@ after_script:
   - git add .
   - git commit -am 'update docs; docs -> website'
   - git push --force --quiet "https://${gh-pages}@${GH_REF}" gh-pages:gh-pages  
+
 
 branches:
   only:
