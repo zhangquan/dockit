@@ -8,8 +8,6 @@ install:
 
 script:  
   - node index.js
-
-after_script:
   - cd ..
   - git init
   - git config user.name "vczero"
@@ -18,6 +16,9 @@ after_script:
   - git add .
   - git commit -am 'update docs; docs -> website'
   - git push --force --quiet "https://${gh-pages}@${GH_REF}" gh-pages:gh-pages  
+
+#after_script:
+  
 
 
 branches:
