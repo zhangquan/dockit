@@ -3,7 +3,7 @@ node_js: stable
 
 env:
  global:
-   - GH_REF: github.com/lifengsofts/lifengsofts.github.io.git
+   - GH_REF: github.com/vczero/dockit.git
 
 # S: Build Lifecycle
 install:
