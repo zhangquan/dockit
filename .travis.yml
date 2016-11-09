@@ -13,30 +13,37 @@ install:
 script:
   - node index.js
 
-# after_script:
-#   - cd ..
-#   - git init
-#   - git config user.name "vczero"
-#   - git config user.email "wlhmyit@126.com"
-#   - git add .
-#   - git commit -m "Update docs"
-#   - git push origin gh-pages
-#   #- git push --force --quiet "https://${gh_token}@${GH_REF}" gh-pages:gh-pages
-after_success: |
-  if [ -n "${gh_token}" ]; then
-    cd "$TRAVIS_BUILD_DIR"
-    # This generates a `web` directory containing the website.
-    make web
-    cd web
-    git init
-    git checkout -b gh-pages
-    git add .
-    git -c user.name='travis' -c user.email='travis' commit -m init
-    # Make sure to make the output quiet, or else the API token will leak!
-    # This works because the API key can replace your password.
-    git push -f -q https://vczero:${gh_token}@github.com/vczero/dockit-gh-pages gh-pages &2>/dev/null
-    cd "$TRAVIS_BUILD_DIR"
-  fi
+after_script:
+  - cd ..
+  - git config user.name "vczero"
+  - git config user.email "wlhmyit@126.com"
+  - git checkout -b gh-pages
+  - git merge doc
+  - git status
+  - git add .
+  - git status
+  - git commit -am 'update website'
+  - git status
+  - git push -f -q https://vczero:${gh_token}@github.com/vczero/dockit-gh-pages gh-pages &2>/dev/null
+  # - git add .
+  # - git commit -m "Update docs"
+  # - git push origin gh-pages
+  #- git push --force --quiet "https://${gh_token}@${GH_REF}" gh-pages:gh-pages
+# after_success: |
+#   if [ -n "${gh_token}" ]; then
+#     cd "$TRAVIS_BUILD_DIR"
+#     # This generates a `web` directory containing the website.
+#     make web
+#     cd web
+#     git init
+#     git checkout -b gh-pages
+#     git add .
+#     git -c user.name='travis' -c user.email='travis' commit -m init
+#     # Make sure to make the output quiet, or else the API token will leak!
+#     # This works because the API key can replace your password.
+#     git push -f -q https://vczero:${gh_token}@github.com/vczero/dockit-gh-pages gh-pages &2>/dev/null
+#     cd "$TRAVIS_BUILD_DIR"
+#   fi
 
 branches:
   only:
