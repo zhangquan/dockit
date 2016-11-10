@@ -10,7 +10,7 @@ install:
   - npm install
   
 script:
-  - travis encrypt 'GIT_NAME="vczero" GIT_EMAIL=wlhmyit@126.com GH_TOKEN=${gh_token}'
+  - travis login --github-token '${GH_TOKEN}'
   - node index.js
   - cd ..
   - git config user.name "vczero"
