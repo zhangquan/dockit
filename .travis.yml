@@ -1,13 +1,4 @@
 
-language: ruby
-rvm:
-  - jruby
-install:
-  - sudo gem install travis
-script:
-  - travis login --github-token '${GH_TOKEN}'
-
-
 language: node_js
 node_js: stable
 
@@ -25,6 +16,7 @@ script:
   - cd ..
   - git config user.name "vczero"
   - git config user.email "wlhmyit@126.com"
+  - git remote add upstream "https://${GH_TOKEN}@github.com/vczero/dockit.git"
   - git checkout -b gh-pages
   - git merge doc
   - git status
