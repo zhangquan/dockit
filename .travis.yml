@@ -8,9 +8,9 @@ env:
 install:
   - cd ./mark
   - npm install
-
-
+  
 script:
+  - travis encrypt 'GIT_NAME="vczero" GIT_EMAIL=wlhmyit@126.com GH_TOKEN=${gh_token}'
   - node index.js
   - cd ..
   - git config user.name "vczero"
@@ -20,9 +20,9 @@ script:
   - git status
   - git add .
   - git status
-  - git commit -am 'update website' -f -q https://vczero:${gh_token}@github.com/vczero/dockit-gh-pages gh-pages &2>/dev/null
+  - git commit -am 'update website'
   - git status
-  - git push -f -q https://vczero:${gh_token}@github.com/vczero/dockit-gh-pages gh-pages &2>/dev/null
+  - git push origin gh-pages
 
 
 # after_script:
