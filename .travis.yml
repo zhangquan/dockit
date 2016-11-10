@@ -22,7 +22,7 @@ script:
   - git status
   - git add .
   - git status
-  - git commit -am 'update website'
+  - git commit -amf 'update website'
   - git status
   - git push origin gh-pages
 
