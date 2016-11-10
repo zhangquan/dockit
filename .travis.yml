@@ -10,6 +10,7 @@ install:
   - npm install
   
 script:
+  - sudo gem install travis
   - travis login --github-token '${GH_TOKEN}'
   - node index.js
   - cd ..
