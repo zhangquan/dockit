@@ -1,12 +1,17 @@
-language: node_js
-node_js: stable
 
 language: ruby
 rvm:
-  - 2.2
   - jruby
-  - rbx-2
-  
+install:
+  - sudo gem install travis
+script:
+  - travis login --github-token '${GH_TOKEN}'
+
+
+language: node_js
+node_js: stable
+
+
 env:
  global:
    - GH_REF: github.com/vczero/dockit.git 
@@ -16,8 +21,6 @@ install:
   - npm install
   
 script:
-  - sudo gem install travis
-  - travis login --github-token '${GH_TOKEN}'
   - node index.js
   - cd ..
   - git config user.name "vczero"
@@ -34,7 +37,6 @@ script:
 
 # after_script:
  
-
 branches:
   only:
     - doc
