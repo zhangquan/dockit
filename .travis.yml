@@ -1,6 +1,12 @@
 language: node_js
 node_js: stable
 
+language: ruby
+rvm:
+  - 2.2
+  - jruby
+  - rbx-2
+  
 env:
  global:
    - GH_REF: github.com/vczero/dockit.git 
