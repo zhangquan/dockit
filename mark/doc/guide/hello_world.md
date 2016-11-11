@@ -1,4 +1,4 @@
-# Hello World 
+# Hello World    
 Weex 是多端一致、高性能的移动动态化解决方案。可以使用Web的技术栈（即HTML、CSS、JavaScript）开发高性能的移动应用。因此，入门相对来说，比较简单；同时Weex提供一系列的辅助工具帮助开发、调试。后面会详细介绍。
 下面来看一下，如何开发出第一个Demo：Hello World。  
 

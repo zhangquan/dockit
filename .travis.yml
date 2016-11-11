@@ -6,7 +6,7 @@ node_js: stable
 cache:
   directories:
     - node_modules
-    
+
 install:
   - cd ./mark
   - npm install
@@ -16,8 +16,8 @@ script:
 
 after_script:  
   - cd ..
-  - cd website
   - git init
+  - cd website
   - git config user.name "vczero"
   - git config user.email "wlhmyit@126.com"
   - git add .
