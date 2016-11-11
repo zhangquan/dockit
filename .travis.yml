@@ -18,6 +18,7 @@ after_script:
   - cd ..
   - git branch 
   - cd website 
+  - mkdir website
   - git init 
   - git config user.name "vczero"
   - git config user.email "wlhmyit@126.com"
