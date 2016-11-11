@@ -19,11 +19,12 @@ after_script:
   - git branch 
   - cd website 
   - git init 
-  - git branch
   - git config user.name "vczero"
   - git config user.email "wlhmyit@126.com"
   - git add .
   - git commit -m 'update website' 
+  - git branch doc
+  - git checkout doc
   - git push --force --quiet "https://${GH_TOEKN}@${GH_REF}" doc:gh-pages
 
 # after_script:
