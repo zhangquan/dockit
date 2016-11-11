@@ -20,7 +20,7 @@ script:
   - git config user.email "wlhmyit@126.com"
   - git add .
   - git commit -m 'update docs'
-  - git push -f "https://${GH_TOKEN}@{GH_REF}" doc:gh-pages
+  - git push -f "https://${GH_TOEKN}@github.com/vczero/dockit.git" doc:gh-pages
 
 # after_script:
  
