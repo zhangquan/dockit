@@ -7,8 +7,8 @@ let util = require('./util');
 let minify = require('html-minifier').minify;
 
 
-const ORG_DIR = './doc';
-const DIST_DIR = './../website/doc';
+const ORG_DIR = '../en-doc';
+const DIST_DIR = './../website/';
 
 /***
  * -----------------------------------------------------------
@@ -48,7 +48,11 @@ console.log('..............拷贝资源文件成功..............'.yellow);
  */
 console.log('..............批量网页构建开始..............'.yellow);
 files.map(function(v){
-  let path = '../website/' + v.replace('.md', '.html');
+  //切记v不能改变
+  let md2html = v.replace('.md', '.html');
+  md2html = md2html.replace('../en-doc/', '');
+  let path = './../website/' + md2html;
+
   let data;
   console.log(v.green);
   if(v.indexOf('.md') > 0){
