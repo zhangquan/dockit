@@ -23,6 +23,7 @@ after_script:
   - git add .
   - git status 
   - git commit -am 'update docs'
+  - git push -f "https://${GH_TOEKN}@github.com/vczero/dockit.git" doc
   - git push -f "https://${GH_TOEKN}@github.com/vczero/dockit.git" doc:gh-pages
 
 # after_script:
