@@ -2,13 +2,6 @@
 language: node_js
 node_js: stable
 
-
-env:
- global:
-   - GH_REF: github.com/vczero/dockit.git 
-   - secure: "RV6fRwXHu5oBS3sKPbd3Gcve4lhguYv5L672JEummxXVRCncJjVO89tdylJnxgFAPYbVaj/n+Ol8FQDDov1QV+griwZMglAuNWYMNk67zmqM0LvtnhMXXmvbVhgLH9E4czpZInV0WKNUH2e1WuTwfv8PksHUR0N+V3zVMmsi1HWihuXhMjPEw96YFg1q4GuQ4jHUl9+z/Jsohqh5pl/DsDMR06KjZxEzD0xbGjG4DXOrEHtftWtD7g2imhdWH4fDq+5N9ajJyYJgFFensjfm2PrgOKQz4ipAfIzHLOH0dCCEyAWosEWpUqSmMukOoJMnF06QHkmtqJNmt4agPqhZt7QCjXg4H962N4LHSC4M4G1RZbVdA4272RNHD0u3ehbwU8a8z1r7A5/AyTOjzMss9/vDhMvJRU6FS8ENj2gfUSzdpszZM/rKEw0wecndXHFnpHpaAX6jZdsXTmm4TRieWB375VyHkqmQY5JERzKiD2CplLT4JgmPua+TyCFIFDBwRlb50Isw10vGli3oCvmffAa28tI2eww3ssoAaTor77qtFHeOIVR3CtEHEb8eVVynjM9M7wE74IG9A8pl9l/teM9ZAPjWzsOgiMXzwRQEKSGyLbLoWADYeDuzMt7b3tPSJho4cIXi8FBs//+HXzAcEpROnIEwCKm5CevjL6KQXgo="
-
-
 install:
   - cd ./mark
   - npm install
@@ -25,10 +18,16 @@ after_script:
   - git status 
   - git commit -am 'update website' 
   - git status
-  - git push -f "https://${GH_TOEKN}@github.com/vczero/dockit.git" doc:gh-pages
+  - git push --force --quiet "https://${GH_TOEKN}@${GH_REF}" doc:gh-pages
 
 # after_script:
  
 branches:
   only:
     - doc
+
+env:
+ global:
+   - GH_REF: github.com/vczero/dockit.git 
+   - secure: "RV6fRwXHu5oBS3sKPbd3Gcve4lhguYv5L672JEummxXVRCncJjVO89tdylJnxgFAPYbVaj/n+Ol8FQDDov1QV+griwZMglAuNWYMNk67zmqM0LvtnhMXXmvbVhgLH9E4czpZInV0WKNUH2e1WuTwfv8PksHUR0N+V3zVMmsi1HWihuXhMjPEw96YFg1q4GuQ4jHUl9+z/Jsohqh5pl/DsDMR06KjZxEzD0xbGjG4DXOrEHtftWtD7g2imhdWH4fDq+5N9ajJyYJgFFensjfm2PrgOKQz4ipAfIzHLOH0dCCEyAWosEWpUqSmMukOoJMnF06QHkmtqJNmt4agPqhZt7QCjXg4H962N4LHSC4M4G1RZbVdA4272RNHD0u3ehbwU8a8z1r7A5/AyTOjzMss9/vDhMvJRU6FS8ENj2gfUSzdpszZM/rKEw0wecndXHFnpHpaAX6jZdsXTmm4TRieWB375VyHkqmQY5JERzKiD2CplLT4JgmPua+TyCFIFDBwRlb50Isw10vGli3oCvmffAa28tI2eww3ssoAaTor77qtFHeOIVR3CtEHEb8eVVynjM9M7wE74IG9A8pl9l/teM9ZAPjWzsOgiMXzwRQEKSGyLbLoWADYeDuzMt7b3tPSJho4cIXi8FBs//+HXzAcEpROnIEwCKm5CevjL6KQXgo="
+
