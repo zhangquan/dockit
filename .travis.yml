@@ -14,8 +14,9 @@ install:
 script:
   - node index.js
 
-after_script:  
+after_script:   
   - cd ..
+  - git branch 
   - cd website 
   - git init 
   - git config user.name "vczero"
