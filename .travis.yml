@@ -15,11 +15,14 @@ install:
   
 script:
   - node index.js
+
+after_script:  
   - cd ..
   - git config user.name "vczero"
   - git config user.email "wlhmyit@126.com"
-  - git add .
-  - git commit -m 'update docs'
+  - git add --all
+  - git status 
+  - git commit -am 'update docs'
   - git push -f "https://${GH_TOEKN}@github.com/vczero/dockit.git" doc:gh-pages
 
 # after_script:
