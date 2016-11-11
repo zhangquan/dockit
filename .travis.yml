@@ -12,7 +12,7 @@ env:
 install:
   - git config user.name "vczero"
   - git config user.email "wlhmyit@126.com"
-  - git checkout gh-pages
+  - git checkout "https://${GH_TOEKN}@github.com/vczero/dockit.git" gh-pages
   - cd ./mark
   - npm install
   
