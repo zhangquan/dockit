@@ -10,9 +10,6 @@ env:
 
 
 install:
-  - git config user.name "vczero"
-  - git config user.email "wlhmyit@126.com"
-  - git checkout "https://${GH_TOEKN}@github.com/vczero/dockit.git" gh-pages
   - cd ./mark
   - npm install
   
@@ -21,10 +18,14 @@ script:
 
 after_script:  
   - cd ..
+  - git init
+  - git config user.name "vczero"
+  - git config user.email "wlhmyit@126.com"
   - git add .
   - git status 
-  - git commit -am 'update website'
-  - git push -f "https://${GH_TOEKN}@github.com/vczero/dockit.git" gh-pages:gh-pages
+  - git commit -am 'update docs'
+  - git push -f "https://${GH_TOEKN}@github.com/vczero/dockit.git" doc
+  - git push -f "https://${GH_TOEKN}@github.com/vczero/dockit.git" doc:gh-pages
 
 # after_script:
  
