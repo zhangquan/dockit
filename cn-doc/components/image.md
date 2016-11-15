@@ -104,7 +104,7 @@ image组件，包含src和resize两个重要的属性。
  ````
 [体验一下](http://www.baidu.com?123=test)   
   
-* weex 0.8及其以上版本，支持onload事件。需要注意的是，目前在Android、iOS上支持，H5不支持。具体代码如下：
+* onload事件需要 weex [0.8@版本号](版本号)及其以上版本才支持。需要注意的是，目前在Android、iOS上支持，H5不支持。具体代码如下：
 
 ````html
 <template>

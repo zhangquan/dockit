@@ -3,8 +3,10 @@ html,body{
     margin:0;
     padding:0;
     font-size:14px;
-    font-family: "Courier New", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    /*font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;*/
+    /*font-family: "Courier New", "Helvetica Neue", Helvetica, Arial, sans-serif !important;*/
     /*font-family: "Courier New", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-family: "Courier New", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .fl{
     float: left;
@@ -71,8 +73,8 @@ html,body{
 .tree_menu_view{
     width:100%;
     margin-top:10px;
-    line-height:23px;
-    font-size:13px;
+    line-height:20px;
+    font-size:12px;
 }
 
 .tree_menu_view_title{
@@ -258,7 +260,7 @@ html,body{
     margin-top:0;
     width:300px;
     line-height:40px;
-    background-color:#4CAE51;
+    background-color:#1B90F7;
     color: #fff;
     border-radius:0 0 5px 5px;
     margin-left:-1px;

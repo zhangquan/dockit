@@ -81,6 +81,16 @@
         });
       });
     }
+ 
+    if(link.innerText.indexOf('@版本号') > 0){
+      $(link).css('background-color', '#FC3D01');
+      $(link).css('display', 'inline-block');
+      $(link).css('padding', '3px');
+      $(link).css('border-radius', '3px');
+      $(link).css('color', '#fff');
+      $(link).html(link.innerText.replace('@版本号', ''));
+      $(link).attr('href', "javascript:;");
+    }
   });
 
   /*

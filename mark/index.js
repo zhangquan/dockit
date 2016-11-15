@@ -7,7 +7,7 @@ let util = require('./util');
 let minify = require('html-minifier').minify;
 
 
-const ORG_DIR = '../en-doc';
+const ORG_DIR = '../cn-doc';
 const DIST_DIR = './../website/';
 
 /***
@@ -50,7 +50,7 @@ console.log('..............批量网页构建开始..............'.yellow);
 files.map(function(v){
   //切记v不能改变
   let md2html = v.replace('.md', '.html');
-  md2html = md2html.replace('../en-doc/', '');
+  md2html = md2html.replace('../cn-doc/', '');
   let path = './../website/' + md2html;
 
   let data;

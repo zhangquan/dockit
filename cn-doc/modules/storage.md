@@ -155,4 +155,4 @@ storage.getAllKeys(function(e) {
 + [storage 在 iPhone 上无效，在模拟器上有效，如何解决？](https://github.com/alibaba/weex/issues/1453) 
 + [storage 模块完整的 Demo](https://github.com/alibaba/weex/blob/dev/examples/module/storage-demo.we)
       
-[mobile_preview](http://gtms03.alicdn.com/tps/i3/TB1pQENMXXXXXaLXVXXkIFHLVXX-624-1105.jpg)
+[mobile_preview](http://vczero.github.io/dockit/source/wt.png)
