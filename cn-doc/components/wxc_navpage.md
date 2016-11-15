@@ -18,7 +18,7 @@ wxc-navpage组件可以包含任意的weex组件。
 ### 属性
 wxc-navpage组件的属性其实是对navbar进行功能设置，如下图所示，是navbar的一个简单示意。
 
-![nav@500*245](https://vczero.github.io/dockit/mark/source/imgs/nav.png)
+![nav@500*245](https://vczero.github.io/dockit/source/imgs/nav.png)
 
 - height: navbar的高度，默认是88。
 
