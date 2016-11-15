@@ -97,4 +97,4 @@ wxc-navpage组件同时支持 [基础事件]()。
 + [wxc-tabbar]()   
 
 
-[mobile_preview](https://vczero.github.io/dockit/mark/source/imgs/navigator.png)
+[mobile_preview](https://vczero.github.io/dockit/source/imgs/navigator.png)
