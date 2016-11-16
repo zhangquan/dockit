@@ -1,5 +1,9 @@
 # text 样式
 
+mx_time 
+	0.5及其以上版本支持
+mx_time 
+
 文本类组件共享一些共同特性, 这类组件目前包括[text](http://alibaba.github.io/weex/doc/components/text.html) and [input](http://alibaba.github.io/weex/doc/components/input.html)。
 
 ### 属性
